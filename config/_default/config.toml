@@ -1,0 +1,10 @@
+# baseURL = "https://your_domain.com/"
+defaultContentLanguage = "en"
+
+title = 'Christopher Dev Blog'
+enableRobotsTXT = true
+paginate = 10
+summaryLength = 0
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
