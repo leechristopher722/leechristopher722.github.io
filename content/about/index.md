@@ -3,14 +3,16 @@ title: 'About'
 description: 'About me'
 ---
 
+View my resume <a class="button primary big" href="/Christopher_Lee_Resume.pdf" download="Christopher_Lee_Resume.pdf" target="_blank" >here</a>.
+
 **Education**
 
 <div class="flex gap-4 items-center">
   <div>
     University of California, Berkeley
-
+    <div>
     Class of 2025 | Bachelor of Arts in Computer Science (GPA: 3.76)
-
+    </div>
   </div>
 </div>
 

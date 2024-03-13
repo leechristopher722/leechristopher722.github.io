@@ -5,7 +5,7 @@ lastmod: 2023-01-23
 draft: false
 description: 'Icon support in Congo.'
 slug: 'gitlet'
-tags: ['icons', 'sample', 'shortcodes']
+tags: ['OOP', 'Java', 'Git']
 ---
 
 Gitlet is a version-control system similar to Git but designed to be simpler and smaller. It allows you to track changes made to your project's files over time.
