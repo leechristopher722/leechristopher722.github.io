@@ -8,8 +8,6 @@ slug: 'gitlet'
 tags: ['icons', 'sample', 'shortcodes']
 ---
 
-## Introduction
-
 Gitlet is a version-control system similar to Git but designed to be simpler and smaller. It allows you to track changes made to your project's files over time.
 
 **Key functionalities:**

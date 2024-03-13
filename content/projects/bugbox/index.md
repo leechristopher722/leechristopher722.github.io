@@ -8,8 +8,6 @@ slug: 'icons'
 tags: ['icons', 'sample', 'shortcodes']
 ---
 
-## Introduction
-
 This is **bold** text, and this is _emphasized_ text.
 
 YAYYYYYY LET's start writing some dev-blogs on this website!
