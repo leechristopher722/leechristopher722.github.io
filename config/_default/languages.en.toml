@@ -12,7 +12,7 @@ title = "Christopher Lee"
 
 [params.author]
   name = "Christopher Lee"
-  image = "img/avatartion.png"
+  image = "img/avatartion.jpg"
   headline = "Software Engineer"
   bio = "Full Stack Software Engineer Located in San Francisco"
   links = [

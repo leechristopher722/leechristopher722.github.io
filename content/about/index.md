@@ -7,14 +7,8 @@ View my resume <a class="button primary big" href="/Christopher_Lee_Resume.pdf" 
 
 **Education**
 
-<div class="flex gap-4 items-center">
-  <div>
-    University of California, Berkeley
-    <div>
-    Class of 2025 | Bachelor of Arts in Computer Science (GPA: 3.76)
-    </div>
-  </div>
-</div>
+University of California, Berkeley
+Class of 2025 | Bachelor of Arts in Computer Science (GPA: 3.76)
 
 **Relevant Coursework:**
 
@@ -26,8 +20,6 @@ View my resume <a class="button primary big" href="/Christopher_Lee_Resume.pdf" 
   <li>DATA 8: Foundations of Data Science</li>
   <li>CS 188: Artificial Intelligence</li>
 </ul>
-
-**Experiences**
 
 <div class="flex flex-col gap-2">
   <h3 class="text-lg font-bold">Eighth United States Army (Oct 2022 - Apr 2024)</h3>
