@@ -1,11 +1,12 @@
 ---
 title: 'GitBug'
 date: 2023-08-14
-lastmod: 2023-01-23
 draft: false
-description: 'Icon support in Congo.'
+description: 'GitBug Project Description'
 slug: 'gitbug'
 tags: ['MongoDB', 'Express', 'Node.js']
 ---
 
-Project management tool for developers.
+Project management tool for developers; combines Gitlet with Dynamic Web Application to provide efficient workflow in team projects.
+
+To Be Released...

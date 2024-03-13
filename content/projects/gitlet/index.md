@@ -1,14 +1,13 @@
 ---
 title: 'Gitlet'
-date: 2023-08-14
-lastmod: 2023-01-23
+date: 2021-12-31
 draft: false
-description: 'Icon support in Congo.'
+description: 'Gitlet Project Page'
 slug: 'gitlet'
 tags: ['OOP', 'Java', 'Git']
 ---
 
-Gitlet is a version-control system similar to Git but designed to be simpler and smaller. It allows you to track changes made to your project's files over time.
+A version-control system similar to Git but designed to be simpler and smaller.
 
 **Key functionalities:**
 
@@ -18,24 +17,16 @@ Gitlet is a version-control system similar to Git but designed to be simpler and
 - **Maintaining branches:** Creates divergent development paths within the project.
 - **Merging branches:** Combines changes from different branches into a single branch.
 
-## Benefits of using a version-control system:
+## Differences from actual Git
 
-- **Easy rollback:** If you accidentally mess up your code, you can restore it to a previous working version.
-- **Collaboration:** Enables multiple developers to work on the same project simultaneously while tracking individual changes.
+1. **Flat Directory Structure:**
+   Gitlet incorporates trees into commits but does not deal with subdirectories. This results in a "flat" directory structure where each repository contains only plain files without nested directories.
 
-## Core Concepts:
+2. **Limited Merging:**
+   Unlike Git, which supports merges with any number of parents, Gitlet limits merges to references with only two parents.
 
-- **Commit:** A snapshot of your project's files at a specific point in time.
-- **Commit Tree:** A linked structure representing the history of commits, where each commit points to its parent commit.
-- **Branch:** A separate development path within the commit tree, allowing you to experiment with changes without affecting the main project line.
-- **Head pointer:** Tracks the current active commit in the branch.
-
-## Internal Structures:
-
-- **Blobs:** Represent the raw content of files.
-- **Trees:** Organize directories by mapping names to references of blobs and other trees (subdirectories).
-- **Commits:** Combine log messages, timestamps, metadata (author, date), a reference to a tree, and references to parent commits.
-- **Unique identifiers (hashes):** Each object (blob or commit) has a unique SHA-1 hash for efficient identification and content verification.
+3. **Minimal Metadata:**
+   Gitlet's metadata for commits is simplified, consisting only of a timestamp and a log message. A commit in Gitlet includes a log message, timestamp, a mapping of file names to blob references, and (for merges) a second parent reference.
 
 ## Detailed functionalities:
 
@@ -50,11 +41,14 @@ Gitlet is a version-control system similar to Git but designed to be simpler and
 - **find:** Prints the unique identifiers of commits containing a specific message.
 - **status:** Displays information about the current branch, staged files, removed files, modified files, and untracked files.
 
-**Additional Notes:**
+## Things I've Learned
 
-- Gitlet commits are immutable, meaning their content cannot be changed after creation.
-- The `.gitlet` directory stores all Gitlet-related data.
+Creating Gitlet deepened my grasp of version control systems and Object-Oriented Programming (OOP). Building a simplified Git taught me Java programming intricacies and reinforced my understanding of commits, branches, and merges.
 
-## Conclusion
+Developing Gitlet honed my skills in modular software design, efficient file handling, and managing complex data structures. It prompted critical thinking about design trade-offs, emphasizing simplicity without sacrificing functionality.
 
-This overview provides a foundational understanding of Gitlet's functionalities and internal structures. Refer to the detailed specifications for a comprehensive guide on using Gitlet commands and their functionalities.
+In summary, Gitlet enhanced my technical proficiency and appreciation for version control and software design principles, showcasing the value of hands-on learning in software engineering.
+
+**Acknowledgements**
+
+This project was developed for UC Berkeley's CS61B: Data Structures Course.
