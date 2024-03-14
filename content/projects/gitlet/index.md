@@ -1,10 +1,10 @@
 ---
 title: 'Gitlet'
-date: 2021-12-31
+date: 2021-12-01
 draft: false
 description: 'Gitlet Project Page'
 slug: 'gitlet'
-tags: ['OOP', 'Java', 'Git']
+tags: ['OOP', 'Git', 'Java']
 ---
 
 A version-control system similar to Git but designed to be simpler and smaller.
@@ -49,6 +49,8 @@ Developing Gitlet honed my skills in modular software design, efficient file han
 
 In summary, Gitlet enhanced my technical proficiency and appreciation for version control and software design principles, showcasing the value of hands-on learning in software engineering.
 
-**Acknowledgements**
+**Disclaimer**
 
 This project was developed for UC Berkeley's CS61B: Data Structures Course.
+Source code can be provided on
+<a class="button primary big" href="mailto:leechristopher722@gmail.com" target="_blank" >request</a>.

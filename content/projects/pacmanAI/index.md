@@ -1,54 +1,67 @@
 ---
 title: 'PacmanAI'
-date: 2021-12-31
+date: 2022-05-01
 draft: false
 description: 'PacmanAI Project Page'
 slug: 'pacmanAI'
 tags:
  [
   'Artificial Intelligence',
-  'Python',
   'Search Algorithms',
   'Reinforcement Learning',
+  'Python',
  ]
 ---
 
-A series of AI engines for the PacMan game, utilizing multiagent search algorithms, neural networks, and more.
+A series of AI engines for the PacMan game, utilizing multiagent search algorithms, reinforcement learning, and more.
 
-**Algorithms:**
+This project consists of 4 parts:
 
-1. **Single/Multiagent Search**:
-   Depth-first, breadth-first, uniform cost, and A\* search. Minimax and expectimax algorithms along with designing evaluation functions for multi-agent search.
-2. **Logic**:
-   Pacman world is represented with booleans, and logical inference is used to solve planning tasks as well as localization, mapping, and SLAM.
-3. **Bayes Nets and HMMs**:
-   Bayes Nets and the forward algorithm, employing particle sampling in Hidden Markov Models to locate ghosts based on noisy distance readings.
-4. **Reinforcement Learning**:
-   Value Function, Q learning, and Approximate Q learning to teach Pacman and crawler agents rational policies.
+- **Single/Multiagent Search**
+- **Logic**
+- **Bayes Nets and HMMs**
+- **Reinforcement Learning**
 
-<!-- ## Differences from actual Git
+## Single/Multiagent Search
 
-1. **Flat Directory Structure:**
-   Gitlet incorporates trees into commits but does not deal with subdirectories. This results in a "flat" directory structure where each repository contains only plain files without nested directories.
+Depth-first, breadth-first, uniform cost, and A\* search. Minimax and expectimax algorithms along with designing evaluation functions for multi-agent search.
 
-2. **Limited Merging:**
-   Unlike Git, which supports merges with any number of parents, Gitlet limits merges to references with only two parents.
+- **Conditions & Algorithms Used**:
+  1. Locating Fixed Food: Depth First, Breath First, A\*, Suboptimal Search
 
-3. **Minimal Metadata:**
-   Gitlet's metadata for commits is simplified, consisting only of a timestamp and a log message. A commit in Gitlet includes a log message, timestamp, a mapping of file names to blob references, and (for merges) a second parent reference.
+## Logic
 
-## Detailed functionalities:
+Applying Propositional Logic in a pacman world represented with booleans to solve planning tasks as well as localization, mapping, and SLAM.
 
-**Commands:**
+**Goals:**
 
-- **init:** Creates a new Gitlet repository in the current directory.
-- **add:** Stages a file for inclusion in the next commit.
-- **commit:** Creates a new commit with the staged changes and a commit message.
-- **rm:** Removes a file from the staging area and marks it for untracking in the next commit.
-- **log:** Displays the commit history, starting from the current head commit and following the parent commit links.
-- **global-log:** Shows information about all commits ever made, regardless of the current branch.
-- **find:** Prints the unique identifiers of commits containing a specific message.
-- **status:** Displays information about the current branch, staged files, removed files, modified files, and untracked files. -->
+1. Create logical expressions that represent Pacman physics and locate Pacman agent's position given its actions and sensor readings.
+2. Plan sequence of actions to the goal position.
+3. Plan sequence of actions to eat all the food on the board.
+4. Locate Pacman agent's position at each timestep with **known map**, **unknown starting position**, and sensors.
+5. Map the entire board with **known starting location** and sensors.
+6. Locate Pacman agent's position and Map the entire board with **unknown map**, **unknown starting position**, and sensors (Simultaneous Localization and Mapping).
+
+**Results:**
+
+1.
+2.
+3.
+4.
+5.
+6.
+
+## Bayes Nets and HMMs
+
+Bayes Nets and the forward algorithm, employing particle sampling in Hidden Markov Models to locate ghosts based on noisy distance readings.
+
+**Goal:** Locate and eat invisible ghosts with sensors that provide nosiy readings of the Manhattan distance.
+
+**Result:**
+
+## Reinforcement Learning
+
+Value Function, Q learning, and Approximate Q learning to teach Pacman and crawler agents rational policies.
 
 ## What I've Learned
 
@@ -62,6 +75,8 @@ A series of AI engines for the PacMan game, utilizing multiagent search algorith
 
 Overall, working on these projects equipped me with practical skills in AI and machine learning, fostering a deeper understanding of their applications in gaming and beyond. Additionally, it instilled in me a sense of confidence in tackling complex problems and leveraging advanced techniques to find effective solutions.
 
-**Acknowledgements**
+**Disclaimer**
 
 This project was developed for UC Berkeley's CS188: Introduction to Artificial Intelligence Course.
+Source code can be provided on
+<a class="button primary big" href="mailto:leechristopher722@gmail.com" target="_blank" >request</a>.

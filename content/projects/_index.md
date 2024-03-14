@@ -6,6 +6,7 @@ cascade:
  showEdit: false
  showSummary: true
  showAuthor: false
+ showDate: true
 ---
 
 {{< lead >}}
