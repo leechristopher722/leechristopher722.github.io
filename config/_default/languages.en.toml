@@ -7,7 +7,7 @@ title = "Christopher Lee"
 
 [params]
   dateFormat = "2 January 2006"
-  mainSections = ["blog"]
+  mainSections = ["projects"]
   description = "My website"
 
 [params.author]
