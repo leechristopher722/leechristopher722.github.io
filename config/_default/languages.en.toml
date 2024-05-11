@@ -1,0 +1,22 @@
+languageCode = "en"
+languageName = "English"
+languageDirection = "ltr"
+weight = 1
+
+title = "Christopher Lee"
+
+[params]
+  dateFormat = "2 January 2006"
+  mainSections = ["projects"]
+  description = "My website"
+
+[params.author]
+  name = "Christopher Lee"
+  image = "img/avatartion.jpg"
+  headline = "Software Engineer"
+  bio = "Full Stack Software Engineer Located in San Francisco"
+  links = [
+    { email = "mailto:leechristopher722@gmail.com" },
+    { github = "https://github.com/leechristopher722" },
+    { linkedin = "https://www.linkedin.com/in/christopher-lee-0722/" },
+  ]
