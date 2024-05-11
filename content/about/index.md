@@ -32,7 +32,7 @@ Implemented pathfinding (BFS, DFS, A\*) and decision-making algorithms (minimax,
 
 Gitlet (Aug 2021 - Dec 2021)
 
-Built a version control system similar to Git, featuring functionalities like commit, merge, log, checkout, and branching. Prioritized efficiency and reliability through design documents, unit tests, and SHA-1 hashing.
+Built a version control system similar to Git, featuring functionalities like commit, merge, log, checkout, and branching. Prioritized efficiency and reliability through design documents, unit tests, and SHA-1 hashing. Code found
 
 Enigma (Aug 2021 - Dec 2021)
 
