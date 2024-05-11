@@ -11,6 +11,7 @@ View my resume <a class="button primary big" href="/Christopher_Lee_Resume.pdf" 
 **Education**
 
 University of California, Berkeley
+
 Class of 2025 | Bachelor of Arts in Computer Science (GPA: 3.76)
 
 ## Experiences
