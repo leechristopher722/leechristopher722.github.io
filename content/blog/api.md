@@ -238,7 +238,7 @@ USE INDEXES TO IMPROVE DB READ PERFORMANCE: Consider read-write pattern, compare
 
 ## Implemented Client-Side Rendering with frontend JS for comments on Tickets to reduce initial loading time and inefficient data retrievals
 
-ToLearn
+To Learn
 
 - Promise
 - Feedback Loop
