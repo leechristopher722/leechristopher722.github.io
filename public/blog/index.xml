@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Christopher Lee</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blog on Christopher Lee</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cloud</title>
+      <link>http://localhost:1313/blog/cloud/</link>
+      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/cloud/</guid>
+      <description>What is Cloud Computing?</description>
+    </item>
+    <item>
+      <title>Thoughts on Devin: AI Software Engineer</title>
+      <link>http://localhost:1313/blog/devin/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/devin/</guid>
+      <description>The field of software development is witnessing a paradigm shift with the introduction of Devin, an AI tool claiming the title of the world&amp;rsquo;s first &amp;ldquo;AI software engineer.</description>
+    </item>
+    <item>
+      <title>Building Static Website with HUGO</title>
+      <link>http://localhost:1313/blog/hugo/</link>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/hugo/</guid>
+      <description>In the realm of web development, crafting an online portfolio can often feel like a daunting task.</description>
+    </item>
+    <item>
+      <title>Learning Git</title>
+      <link>http://localhost:1313/blog/git/</link>
+      <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/git/</guid>
+      <description>Introduction #The vast landscape of software development is governed by one tool: Git.</description>
+    </item>
+    <item>
+      <title>Password Encryption Algorithms</title>
+      <link>http://localhost:1313/blog/encryption/</link>
+      <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/encryption/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

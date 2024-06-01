@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Search Algorithms on Christopher Lee</title>
+    <link>http://localhost:1313/tags/search-algorithms/</link>
+    <description>Recent content in Search Algorithms on Christopher Lee</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/search-algorithms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PacmanAI</title>
+      <link>http://localhost:1313/projects/pacmanai/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/pacmanai/</guid>
+      <description>A series of AI engines for the PacMan game, utilizing multiagent search algorithms, reinforcement learning, and more.</description>
+    </item>
+  </channel>
+</rss>
