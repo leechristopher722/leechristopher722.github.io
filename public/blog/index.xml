@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Christopher Lee</title>
-    <link>https://leechristopher722.github.io/blog/</link>
+    <link>http://localhost:62322/blog/</link>
     <description>Recent content in Blog on Christopher Lee</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://leechristopher722.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62322/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloud</title>
-      <link>https://leechristopher722.github.io/blog/cloud/</link>
+      <link>http://localhost:62322/blog/cloud/</link>
       <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/blog/cloud/</guid>
+      <guid>http://localhost:62322/blog/cloud/</guid>
       <description>What is Cloud Computing?</description>
     </item>
     <item>
       <title>RESTful API</title>
-      <link>https://leechristopher722.github.io/blog/api/</link>
+      <link>http://localhost:62322/blog/api/</link>
       <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/blog/api/</guid>
+      <guid>http://localhost:62322/blog/api/</guid>
       <description>Write about restful api here.</description>
     </item>
     <item>
       <title>Thoughts on Devin: AI Software Engineer</title>
-      <link>https://leechristopher722.github.io/blog/devin/</link>
+      <link>http://localhost:62322/blog/devin/</link>
       <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/blog/devin/</guid>
+      <guid>http://localhost:62322/blog/devin/</guid>
       <description>The field of software development is witnessing a paradigm shift with the introduction of Devin, an AI tool claiming the title of the world&amp;rsquo;s first &amp;ldquo;AI software engineer.</description>
     </item>
     <item>
       <title>Building Static Website with HUGO</title>
-      <link>https://leechristopher722.github.io/blog/hugo/</link>
+      <link>http://localhost:62322/blog/hugo/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/blog/hugo/</guid>
+      <guid>http://localhost:62322/blog/hugo/</guid>
       <description>In the realm of web development, crafting an online portfolio can often feel like a daunting task.</description>
     </item>
     <item>
       <title>Learning Git</title>
-      <link>https://leechristopher722.github.io/blog/git/</link>
+      <link>http://localhost:62322/blog/git/</link>
       <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/blog/git/</guid>
+      <guid>http://localhost:62322/blog/git/</guid>
       <description>Introduction #The vast landscape of software development is governed by one tool: Git.</description>
     </item>
     <item>
       <title>Password Encryption Algorithms</title>
-      <link>https://leechristopher722.github.io/blog/encryption/</link>
+      <link>http://localhost:62322/blog/encryption/</link>
       <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/blog/encryption/</guid>
+      <guid>http://localhost:62322/blog/encryption/</guid>
       <description></description>
     </item>
   </channel>

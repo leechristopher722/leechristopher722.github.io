@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Christopher Lee</title>
-    <link>https://leechristopher722.github.io/tags/</link>
+    <link>http://localhost:62322/tags/</link>
     <description>Recent content in Tags on Christopher Lee</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://leechristopher722.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62322/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backend Development</title>
-      <link>https://leechristopher722.github.io/tags/backend-development/</link>
+      <link>http://localhost:62322/tags/backend-development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/tags/backend-development/</guid>
+      <guid>http://localhost:62322/tags/backend-development/</guid>
       <description></description>
     </item>
     <item>
       <title>Cloud Computing</title>
-      <link>https://leechristopher722.github.io/tags/cloud-computing/</link>
+      <link>http://localhost:62322/tags/cloud-computing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/tags/cloud-computing/</guid>
+      <guid>http://localhost:62322/tags/cloud-computing/</guid>
       <description></description>
     </item>
     <item>
       <title>Machine Learning</title>
-      <link>https://leechristopher722.github.io/tags/machine-learning/</link>
+      <link>http://localhost:62322/tags/machine-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/tags/machine-learning/</guid>
+      <guid>http://localhost:62322/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>https://leechristopher722.github.io/tags/hugo/</link>
+      <link>http://localhost:62322/tags/hugo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/tags/hugo/</guid>
+      <guid>http://localhost:62322/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>CyberSecurity</title>
-      <link>https://leechristopher722.github.io/tags/cybersecurity/</link>
+      <link>http://localhost:62322/tags/cybersecurity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/tags/cybersecurity/</guid>
+      <guid>http://localhost:62322/tags/cybersecurity/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://leechristopher722.github.io/tags/git/</link>
+      <link>http://localhost:62322/tags/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/tags/git/</guid>
+      <guid>http://localhost:62322/tags/git/</guid>
       <description></description>
     </item>
   </channel>

@@ -6,30 +6,21 @@
   
     
       <url>
-            <loc>https://leechristopher722.github.io/blog/</loc>
+            <loc>http://localhost:62322/blog/</loc>
             <lastmod>2024-03-20T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://leechristopher722.github.io/</loc>
+            <loc>http://localhost:62322/</loc>
             <lastmod>2024-03-20T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://leechristopher722.github.io/blog/cloud/</loc>
-            <lastmod>2024-03-20T00:00:00+00:00</lastmod>
-          </url>
-    
-  
-    
-  
-    
-      <url>
-            <loc>https://leechristopher722.github.io/blog/api/</loc>
+            <loc>http://localhost:62322/blog/cloud/</loc>
             <lastmod>2024-03-20T00:00:00+00:00</lastmod>
           </url>
     
@@ -38,7 +29,16 @@
   
     
       <url>
-            <loc>https://leechristopher722.github.io/projects/atelier/</loc>
+            <loc>http://localhost:62322/blog/api/</loc>
+            <lastmod>2024-03-20T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+  
+    
+      <url>
+            <loc>http://localhost:62322/projects/atelier/</loc>
             <lastmod>2024-03-14T00:00:00+00:00</lastmod>
           </url>
     
@@ -47,21 +47,21 @@
   
     
       <url>
-            <loc>https://leechristopher722.github.io/projects/</loc>
+            <loc>http://localhost:62322/projects/</loc>
             <lastmod>2024-03-14T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://leechristopher722.github.io/blog/devin/</loc>
+            <loc>http://localhost:62322/blog/devin/</loc>
             <lastmod>2024-03-14T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://leechristopher722.github.io/blog/hugo/</loc>
+            <loc>http://localhost:62322/blog/hugo/</loc>
             <lastmod>2024-03-13T00:00:00+00:00</lastmod>
           </url>
     
@@ -74,35 +74,35 @@
   
     
       <url>
-            <loc>https://leechristopher722.github.io/blog/git/</loc>
+            <loc>http://localhost:62322/blog/git/</loc>
             <lastmod>2024-03-10T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://leechristopher722.github.io/blog/encryption/</loc>
+            <loc>http://localhost:62322/blog/encryption/</loc>
             <lastmod>2024-03-10T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://leechristopher722.github.io/projects/pacmanai/</loc>
+            <loc>http://localhost:62322/projects/pacmanai/</loc>
             <lastmod>2022-05-01T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://leechristopher722.github.io/projects/gitlet/</loc>
+            <loc>http://localhost:62322/projects/gitlet/</loc>
             <lastmod>2021-12-01T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://leechristopher722.github.io/about/</loc>
+            <loc>http://localhost:62322/about/</loc>
           </url>
     
   

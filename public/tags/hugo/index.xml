@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Christopher Lee</title>
-    <link>https://leechristopher722.github.io/tags/hugo/</link>
+    <link>http://localhost:62322/tags/hugo/</link>
     <description>Recent content in Hugo on Christopher Lee</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Wed, 13 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://leechristopher722.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:62322/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building Static Website with HUGO</title>
-      <link>https://leechristopher722.github.io/blog/hugo/</link>
+      <link>http://localhost:62322/blog/hugo/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://leechristopher722.github.io/blog/hugo/</guid>
+      <guid>http://localhost:62322/blog/hugo/</guid>
       <description>In the realm of web development, crafting an online portfolio can often feel like a daunting task.</description>
     </item>
   </channel>

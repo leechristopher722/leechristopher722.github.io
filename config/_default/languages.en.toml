@@ -14,9 +14,10 @@ title = "Christopher Lee"
   name = "Christopher Lee"
   image = "img/avatartion.jpg"
   headline = "Software Engineer"
-  bio = "Full Stack Software Engineer Located in San Francisco"
+  bio = "Software Engineer building enterprise solutions at scale"
   links = [
     { email = "mailto:leechristopher722@gmail.com" },
     { github = "https://github.com/leechristopher722" },
     { linkedin = "https://www.linkedin.com/in/christopher-lee-0722/" },
+    { instagram = "https://www.instagram.com/chrislee722_/" },
   ]
