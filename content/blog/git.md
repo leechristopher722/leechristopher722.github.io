@@ -4,7 +4,7 @@ date: 2024-03-10
 draft: false
 description: 'Git blog'
 slug: 'git'
-tags: ['Hugo', 'Github Pages', 'Static Website', 'HTML']
+tags: ['Git']
 ---
 
 ## Introduction

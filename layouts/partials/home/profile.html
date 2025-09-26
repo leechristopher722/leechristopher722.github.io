@@ -8,9 +8,9 @@
 		.Site.Params.enableImageLazyLoading | default true }} {{ $altText :=
 		($.Site.Language.Params.Author.name | default "Author") }} {{ with
 		.Site.Language.Params.Author.image }} {{ $authorImage := resources.Get . }} {{
-		if $authorImage }} {{ $imgClass := "mb-2 h-auto w-36 rounded-full" }} {{
-		partial "picture.html" (dict "img" $authorImage "alt" $altText "class"
-		$imgClass "lazy" $lazy) }} {{ end }} {{ end }}
+		if $authorImage }} {{ $imgClass := "mb-2 h-auto w-36" }} {{ partial
+		"picture.html" (dict "img" $authorImage "alt" $altText "class" $imgClass
+		"lazy" $lazy) }} {{ end }} {{ end }}
 		<h1 class="text-4xl font-extrabold">
 			{{ .Site.Language.Params.Author.name | default .Site.Title }}
 		</h1>

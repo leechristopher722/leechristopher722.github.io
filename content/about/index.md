@@ -6,38 +6,30 @@ cascade:
  showRecent: true
 ---
 
-View my resume <a class="button primary big" href="/Christopher_Lee_Resume.pdf" download="Christopher_Lee_Resume.pdf" target="_blank" >here</a>.
+I'm a software engineer passionate about building scalable systems and solving complex problems. Currently studying Computer Science at UC Berkeley with hands-on experience at major tech companies—if you'd like to collaborate or discuss opportunities, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/christopher-lee-0722/).
 
-**Education**
+## Hi, I'm Christopher 👋
 
-University of California, Berkeley
+**📍 Location:** San Francisco, CA  
+**💻 Focus:** Full-Stack Development & Cloud Architecture  
+**🎓 University:** UC Berkeley (Class of 2026) - Computer Science, 3.79 GPA  
+**📧 Email:** leechristopher722@gmail.com  
+**🔗 GitHub:** [@leechristopher722](https://github.com/leechristopher722)
 
-Class of 2025 | Bachelor of Arts in Computer Science (GPA: 3.76)
+## My Journey 🚀
 
-## Experiences
+I'm currently in my final year at UC Berkeley, where I've developed a strong foundation in algorithms, data structures, and system design. My academic journey has been enriched by real-world experience through competitive internships and leadership roles.
 
-**Eighth United States Army (Oct 2022 - Apr 2024)**
+**Recent Experience:**
 
-_Company Senior KATUSA (Korean Augmentation to the United States Army)_
+- **Amazon Web Services** - Built international marketplace automation for enterprise EC2 pricing, reducing operational load by 20% and eliminating high-severity incidents
+- **OpenGrant** - Engineered AI evaluation pipelines using advanced prompting techniques and created comprehensive UI/UX designs for grant proposal platforms
+- **U.S. Army (KATUSA)** - Led cross-cultural teams of 50+ members, coordinating large-scale operations and serving as a linguistic liaison
 
-- Led a team of 50 KATUSAs, ensuring deployment readiness and mission effectiveness.
-- Coordinated and executed large-scale events like KATUSA ETS & promotion ceremonies.
-- Collaborated as a liaison, providing linguistic and cultural support during joint operations.
+**[📄 View Full Resume](/Christopher_Lee_Resume.pdf)** | **[🛠️ Explore My Projects]({{< ref "projects" >}})**
 
-## Personal Projects
+## Beyond Code 🌟
 
-[Pacman AI]({{< ref "projects/pacmanAI" >}}) (Jan 2022 - May 2022)
+When I'm not coding, you'll find me behind the bar mixing up creative cocktails for my friends—I love experimenting with different spirits and flavors to come up with something completely new. I'm also constantly exploring San Francisco's food scene, from hole-in-the-wall spots to trendy new restaurants, and I'm always on the mission to find the city's most amazing coffee shops.
 
-Implemented pathfinding (BFS, DFS, A\*) and decision-making algorithms (minimax, expectiMax) with Alpha-Beta pruning for Pacman in a multi-agent environment. Also explored self-localization and mapping using propositional logic and SLAM.
-
-Gitlet (Aug 2021 - Dec 2021)
-
-Built a version control system similar to Git, featuring functionalities like commit, merge, log, checkout, and branching. Prioritized efficiency and reliability through design documents, unit tests, and SHA-1 hashing. Code found
-
-Enigma (Aug 2021 - Dec 2021)
-
-Developed a simulator for a generalized Enigma machine, used for historical communication encryption. Implemented object-oriented programming with customizable rotors and enhanced Java skills in parsing configurations and file I/O for message decryption.
-
-**Technical Skills**
-
-- Python, Java, Scheme, SQL, Numpy
+Whether it's perfecting a new cocktail recipe or discovering an amazing restaurant together, I love bringing people together over great food and drinks. These moments of connection and creativity keep me energized and inspired, both in life and in my work.

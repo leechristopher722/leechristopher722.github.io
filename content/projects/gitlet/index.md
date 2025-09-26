@@ -4,7 +4,6 @@ date: 2021-12-01
 draft: false
 description: 'Gitlet Project Page'
 slug: 'gitlet'
-tags: ['OOP', 'Git', 'Java']
 ---
 
 A version-control system similar to Git but designed to be simpler and smaller.

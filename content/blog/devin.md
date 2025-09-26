@@ -4,7 +4,7 @@ date: 2024-03-14
 draft: false
 description: 'Devin blog post'
 slug: 'devin'
-tags: ['Devin', 'Artificial Intelligence', 'LLM']
+tags: ['Machine Learning']
 ---
 
 The field of software development is witnessing a paradigm shift with the introduction of Devin, an AI tool claiming the title of the world's first "AI software engineer." This blog post delves into Devin's technical underpinnings, analyzes its potential impact, and explores how it stands out from existing AI development tools.

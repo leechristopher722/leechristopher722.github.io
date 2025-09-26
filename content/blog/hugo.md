@@ -4,7 +4,7 @@ date: 2024-03-13
 draft: false
 description: 'Hugo blog post'
 slug: 'hugo'
-tags: ['Hugo', 'Github Pages', 'Static Website']
+tags: ['Hugo']
 ---
 
 In the realm of web development, crafting an online portfolio can often feel like a daunting task. As developers, we aim to showcase our skills and projects in an efficient, visually appealing manner. However, the process can become overwhelming without the right tools at our disposal. This is where Hugo and GitHub Pages come into play, offering a seamless solution for building and hosting dynamic portfolios. Let's delve deeper into why this combination is a game-changer for developers.

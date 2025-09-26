@@ -4,7 +4,7 @@ date: 2024-03-20
 draft: false
 description: 'Cloud Computing'
 slug: 'cloud'
-tags: ['Cloud']
+tags: ['Cloud Computing']
 ---
 
 ### What is Cloud Computing?

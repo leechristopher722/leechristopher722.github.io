@@ -2,122 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Christopher Lee</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://leechristopher722.github.io/tags/</link>
     <description>Recent content in Tags on Christopher Lee</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://leechristopher722.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Artificial Intelligence</title>
-      <link>http://localhost:1313/tags/artificial-intelligence/</link>
+      <title>Backend Development</title>
+      <link>https://leechristopher722.github.io/tags/backend-development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/artificial-intelligence/</guid>
+      <guid>https://leechristopher722.github.io/tags/backend-development/</guid>
       <description></description>
     </item>
     <item>
-      <title>Devin</title>
-      <link>http://localhost:1313/tags/devin/</link>
+      <title>Cloud Computing</title>
+      <link>https://leechristopher722.github.io/tags/cloud-computing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/devin/</guid>
+      <guid>https://leechristopher722.github.io/tags/cloud-computing/</guid>
       <description></description>
     </item>
     <item>
-      <title>Express</title>
-      <link>http://localhost:1313/tags/express/</link>
+      <title>Machine Learning</title>
+      <link>https://leechristopher722.github.io/tags/machine-learning/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/express/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LLM</title>
-      <link>http://localhost:1313/tags/llm/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/llm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MongoDB</title>
-      <link>http://localhost:1313/tags/mongodb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mongodb/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Node.js</title>
-      <link>http://localhost:1313/tags/node.js/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/node.js/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Github Pages</title>
-      <link>http://localhost:1313/tags/github-pages/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github-pages/</guid>
+      <guid>https://leechristopher722.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:1313/tags/hugo/</link>
+      <link>https://leechristopher722.github.io/tags/hugo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hugo/</guid>
+      <guid>https://leechristopher722.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
-      <title>Static Website</title>
-      <link>http://localhost:1313/tags/static-website/</link>
+      <title>CyberSecurity</title>
+      <link>https://leechristopher722.github.io/tags/cybersecurity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/static-website/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTML</title>
-      <link>http://localhost:1313/tags/html/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/html/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Reinforcement Learning</title>
-      <link>http://localhost:1313/tags/reinforcement-learning/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/reinforcement-learning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Search Algorithms</title>
-      <link>http://localhost:1313/tags/search-algorithms/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/search-algorithms/</guid>
+      <guid>https://leechristopher722.github.io/tags/cybersecurity/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>http://localhost:1313/tags/git/</link>
+      <link>https://leechristopher722.github.io/tags/git/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/git/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OOP</title>
-      <link>http://localhost:1313/tags/oop/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/oop/</guid>
+      <guid>https://leechristopher722.github.io/tags/git/</guid>
       <description></description>
     </item>
   </channel>

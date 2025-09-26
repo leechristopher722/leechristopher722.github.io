@@ -3,15 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
+  
+    
       <url>
-            <loc>http://localhost:1313/blog/</loc>
+            <loc>https://leechristopher722.github.io/blog/</loc>
             <lastmod>2024-03-20T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>http://localhost:1313/</loc>
+            <loc>https://leechristopher722.github.io/</loc>
+            <lastmod>2024-03-20T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>https://leechristopher722.github.io/blog/cloud/</loc>
             <lastmod>2024-03-20T00:00:00+00:00</lastmod>
           </url>
     
@@ -19,25 +28,17 @@
     
   
     
-  
-    
-  
-    
       <url>
-            <loc>http://localhost:1313/projects/gitbug/</loc>
-            <lastmod>2024-03-14T00:00:00+00:00</lastmod>
+            <loc>https://leechristopher722.github.io/blog/api/</loc>
+            <lastmod>2024-03-20T00:00:00+00:00</lastmod>
           </url>
     
   
     
   
     
-  
-    
-  
-    
       <url>
-            <loc>http://localhost:1313/projects/</loc>
+            <loc>https://leechristopher722.github.io/projects/atelier/</loc>
             <lastmod>2024-03-14T00:00:00+00:00</lastmod>
           </url>
     
@@ -46,14 +47,21 @@
   
     
       <url>
-            <loc>http://localhost:1313/blog/devin/</loc>
+            <loc>https://leechristopher722.github.io/projects/</loc>
             <lastmod>2024-03-14T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>http://localhost:1313/blog/hugo/</loc>
+            <loc>https://leechristopher722.github.io/blog/devin/</loc>
+            <lastmod>2024-03-14T00:00:00+00:00</lastmod>
+          </url>
+    
+  
+    
+      <url>
+            <loc>https://leechristopher722.github.io/blog/hugo/</loc>
             <lastmod>2024-03-13T00:00:00+00:00</lastmod>
           </url>
     
@@ -65,56 +73,36 @@
     
   
     
-  
-    
       <url>
-            <loc>http://localhost:1313/blog/git/</loc>
+            <loc>https://leechristopher722.github.io/blog/git/</loc>
             <lastmod>2024-03-10T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>http://localhost:1313/blog/encryption/</loc>
+            <loc>https://leechristopher722.github.io/blog/encryption/</loc>
             <lastmod>2024-03-10T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>http://localhost:1313/projects/pacmanai/</loc>
+            <loc>https://leechristopher722.github.io/projects/pacmanai/</loc>
             <lastmod>2022-05-01T00:00:00+00:00</lastmod>
           </url>
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
       <url>
-            <loc>http://localhost:1313/projects/gitlet/</loc>
+            <loc>https://leechristopher722.github.io/projects/gitlet/</loc>
             <lastmod>2021-12-01T00:00:00+00:00</lastmod>
           </url>
     
   
     
-  
-    
-  
-    
       <url>
-            <loc>http://localhost:1313/blog/cloud/</loc>
-          </url>
-    
-  
-    
-      <url>
-            <loc>http://localhost:1313/about/</loc>
+            <loc>https://leechristopher722.github.io/about/</loc>
           </url>
     
   

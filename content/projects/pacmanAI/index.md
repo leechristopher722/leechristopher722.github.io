@@ -4,13 +4,6 @@ date: 2022-05-01
 draft: false
 description: 'PacmanAI Project Page'
 slug: 'pacmanAI'
-tags:
- [
-  'Artificial Intelligence',
-  'Search Algorithms',
-  'Reinforcement Learning',
-  'Python',
- ]
 ---
 
 A series of AI engines for the PacMan game, utilizing multiagent search algorithms, reinforcement learning, and more.

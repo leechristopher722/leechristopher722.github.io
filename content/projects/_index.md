@@ -10,5 +10,5 @@ cascade:
 ---
 
 {{< lead >}}
-From ideas to reality.
+From ideas to reality
 {{< /lead >}}

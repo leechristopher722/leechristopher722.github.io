@@ -1,10 +1,10 @@
 ---
 title: 'RESTful API'
 date: 2024-03-20
-draft: true
+draft: false
 description: 'Backend Web Dev'
 slug: 'api'
-tags: ['Backend', 'RESTful API']
+tags: ['Backend Development']
 ---
 
 Write about restful api here.
@@ -253,3 +253,5 @@ To Learn
 4. Performance improvements
 5. Which templating engines to use (Pug, handlebars, ejs)
    Which frontend framework should be used?
+
+## Created a middleware that stores three recently viewed projects in cookie.
