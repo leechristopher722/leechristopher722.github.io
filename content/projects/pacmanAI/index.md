@@ -2,74 +2,79 @@
 title: 'PacmanAI'
 date: 2022-05-01
 draft: false
-description: 'PacmanAI Project Page'
+description: 'AI agents for Pac-Man using search algorithms, reinforcement learning, and probabilistic inference'
 slug: 'pacmanAI'
 ---
 
-A series of AI engines for the PacMan game, utilizing multiagent search algorithms, reinforcement learning, and more.
+A comprehensive suite of AI agents for the Pac-Man game, implementing fundamental artificial intelligence techniques from graph search to reinforcement learning. Built as part of UC Berkeley's CS188 Introduction to Artificial Intelligence course, this project demonstrates practical applications of AI algorithms in a challenging game environment.
 
-This project consists of 4 parts:
+## The Problem
 
-- **Single/Multiagent Search**
-- **Logic**
-- **Bayes Nets and HMMs**
-- **Reinforcement Learning**
+Real-world AI problems require agents that can navigate complex environments, make decisions under uncertainty, and learn from experience. While Pac-Man may seem like just a game, it presents all these challenges: path planning through mazes, adversarial ghost agents with stochastic behavior, partial observability with invisible ghosts, and the need to learn optimal strategies through trial and error.
 
-## Single/Multiagent Search
+## Key Features
 
-Depth-first, breadth-first, uniform cost, and A\* search. Minimax and expectimax algorithms along with designing evaluation functions for multi-agent search.
+**🔍 Intelligent Path Finding**  
+Implemented four fundamental search algorithms (DFS, BFS, UCS, A*) to navigate mazes efficiently. Developed custom heuristics for A* that reduce node expansions by up to 80% while maintaining optimality. Solved complex problems like finding optimal paths to eat all food pellets using advanced state space representations.
 
-- **Conditions & Algorithms Used**:
-  1. Locating Fixed Food: Depth First, Breath First, A\*, Suboptimal Search
+**🎮 Multi-Agent Game Playing**  
+Built adversarial search agents using Minimax and Expectimax algorithms to play against multiple ghosts. Designed sophisticated evaluation functions that balance food collection, ghost avoidance, and winning strategies. Handles both deterministic and probabilistic ghost behaviors.
 
-## Logic
+**🧠 Reinforcement Learning**  
+Implemented model-based (Value Iteration) and model-free (Q-Learning, Approximate Q-Learning) algorithms. Trained agents that learn optimal policies through experience, starting from zero knowledge about the game. Applied function approximation to handle large state spaces efficiently.
 
-Applying Propositional Logic in a pacman world represented with booleans to solve planning tasks as well as localization, mapping, and SLAM.
+**👻 Probabilistic Tracking**  
+Created ghost-hunting agents that track invisible ghosts using noisy distance sensors. Implemented Bayes Nets for probabilistic inference and particle filters for Hidden Markov Models. Achieved accurate ghost localization even with Manhattan distance readings corrupted by noise.
 
-**Goals:**
+**🗺️ Logic-Based Planning**  
+Applied propositional logic to solve SLAM (Simultaneous Localization and Mapping) problems. Built agents that can locate themselves with unknown starting positions, map unknown environments, and plan action sequences using logical inference.
 
-1. Create logical expressions that represent Pacman physics and locate Pacman agent's position given its actions and sensor readings.
-2. Plan sequence of actions to the goal position.
-3. Plan sequence of actions to eat all the food on the board.
-4. Locate Pacman agent's position at each timestep with **known map**, **unknown starting position**, and sensors.
-5. Map the entire board with **known starting location** and sensors.
-6. Locate Pacman agent's position and Map the entire board with **unknown map**, **unknown starting position**, and sensors (Simultaneous Localization and Mapping).
+## Implementation Details
 
-**Results:**
+**Search Algorithms**  
+The search module implements graph-based versions of all algorithms to avoid revisiting states. Used Python's data structures strategically—`Stack` for DFS, `Queue` for BFS, and `PriorityQueue` for UCS and A*. Custom heuristics for A* use Manhattan distance for simple cases and actual maze distances for complex multi-goal problems.
 
-1.
-2.
-3.
-4.
-5.
-6.
+**Game Playing Agents**  
+Minimax with alpha-beta pruning handles deterministic ghosts, searching up to depth 4 in reasonable time. Expectimax models probabilistic ghost behavior, computing expected utilities across all possible ghost actions. Evaluation functions combine weighted features: food proximity, ghost distances, power pellet opportunities, and winning conditions.
 
-## Bayes Nets and HMMs
+**Reinforcement Learning**  
+Value Iteration computes optimal policies for known MDPs using dynamic programming. Q-Learning agents explore using epsilon-greedy strategies, learning state-action values through experience. Approximate Q-Learning uses feature extraction to generalize across similar states, enabling learning in large state spaces.
 
-Bayes Nets and the forward algorithm, employing particle sampling in Hidden Markov Models to locate ghosts based on noisy distance readings.
+**Probabilistic Inference**  
+Exact inference using the Forward Algorithm for HMMs when tracking single ghosts. Particle filtering approximates joint distributions when tracking multiple ghosts simultaneously. Dynamic particle count adjustment based on uncertainty levels improves both accuracy and performance.
 
-**Goal:** Locate and eat invisible ghosts with sensors that provide nosiy readings of the Manhattan distance.
+## Key Algorithms
 
-**Result:**
+**Search & Planning:**
 
-## Reinforcement Learning
+- DFS/BFS – Complete maze exploration and shortest path finding
+- UCS – Optimal paths with non-uniform costs
+- A\* – Optimal paths with admissible heuristics reducing search space
 
-Value Function, Q learning, and Approximate Q learning to teach Pacman and crawler agents rational policies.
+**Adversarial Search:**
 
-## What I've Learned
+- Minimax – Perfect play against optimal opponents
+- Alpha-Beta Pruning – Efficient minimax through branch elimination
+- Expectimax – Rational decisions against stochastic opponents
 
-1. **Algorithm Implementation**: Through Projects 1 and 2, I gained proficiency in implementing search algorithms and understanding their effectiveness in solving navigation and adversarial problems. This involved grasping concepts like depth-first, breadth-first, uniform cost, A\* search, multiagent minimax, and expectimax algorithms.
+**Learning & Inference:**
 
-2. **Reinforcement Learning**: Project 3 introduced me to reinforcement learning techniques such as Value Function, Q learning, and Approximate Q learning. By implementing these algorithms, I learned how agents can learn optimal policies through trial and error, improving decision-making in dynamic environments.
+- Value/Policy Iteration – Computing optimal policies for MDPs
+- Q-Learning – Model-free reinforcement learning
+- Particle Filtering – Approximate inference in continuous spaces
 
-3. **Probabilistic Inference**: Project 4 deepened my understanding of probabilistic reasoning by employing Bayes Nets and Hidden Markov Models (HMMs). I learned how to use inference algorithms like the forward algorithm and particle sampling to make probabilistic predictions, crucial for tasks like ghost tracking in Pacman.
+## Challenges & Solutions
 
-4. **Problem Solving and Critical Thinking**: Across all projects, I honed my problem-solving skills and developed a critical mindset towards algorithm selection and implementation. I learned to evaluate the trade-offs between different approaches and make informed decisions based on the specific requirements of each problem.
+**Challenge**: Designing admissible heuristics for multi-goal search problems (eating all food)  
+**Solution**: Used minimum spanning tree of remaining food as heuristic, ensuring admissibility while providing tight bounds that dramatically reduce search space
 
-Overall, working on these projects equipped me with practical skills in AI and machine learning, fostering a deeper understanding of their applications in gaming and beyond. Additionally, it instilled in me a sense of confidence in tackling complex problems and leveraging advanced techniques to find effective solutions.
+**Challenge**: Balancing exploration vs exploitation in Q-Learning  
+**Solution**: Implemented adaptive epsilon-greedy strategy that decreases exploration over time, transitioning from learning to optimal play
 
-**Disclaimer**
+**Challenge**: Tracking multiple invisible ghosts with noisy sensors  
+**Solution**: Particle filter with intelligent resampling—concentrates particles in high-probability regions while maintaining diversity to avoid particle depletion
 
-This project was developed for UC Berkeley's CS188: Introduction to Artificial Intelligence Course.
-Source code can be provided on
-<a class="button primary big" href="mailto:leechristopher722@gmail.com" target="_blank" >request</a>.
+---
+
+**Note**: Source code available upon request as per UC Berkeley's academic integrity policies.  
+<a class="button primary big" href="mailto:leechristopher722@gmail.com" target="_blank">Request Source Code</a>

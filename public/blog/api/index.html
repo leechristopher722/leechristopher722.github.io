@@ -12,7 +12,7 @@
   class="scroll-smooth"
   data-default-appearance="light"
   data-auto-appearance="true"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62322&amp;path=livereload" data-no-instant defer></script>
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="rgb(255,255,255)" />
@@ -77,7 +77,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:62322/blog/api/" />
+  <link rel="canonical" href="http://localhost:1313/blog/api/" />
   
   
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -92,7 +92,7 @@
   
   
   
-  <meta property="og:url" content="http://localhost:62322/blog/api/">
+  <meta property="og:url" content="http://localhost:1313/blog/api/">
   <meta property="og:site_name" content="Christopher Lee">
   <meta property="og:title" content="RESTful API">
   <meta property="og:description" content="Backend Web Dev">
@@ -119,7 +119,7 @@
     "description": "Backend Web Dev",
     "abstract": "Write about restful api here.",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:62322\/blog\/api\/",
+    "url" : "http:\/\/localhost:1313\/blog\/api\/",
     "author" : {
       "@type": "Person",
       "name": "Christopher Lee"
@@ -133,7 +133,7 @@
     "keywords": ["Backend Development"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1260"
+    "wordCount": "1249"
   }
   </script>
 
@@ -571,7 +571,7 @@ For env variables, deal with it in server.js</p>
 </li>
 <li>Mongoose model: wrapper for the schema, pproviding an interface to the database for CRUD operations</li>
 </ul>
-<h2 id="mvc" class="relative group">MVC <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#mvc" aria-label="Anchor">#</a></span></h2><ul>
+<h2 id="mvc" class="relative group">MVC </h2><ul>
 <li>
 <p>Separate Business Logic &amp; Application Logic</p>
 <ul>
@@ -635,10 +635,10 @@ offload as much logic as possible onto the model, and keep controllers as simple
 <li>Aggregation Middleware:</li>
 <li>Model Middleware</li>
 </ul>
-<h2 id="data-sanitization--validation" class="relative group">Data Sanitization &amp; Validation <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#data-sanitization--validation" aria-label="Anchor">#</a></span></h2><ul>
+<h2 id="data-sanitization--validation" class="relative group">Data Sanitization &amp; Validation </h2><ul>
 <li>Setting models for each data types</li>
 </ul>
-<h2 id="errors-in-express" class="relative group">Errors in Express <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#errors-in-express" aria-label="Anchor">#</a></span></h2><ol>
+<h2 id="errors-in-express" class="relative group">Errors in Express </h2><ol>
 <li>Operational error</li>
 </ol>
 <ul>
@@ -652,7 +652,7 @@ offload as much logic as possible onto the model, and keep controllers as simple
 <ul>
 <li>Bugs in code</li>
 </ul>
-<h2 id="user-authentication--authorization" class="relative group">User Authentication &amp; Authorization <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#user-authentication--authorization" aria-label="Anchor">#</a></span></h2><ul>
+<h2 id="user-authentication--authorization" class="relative group">User Authentication &amp; Authorization </h2><ul>
 <li>bcrypt for password hashing =&gt; Argon2 is the newest algorithm among these and is currently considered to be the strongest password hashing algorithm available. It is designed to be memory-hard, meaning that it requires a lot of memory to compute. This makes it difficult for attackers to use specialized hardware like GPUs and ASICs to crack passwords. Argon2 has several parameters that need to be kept in mind when using it, such as the amount of memory to use and the number of iterations to perform.</li>
 </ul>
 <p>Bcrypt is an older algorithm but is still widely used and considered to be secure. It is designed to be computationally expensive, meaning that it requires a lot of processing power to compute. Bcrypt has a cost parameter that determines the number of iterations to perform, and it also has a work factor that determines the amount of memory to use.</p>
@@ -670,7 +670,7 @@ offload as much logic as possible onto the model, and keep controllers as simple
 <p>Sent email for resetting password</p>
 </li>
 </ul>
-<h2 id="security-practices" class="relative group">Security Practices <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#security-practices" aria-label="Anchor">#</a></span></h2><ol>
+<h2 id="security-practices" class="relative group">Security Practices </h2><ol>
 <li>Copmromised Database</li>
 </ol>
 <ul>
@@ -725,7 +725,7 @@ offload as much logic as possible onto the model, and keep controllers as simple
 <li>Implement two-factor authentication</li>
 <li>Prevent parameter pollution causing Uncaught Exceptions</li>
 </ul>
-<h2 id="data-modeling" class="relative group">Data Modeling <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#data-modeling" aria-label="Anchor">#</a></span></h2><ol>
+<h2 id="data-modeling" class="relative group">Data Modeling </h2><ol>
 <li>
 <p>Different types of relationships between data</p>
 <ul>
@@ -782,7 +782,7 @@ offload as much logic as possible onto the model, and keep controllers as simple
 <ul>
 <li>It takes memory to use indexes. Only use on low Write-Read ratio documents (More reads than writes)</li>
 </ul>
-<h2 id="todoimplement-caching-to-prevent-multiple-requests-of-same-data" class="relative group">TODO::Implement caching to prevent multiple requests of same data. <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#todoimplement-caching-to-prevent-multiple-requests-of-same-data" aria-label="Anchor">#</a></span></h2><ul>
+<h2 id="todoimplement-caching-to-prevent-multiple-requests-of-same-data" class="relative group">TODO::Implement caching to prevent multiple requests of same data. </h2><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage" target="_blank" rel="noreferrer">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage</a></li>
 <li>Cookies vs Web Storage API vs IndexedDB
 <ul>
@@ -791,19 +791,19 @@ offload as much logic as possible onto the model, and keep controllers as simple
 </ul>
 </li>
 </ul>
-<h2 id="handlebars-suck" class="relative group">Handlebars SUCK <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#handlebars-suck" aria-label="Anchor">#</a></span></h2><ul>
+<h2 id="handlebars-suck" class="relative group">Handlebars SUCK </h2><ul>
 <li>Cannot directly access res.locals, but pug can</li>
 <li>
-<h2 id="does-not-have-extends-but-only-partials" class="relative group">Does not have extends, but only partials <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#does-not-have-extends-but-only-partials" aria-label="Anchor">#</a></span></h2></li>
+<h2 id="does-not-have-extends-but-only-partials" class="relative group">Does not have extends, but only partials </h2></li>
 </ul>
-<h2 id="to-provide-current-project-id-into-js-frontend-code-create-a-hidden-field-in-htmlpug-with-reqbodyproject_id-included" class="relative group">TO provide current project ID into JS Frontend Code, create a hidden field in HTML/Pug with req.body.project._id included <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#to-provide-current-project-id-into-js-frontend-code-create-a-hidden-field-in-htmlpug-with-reqbodyproject_id-included" aria-label="Anchor">#</a></span></h2><h2 id="todo-instead-of-deleting-tickets--projects-mark-them-as-inactive-and-simply-dont-display-it-to-user" class="relative group">TODO: Instead of deleting tickets &amp; projects, mark them as inactive and simply don&rsquo;t display it to user. <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#todo-instead-of-deleting-tickets--projects-mark-them-as-inactive-and-simply-dont-display-it-to-user" aria-label="Anchor">#</a></span></h2><h2 id="implemented-client-side-rendering-with-frontend-js-for-comments-on-tickets-to-reduce-initial-loading-time-and-inefficient-data-retrievals" class="relative group">Implemented Client-Side Rendering with frontend JS for comments on Tickets to reduce initial loading time and inefficient data retrievals <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#implemented-client-side-rendering-with-frontend-js-for-comments-on-tickets-to-reduce-initial-loading-time-and-inefficient-data-retrievals" aria-label="Anchor">#</a></span></h2><p>To Learn</p>
+<h2 id="to-provide-current-project-id-into-js-frontend-code-create-a-hidden-field-in-htmlpug-with-reqbodyproject_id-included" class="relative group">TO provide current project ID into JS Frontend Code, create a hidden field in HTML/Pug with req.body.project._id included </h2><h2 id="todo-instead-of-deleting-tickets--projects-mark-them-as-inactive-and-simply-dont-display-it-to-user" class="relative group">TODO: Instead of deleting tickets &amp; projects, mark them as inactive and simply don&rsquo;t display it to user. </h2><h2 id="implemented-client-side-rendering-with-frontend-js-for-comments-on-tickets-to-reduce-initial-loading-time-and-inefficient-data-retrievals" class="relative group">Implemented Client-Side Rendering with frontend JS for comments on Tickets to reduce initial loading time and inefficient data retrievals </h2><p>To Learn</p>
 <ul>
 <li>Promise</li>
 <li>Feedback Loop</li>
 <li>function() {} vs () =&gt; {}</li>
 <li>Static Method vs Review Method</li>
 </ul>
-<h1 id="choices-made" class="relative group">Choices Made <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#choices-made" aria-label="Anchor">#</a></span></h1><ol>
+<h1 id="choices-made" class="relative group">Choices Made </h1><ol>
 <li>MongoDB choice: mySQL, noSQL, postgreSQL (child vs parent vs 2 way refenrencing vs embedding)</li>
 <li>How I applied MVC</li>
 <li>Security measures done (pw on DB, argon2, and more)</li>
@@ -811,7 +811,7 @@ offload as much logic as possible onto the model, and keep controllers as simple
 <li>Which templating engines to use (Pug, handlebars, ejs)
 Which frontend framework should be used?</li>
 </ol>
-<h2 id="created-a-middleware-that-stores-three-recently-viewed-projects-in-cookie" class="relative group">Created a middleware that stores three recently viewed projects in cookie. <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#created-a-middleware-that-stores-three-recently-viewed-projects-in-cookie" aria-label="Anchor">#</a></span></h2>
+<h2 id="created-a-middleware-that-stores-three-recently-viewed-projects-in-cookie" class="relative group">Created a middleware that stores three recently viewed projects in cookie. </h2>
       </div>
     </section>
     <footer class="max-w-prose pt-8 print:hidden">
@@ -1056,7 +1056,7 @@ Which frontend framework should be used?</li>
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm sm:p-6 md:p-[10vh] lg:p-[12vh] dark:bg-neutral-900/50"
-  data-url="http://localhost:62322/"
+  data-url="http://localhost:1313/"
 >
   <div
     id="search-modal"

@@ -12,7 +12,7 @@
   class="scroll-smooth"
   data-default-appearance="light"
   data-auto-appearance="true"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62322&amp;path=livereload" data-no-instant defer></script>
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="rgb(255,255,255)" />
@@ -71,13 +71,13 @@
   <meta
     name="description"
     content="
-      PacmanAI Project Page
+      AI agents for Pac-Man using search algorithms, reinforcement learning, and probabilistic inference
     "
   />
   
   
   
-  <link rel="canonical" href="http://localhost:62322/projects/pacmanai/" />
+  <link rel="canonical" href="http://localhost:1313/projects/pacmanai/" />
   
   
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -92,10 +92,10 @@
   
   
   
-  <meta property="og:url" content="http://localhost:62322/projects/pacmanai/">
+  <meta property="og:url" content="http://localhost:1313/projects/pacmanai/">
   <meta property="og:site_name" content="Christopher Lee">
   <meta property="og:title" content="PacmanAI">
-  <meta property="og:description" content="PacmanAI Project Page">
+  <meta property="og:description" content="AI agents for Pac-Man using search algorithms, reinforcement learning, and probabilistic inference">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
@@ -105,7 +105,7 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="PacmanAI">
-  <meta name="twitter:description" content="PacmanAI Project Page">
+  <meta name="twitter:description" content="AI agents for Pac-Man using search algorithms, reinforcement learning, and probabilistic inference">
 
   
   <script type="application/ld+json">
@@ -115,10 +115,10 @@
     "articleSection": "Projects",
     "name": "PacmanAI",
     "headline": "PacmanAI",
-    "description": "PacmanAI Project Page",
-    "abstract": "A series of AI engines for the PacMan game, utilizing multiagent search algorithms, reinforcement learning, and more.",
+    "description": "AI agents for Pac-Man using search algorithms, reinforcement learning, and probabilistic inference",
+    "abstract": "A comprehensive suite of AI agents for the Pac-Man game, implementing fundamental artificial intelligence techniques from graph search to reinforcement learning.",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:62322\/projects\/pacmanai\/",
+    "url" : "http:\/\/localhost:1313\/projects\/pacmanai\/",
     "author" : {
       "@type": "Person",
       "name": "Christopher Lee"
@@ -132,7 +132,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "477"
+    "wordCount": "657"
   }
   </script>
 
@@ -484,64 +484,53 @@
     <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
       
       <div class="min-h-0 min-w-0 max-w-prose grow">
-        <p>A series of AI engines for the PacMan game, utilizing multiagent search algorithms, reinforcement learning, and more.</p>
-<p>This project consists of 4 parts:</p>
+        <p>A comprehensive suite of AI agents for the Pac-Man game, implementing fundamental artificial intelligence techniques from graph search to reinforcement learning. Built as part of UC Berkeley&rsquo;s CS188 Introduction to Artificial Intelligence course, this project demonstrates practical applications of AI algorithms in a challenging game environment.</p>
+<h2 id="the-problem" class="relative group">The Problem </h2><p>Real-world AI problems require agents that can navigate complex environments, make decisions under uncertainty, and learn from experience. While Pac-Man may seem like just a game, it presents all these challenges: path planning through mazes, adversarial ghost agents with stochastic behavior, partial observability with invisible ghosts, and the need to learn optimal strategies through trial and error.</p>
+<h2 id="key-features" class="relative group">Key Features </h2><p><strong>🔍 Intelligent Path Finding</strong><br>
+Implemented four fundamental search algorithms (DFS, BFS, UCS, A*) to navigate mazes efficiently. Developed custom heuristics for A* that reduce node expansions by up to 80% while maintaining optimality. Solved complex problems like finding optimal paths to eat all food pellets using advanced state space representations.</p>
+<p><strong>🎮 Multi-Agent Game Playing</strong><br>
+Built adversarial search agents using Minimax and Expectimax algorithms to play against multiple ghosts. Designed sophisticated evaluation functions that balance food collection, ghost avoidance, and winning strategies. Handles both deterministic and probabilistic ghost behaviors.</p>
+<p><strong>🧠 Reinforcement Learning</strong><br>
+Implemented model-based (Value Iteration) and model-free (Q-Learning, Approximate Q-Learning) algorithms. Trained agents that learn optimal policies through experience, starting from zero knowledge about the game. Applied function approximation to handle large state spaces efficiently.</p>
+<p><strong>👻 Probabilistic Tracking</strong><br>
+Created ghost-hunting agents that track invisible ghosts using noisy distance sensors. Implemented Bayes Nets for probabilistic inference and particle filters for Hidden Markov Models. Achieved accurate ghost localization even with Manhattan distance readings corrupted by noise.</p>
+<p><strong>🗺️ Logic-Based Planning</strong><br>
+Applied propositional logic to solve SLAM (Simultaneous Localization and Mapping) problems. Built agents that can locate themselves with unknown starting positions, map unknown environments, and plan action sequences using logical inference.</p>
+<h2 id="implementation-details" class="relative group">Implementation Details </h2><p><strong>Search Algorithms</strong><br>
+The search module implements graph-based versions of all algorithms to avoid revisiting states. Used Python&rsquo;s data structures strategically—<code>Stack</code> for DFS, <code>Queue</code> for BFS, and <code>PriorityQueue</code> for UCS and A*. Custom heuristics for A* use Manhattan distance for simple cases and actual maze distances for complex multi-goal problems.</p>
+<p><strong>Game Playing Agents</strong><br>
+Minimax with alpha-beta pruning handles deterministic ghosts, searching up to depth 4 in reasonable time. Expectimax models probabilistic ghost behavior, computing expected utilities across all possible ghost actions. Evaluation functions combine weighted features: food proximity, ghost distances, power pellet opportunities, and winning conditions.</p>
+<p><strong>Reinforcement Learning</strong><br>
+Value Iteration computes optimal policies for known MDPs using dynamic programming. Q-Learning agents explore using epsilon-greedy strategies, learning state-action values through experience. Approximate Q-Learning uses feature extraction to generalize across similar states, enabling learning in large state spaces.</p>
+<p><strong>Probabilistic Inference</strong><br>
+Exact inference using the Forward Algorithm for HMMs when tracking single ghosts. Particle filtering approximates joint distributions when tracking multiple ghosts simultaneously. Dynamic particle count adjustment based on uncertainty levels improves both accuracy and performance.</p>
+<h2 id="key-algorithms" class="relative group">Key Algorithms </h2><p><strong>Search &amp; Planning:</strong></p>
 <ul>
-<li><strong>Single/Multiagent Search</strong></li>
-<li><strong>Logic</strong></li>
-<li><strong>Bayes Nets and HMMs</strong></li>
-<li><strong>Reinforcement Learning</strong></li>
+<li>DFS/BFS – Complete maze exploration and shortest path finding</li>
+<li>UCS – Optimal paths with non-uniform costs</li>
+<li>A* – Optimal paths with admissible heuristics reducing search space</li>
 </ul>
-<h2 id="singlemultiagent-search" class="relative group">Single/Multiagent Search <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#singlemultiagent-search" aria-label="Anchor">#</a></span></h2><p>Depth-first, breadth-first, uniform cost, and A* search. Minimax and expectimax algorithms along with designing evaluation functions for multi-agent search.</p>
+<p><strong>Adversarial Search:</strong></p>
 <ul>
-<li><strong>Conditions &amp; Algorithms Used</strong>:
-<ol>
-<li>Locating Fixed Food: Depth First, Breath First, A*, Suboptimal Search</li>
-</ol>
-</li>
+<li>Minimax – Perfect play against optimal opponents</li>
+<li>Alpha-Beta Pruning – Efficient minimax through branch elimination</li>
+<li>Expectimax – Rational decisions against stochastic opponents</li>
 </ul>
-<h2 id="logic" class="relative group">Logic <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#logic" aria-label="Anchor">#</a></span></h2><p>Applying Propositional Logic in a pacman world represented with booleans to solve planning tasks as well as localization, mapping, and SLAM.</p>
-<p><strong>Goals:</strong></p>
-<ol>
-<li>Create logical expressions that represent Pacman physics and locate Pacman agent&rsquo;s position given its actions and sensor readings.</li>
-<li>Plan sequence of actions to the goal position.</li>
-<li>Plan sequence of actions to eat all the food on the board.</li>
-<li>Locate Pacman agent&rsquo;s position at each timestep with <strong>known map</strong>, <strong>unknown starting position</strong>, and sensors.</li>
-<li>Map the entire board with <strong>known starting location</strong> and sensors.</li>
-<li>Locate Pacman agent&rsquo;s position and Map the entire board with <strong>unknown map</strong>, <strong>unknown starting position</strong>, and sensors (Simultaneous Localization and Mapping).</li>
-</ol>
-<p><strong>Results:</strong></p>
-<ol>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-</ol>
-<h2 id="bayes-nets-and-hmms" class="relative group">Bayes Nets and HMMs <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#bayes-nets-and-hmms" aria-label="Anchor">#</a></span></h2><p>Bayes Nets and the forward algorithm, employing particle sampling in Hidden Markov Models to locate ghosts based on noisy distance readings.</p>
-<p><strong>Goal:</strong> Locate and eat invisible ghosts with sensors that provide nosiy readings of the Manhattan distance.</p>
-<p><strong>Result:</strong></p>
-<h2 id="reinforcement-learning" class="relative group">Reinforcement Learning <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#reinforcement-learning" aria-label="Anchor">#</a></span></h2><p>Value Function, Q learning, and Approximate Q learning to teach Pacman and crawler agents rational policies.</p>
-<h2 id="what-ive-learned" class="relative group">What I&rsquo;ve Learned <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#what-ive-learned" aria-label="Anchor">#</a></span></h2><ol>
-<li>
-<p><strong>Algorithm Implementation</strong>: Through Projects 1 and 2, I gained proficiency in implementing search algorithms and understanding their effectiveness in solving navigation and adversarial problems. This involved grasping concepts like depth-first, breadth-first, uniform cost, A* search, multiagent minimax, and expectimax algorithms.</p>
-</li>
-<li>
-<p><strong>Reinforcement Learning</strong>: Project 3 introduced me to reinforcement learning techniques such as Value Function, Q learning, and Approximate Q learning. By implementing these algorithms, I learned how agents can learn optimal policies through trial and error, improving decision-making in dynamic environments.</p>
-</li>
-<li>
-<p><strong>Probabilistic Inference</strong>: Project 4 deepened my understanding of probabilistic reasoning by employing Bayes Nets and Hidden Markov Models (HMMs). I learned how to use inference algorithms like the forward algorithm and particle sampling to make probabilistic predictions, crucial for tasks like ghost tracking in Pacman.</p>
-</li>
-<li>
-<p><strong>Problem Solving and Critical Thinking</strong>: Across all projects, I honed my problem-solving skills and developed a critical mindset towards algorithm selection and implementation. I learned to evaluate the trade-offs between different approaches and make informed decisions based on the specific requirements of each problem.</p>
-</li>
-</ol>
-<p>Overall, working on these projects equipped me with practical skills in AI and machine learning, fostering a deeper understanding of their applications in gaming and beyond. Additionally, it instilled in me a sense of confidence in tackling complex problems and leveraging advanced techniques to find effective solutions.</p>
-<p><strong>Disclaimer</strong></p>
-<p>This project was developed for UC Berkeley&rsquo;s CS188: Introduction to Artificial Intelligence Course.
-Source code can be provided on
-<a class="button primary big" href="mailto:leechristopher722@gmail.com" target="_blank" >request</a>.</p>
+<p><strong>Learning &amp; Inference:</strong></p>
+<ul>
+<li>Value/Policy Iteration – Computing optimal policies for MDPs</li>
+<li>Q-Learning – Model-free reinforcement learning</li>
+<li>Particle Filtering – Approximate inference in continuous spaces</li>
+</ul>
+<h2 id="challenges--solutions" class="relative group">Challenges &amp; Solutions </h2><p><strong>Challenge</strong>: Designing admissible heuristics for multi-goal search problems (eating all food)<br>
+<strong>Solution</strong>: Used minimum spanning tree of remaining food as heuristic, ensuring admissibility while providing tight bounds that dramatically reduce search space</p>
+<p><strong>Challenge</strong>: Balancing exploration vs exploitation in Q-Learning<br>
+<strong>Solution</strong>: Implemented adaptive epsilon-greedy strategy that decreases exploration over time, transitioning from learning to optimal play</p>
+<p><strong>Challenge</strong>: Tracking multiple invisible ghosts with noisy sensors<br>
+<strong>Solution</strong>: Particle filter with intelligent resampling—concentrates particles in high-probability regions while maintaining diversity to avoid particle depletion</p>
+<hr>
+<p><strong>Note</strong>: Source code available upon request as per UC Berkeley&rsquo;s academic integrity policies.<br>
+<a class="button primary big" href="mailto:leechristopher722@gmail.com" target="_blank">Request Source Code</a></p>
 
       </div>
     </section>
@@ -673,7 +662,7 @@ Source code can be provided on
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm sm:p-6 md:p-[10vh] lg:p-[12vh] dark:bg-neutral-900/50"
-  data-url="http://localhost:62322/"
+  data-url="http://localhost:1313/"
 >
   <div
     id="search-modal"

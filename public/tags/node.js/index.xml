@@ -9,11 +9,11 @@
     <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GitBug</title>
-      <link>http://localhost:1313/projects/gitbug/</link>
+      <title>Atelier</title>
+      <link>http://localhost:1313/projects/atelier/</link>
       <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/gitbug/</guid>
-      <description>Project management tool for developers; combines Gitlet with Dynamic Web Application to provide efficient workflow in team projects.</description>
+      <guid>http://localhost:1313/projects/atelier/</guid>
+      <description>Atelier #Full-Stack Project Management Platform for Development Teams</description>
     </item>
   </channel>
 </rss>

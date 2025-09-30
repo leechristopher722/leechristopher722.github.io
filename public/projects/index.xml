@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Christopher Lee</title>
-    <link>http://localhost:62322/projects/</link>
+    <link>http://localhost:1313/projects/</link>
     <description>Recent content in Projects on Christopher Lee</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:62322/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Atelier</title>
-      <link>http://localhost:62322/projects/atelier/</link>
+      <link>http://localhost:1313/projects/atelier/</link>
       <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62322/projects/atelier/</guid>
-      <description>Project management tool for developers; combines Gitlet with Dynamic Web Application to provide efficient workflow in team projects.</description>
+      <guid>http://localhost:1313/projects/atelier/</guid>
+      <description>A project management platform designed to streamline how development teams work together by bringing task tracking, team communication, and project analytics into one unified workspace.</description>
     </item>
     <item>
       <title>PacmanAI</title>
-      <link>http://localhost:62322/projects/pacmanai/</link>
+      <link>http://localhost:1313/projects/pacmanai/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62322/projects/pacmanai/</guid>
-      <description>A series of AI engines for the PacMan game, utilizing multiagent search algorithms, reinforcement learning, and more.</description>
+      <guid>http://localhost:1313/projects/pacmanai/</guid>
+      <description>A comprehensive suite of AI agents for the Pac-Man game, implementing fundamental artificial intelligence techniques from graph search to reinforcement learning.</description>
     </item>
     <item>
       <title>Gitlet</title>
-      <link>http://localhost:62322/projects/gitlet/</link>
+      <link>http://localhost:1313/projects/gitlet/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>http://localhost:62322/projects/gitlet/</guid>
-      <description>A version-control system similar to Git but designed to be simpler and smaller.</description>
+      <guid>http://localhost:1313/projects/gitlet/</guid>
+      <description>A lightweight version control system that implements Git&amp;rsquo;s core functionality from scratch in Java.</description>
     </item>
   </channel>
 </rss>

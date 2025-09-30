@@ -12,7 +12,7 @@
   class="scroll-smooth"
   data-default-appearance="light"
   data-auto-appearance="true"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62322&amp;path=livereload" data-no-instant defer></script>
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="rgb(255,255,255)" />
@@ -71,13 +71,13 @@
   <meta
     name="description"
     content="
-      Gitlet Project Page
+      A simplified version control system implementing core Git functionality in Java
     "
   />
   
   
   
-  <link rel="canonical" href="http://localhost:62322/projects/gitlet/" />
+  <link rel="canonical" href="http://localhost:1313/projects/gitlet/" />
   
   
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -92,10 +92,10 @@
   
   
   
-  <meta property="og:url" content="http://localhost:62322/projects/gitlet/">
+  <meta property="og:url" content="http://localhost:1313/projects/gitlet/">
   <meta property="og:site_name" content="Christopher Lee">
   <meta property="og:title" content="Gitlet">
-  <meta property="og:description" content="Gitlet Project Page">
+  <meta property="og:description" content="A simplified version control system implementing core Git functionality in Java">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
@@ -105,7 +105,7 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Gitlet">
-  <meta name="twitter:description" content="Gitlet Project Page">
+  <meta name="twitter:description" content="A simplified version control system implementing core Git functionality in Java">
 
   
   <script type="application/ld+json">
@@ -115,10 +115,10 @@
     "articleSection": "Projects",
     "name": "Gitlet",
     "headline": "Gitlet",
-    "description": "Gitlet Project Page",
-    "abstract": "A version-control system similar to Git but designed to be simpler and smaller.",
+    "description": "A simplified version control system implementing core Git functionality in Java",
+    "abstract": "A lightweight version control system that implements Git\u0026rsquo;s core functionality from scratch in Java.",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:62322\/projects\/gitlet\/",
+    "url" : "http:\/\/localhost:1313\/projects\/gitlet\/",
     "author" : {
       "@type": "Person",
       "name": "Christopher Lee"
@@ -132,7 +132,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "393"
+    "wordCount": "538"
   }
   </script>
 
@@ -484,47 +484,61 @@
     <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
       
       <div class="min-h-0 min-w-0 max-w-prose grow">
-        <p>A version-control system similar to Git but designed to be simpler and smaller.</p>
-<p><strong>Key functionalities:</strong></p>
+        <p>A lightweight version control system that implements Git&rsquo;s core functionality from scratch in Java. Built as part of UC Berkeley&rsquo;s CS61B Data Structures course, Gitlet demonstrates practical application of data structures including trees, hash maps, and directed acyclic graphs to solve real-world problems.</p>
+<h2 id="the-problem" class="relative group">The Problem </h2><p>Understanding how version control systems work under the hood is crucial for software engineers, yet most developers only interact with Git at a surface level. This project required building a functional VCS from the ground up, handling everything from object serialization to complex merge algorithms—all while maintaining efficiency and correctness.</p>
+<h2 id="key-features" class="relative group">Key Features </h2><p><strong>📁 Complete Version Control</strong><br>
+Implements fundamental Git operations: init, add, commit, rm, status, log, and checkout. Each commit creates an immutable snapshot of the repository state, stored efficiently using SHA-1 hashing for content-addressable storage.</p>
+<p><strong>🌳 Branching &amp; Merging</strong><br>
+Full support for creating, switching, and deleting branches. Implements a sophisticated merge algorithm that handles split points, conflict detection, and automatic merging when possible. The commit tree structure uses directed acyclic graphs to maintain branch relationships.</p>
+<p><strong>⚡ Efficient Storage</strong><br>
+Uses blob objects for file storage with content-based deduplication—identical files share the same blob regardless of commit or filename. Implements lazy loading and caching strategies to minimize disk I/O operations.</p>
+<p><strong>🔍 History Tracking</strong><br>
+Comprehensive logging with <code>log</code> (current branch history) and <code>global-log</code> (all commits). The <code>find</code> command searches commit messages across the entire repository history. Status command provides detailed staging area and working directory information.</p>
+<h2 id="technical-implementation" class="relative group">Technical Implementation </h2><p><strong>Persistence Layer</strong><br>
+Built a custom serialization system using Java&rsquo;s Serializable interface to persist repository state to disk. The <code>.gitlet</code> directory structure mirrors Git&rsquo;s design with separate folders for commits, blobs, and branches. Each object is stored with its SHA-1 hash as the filename, enabling O(1) lookups.</p>
+<p><strong>Data Structures</strong></p>
 <ul>
-<li><strong>Saving file versions (committing):</strong> Creates snapshots of entire directories, enabling restoration to previous states.</li>
-<li><strong>Restoring file versions (checking out):</strong> Reverts files or entire commits to a chosen point in time.</li>
-<li><strong>Viewing history (log):</strong> Displays a chronological list of commits made to the project.</li>
-<li><strong>Maintaining branches:</strong> Creates divergent development paths within the project.</li>
-<li><strong>Merging branches:</strong> Combines changes from different branches into a single branch.</li>
+<li><strong>Commit Tree</strong>: Directed acyclic graph implementation tracking parent-child relationships</li>
+<li><strong>Staging Area</strong>: HashMap-based structure for tracking additions and removals</li>
+<li><strong>Blob Storage</strong>: Content-addressable storage using SHA-1 hashing for deduplication</li>
+<li><strong>Branch Management</strong>: Reference system pointing to commit SHAs</li>
 </ul>
-<h2 id="differences-from-actual-git" class="relative group">Differences from actual Git <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#differences-from-actual-git" aria-label="Anchor">#</a></span></h2><ol>
-<li>
-<p><strong>Flat Directory Structure:</strong>
-Gitlet incorporates trees into commits but does not deal with subdirectories. This results in a &ldquo;flat&rdquo; directory structure where each repository contains only plain files without nested directories.</p>
-</li>
-<li>
-<p><strong>Limited Merging:</strong>
-Unlike Git, which supports merges with any number of parents, Gitlet limits merges to references with only two parents.</p>
-</li>
-<li>
-<p><strong>Minimal Metadata:</strong>
-Gitlet&rsquo;s metadata for commits is simplified, consisting only of a timestamp and a log message. A commit in Gitlet includes a log message, timestamp, a mapping of file names to blob references, and (for merges) a second parent reference.</p>
-</li>
+<p><strong>Merge Algorithm</strong><br>
+Implements a three-way merge that:</p>
+<ol>
+<li>Finds the split point (latest common ancestor) using BFS traversal</li>
+<li>Compares files across current branch, given branch, and split point</li>
+<li>Automatically merges non-conflicting changes</li>
+<li>Marks conflicts for manual resolution when both branches modify the same file</li>
 </ol>
-<h2 id="detailed-functionalities" class="relative group">Detailed functionalities: <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#detailed-functionalities" aria-label="Anchor">#</a></span></h2><p><strong>Commands:</strong></p>
+<h2 id="key-commands" class="relative group">Key Commands </h2><p><strong>Repository Management:</strong></p>
 <ul>
-<li><strong>init:</strong> Creates a new Gitlet repository in the current directory.</li>
-<li><strong>add:</strong> Stages a file for inclusion in the next commit.</li>
-<li><strong>commit:</strong> Creates a new commit with the staged changes and a commit message.</li>
-<li><strong>rm:</strong> Removes a file from the staging area and marks it for untracking in the next commit.</li>
-<li><strong>log:</strong> Displays the commit history, starting from the current head commit and following the parent commit links.</li>
-<li><strong>global-log:</strong> Shows information about all commits ever made, regardless of the current branch.</li>
-<li><strong>find:</strong> Prints the unique identifiers of commits containing a specific message.</li>
-<li><strong>status:</strong> Displays information about the current branch, staged files, removed files, modified files, and untracked files.</li>
+<li><code>init</code> – Creates new repository with initial commit</li>
+<li><code>add/rm</code> – Stages files for addition or removal</li>
+<li><code>commit</code> – Creates immutable snapshot with parent reference</li>
 </ul>
-<h2 id="things-ive-learned" class="relative group">Things I&rsquo;ve Learned <span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#things-ive-learned" aria-label="Anchor">#</a></span></h2><p>Creating Gitlet deepened my grasp of version control systems and Object-Oriented Programming (OOP). Building a simplified Git taught me Java programming intricacies and reinforced my understanding of commits, branches, and merges.</p>
-<p>Developing Gitlet honed my skills in modular software design, efficient file handling, and managing complex data structures. It prompted critical thinking about design trade-offs, emphasizing simplicity without sacrificing functionality.</p>
-<p>In summary, Gitlet enhanced my technical proficiency and appreciation for version control and software design principles, showcasing the value of hands-on learning in software engineering.</p>
-<p><strong>Disclaimer</strong></p>
-<p>This project was developed for UC Berkeley&rsquo;s CS61B: Data Structures Course.
-Source code can be provided on
-<a class="button primary big" href="mailto:leechristopher722@gmail.com" target="_blank" >request</a>.</p>
+<p><strong>History &amp; Branches:</strong></p>
+<ul>
+<li><code>log/global-log</code> – Views commit history</li>
+<li><code>branch/rm-branch</code> – Creates or deletes branches</li>
+<li><code>checkout</code> – Restores files or switches branches</li>
+<li><code>reset</code> – Moves current branch to specified commit</li>
+</ul>
+<p><strong>Advanced Operations:</strong></p>
+<ul>
+<li><code>merge</code> – Three-way merge with conflict detection</li>
+<li><code>find</code> – Searches commits by message</li>
+<li><code>status</code> – Displays repository state</li>
+</ul>
+<h2 id="challenges--solutions" class="relative group">Challenges &amp; Solutions </h2><p><strong>Challenge</strong>: Implementing efficient file deduplication across commits<br>
+<strong>Solution</strong>: Content-based addressing using SHA-1 hashes—identical files reference the same blob object regardless of name or location</p>
+<p><strong>Challenge</strong>: Finding the merge split point in complex branch histories<br>
+<strong>Solution</strong>: BFS traversal of the commit DAG to find the latest common ancestor, handling multiple merge commits correctly</p>
+<p><strong>Challenge</strong>: Managing persistence without a database<br>
+<strong>Solution</strong>: Custom serialization layer with careful file organization, using SHA-1 hashes as natural indexes for O(1) retrieval</p>
+<hr>
+<p><strong>Note</strong>: Source code available upon request as per UC Berkeley&rsquo;s academic integrity policies.<br>
+<a class="button primary big" href="mailto:leechristopher722@gmail.com" target="_blank">Request Source Code</a></p>
 
       </div>
     </section>
@@ -637,7 +651,7 @@ Source code can be provided on
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm sm:p-6 md:p-[10vh] lg:p-[12vh] dark:bg-neutral-900/50"
-  data-url="http://localhost:62322/"
+  data-url="http://localhost:1313/"
 >
   <div
     id="search-modal"

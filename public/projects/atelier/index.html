@@ -12,7 +12,7 @@
   class="scroll-smooth"
   data-default-appearance="light"
   data-auto-appearance="true"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=62322&amp;path=livereload" data-no-instant defer></script>
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="rgb(255,255,255)" />
@@ -71,13 +71,13 @@
   <meta
     name="description"
     content="
-      Atelier Project Description
+      Full-Stack Project Management Platform for Development Teams
     "
   />
   
   
   
-  <link rel="canonical" href="http://localhost:62322/projects/atelier/" />
+  <link rel="canonical" href="http://localhost:1313/projects/atelier/" />
   
   
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -92,10 +92,10 @@
   
   
   
-  <meta property="og:url" content="http://localhost:62322/projects/atelier/">
+  <meta property="og:url" content="http://localhost:1313/projects/atelier/">
   <meta property="og:site_name" content="Christopher Lee">
   <meta property="og:title" content="Atelier">
-  <meta property="og:description" content="Atelier Project Description">
+  <meta property="og:description" content="Full-Stack Project Management Platform for Development Teams">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="projects">
@@ -105,7 +105,7 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Atelier">
-  <meta name="twitter:description" content="Atelier Project Description">
+  <meta name="twitter:description" content="Full-Stack Project Management Platform for Development Teams">
 
   
   <script type="application/ld+json">
@@ -115,10 +115,10 @@
     "articleSection": "Projects",
     "name": "Atelier",
     "headline": "Atelier",
-    "description": "Atelier Project Description",
-    "abstract": "Project management tool for developers; combines Gitlet with Dynamic Web Application to provide efficient workflow in team projects.",
+    "description": "Full-Stack Project Management Platform for Development Teams",
+    "abstract": "A project management platform designed to streamline how development teams work together by bringing task tracking, team communication, and project analytics into one unified workspace.",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:62322\/projects\/atelier\/",
+    "url" : "http:\/\/localhost:1313\/projects\/atelier\/",
     "author" : {
       "@type": "Person",
       "name": "Christopher Lee"
@@ -132,7 +132,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "20"
+    "wordCount": "361"
   }
   </script>
 
@@ -484,8 +484,35 @@
     <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
       
       <div class="min-h-0 min-w-0 max-w-prose grow">
-        <p>Project management tool for developers; combines Gitlet with Dynamic Web Application to provide efficient workflow in team projects.</p>
-<p>Coming soon&hellip;</p>
+        <p>A project management platform designed to streamline how development teams work together by bringing task tracking, team communication, and project analytics into one unified workspace.</p>
+<h2 id="the-problem" class="relative group">The Problem </h2><p>Development teams often juggle multiple disconnected tools—one for messaging, another for task tracking, and yet another for metrics. This fragmentation creates information gaps and makes it harder to maintain project visibility. Atelier addresses this by providing a single platform where teams can manage their entire workflow.</p>
+<h2 id="key-features" class="relative group">Key Features </h2><p><strong>🔐 Authentication &amp; Access Control</strong><br>
+Argon2 password hashing with JWT token-based sessions. Role-based permissions system (Admin, Project Manager, Developer, Team Member) controls access to project resources. Automated email notifications for password resets and task assignments.</p>
+<p><strong>📊 Real-Time Collaboration</strong><br>
+Shared Kanban boards with instant updates via WebSocket connections—drag a task and everyone sees it move immediately. Integrated chat keeps discussions in context with the relevant tasks. Visual analytics track sprint progress and identify bottlenecks.</p>
+<p><strong>⚡ Technical Architecture</strong><br>
+Node.js/Express.js backend following MVC patterns with RESTful APIs. MongoDB for flexible document storage using Atlas for cloud hosting. Optimized database queries with proper indexing and efficient real-time event handling through Socket.io.</p>
+<h2 id="technical-implementation" class="relative group">Technical Implementation </h2><p>The tech stack was chosen for practical reasons: <strong>Node.js</strong> handles concurrent connections well (crucial for real-time features), <strong>MongoDB</strong> allows schema flexibility during rapid development, and <strong>JWT authentication</strong> keeps the system stateless and scalable.</p>
+<p>Each API endpoint validates permissions through custom middleware. When someone updates a Kanban board, WebSocket events broadcast minimal data updates rather than full refreshes, keeping the system responsive even with multiple concurrent users.</p>
+<h2 id="challenges--solutions" class="relative group">Challenges &amp; Solutions </h2><p><strong>Challenge</strong>: Synchronizing multiple clients without overwhelming the server<br>
+<strong>Solution</strong>: Implemented event throttling and delta updates—sending only changed data instead of full state refreshes</p>
+<p><strong>Challenge</strong>: Managing complex permission logic across different roles<br>
+<strong>Solution</strong>: Centralized authorization middleware that validates permissions before any database operation</p>
+<h2 id="current-status" class="relative group">Current Status </h2><p><strong>Working Features:</strong></p>
+<ul>
+<li>User registration/login with secure authentication</li>
+<li>Project creation and team member management</li>
+<li>Drag-and-drop Kanban boards with real-time updates</li>
+<li>Basic chat system within project context</li>
+<li>Role-based access control across all features</li>
+</ul>
+<p><strong>In Development:</strong></p>
+<ul>
+<li>Enhanced analytics dashboard with actionable metrics</li>
+<li>Performance optimization for larger teams</li>
+<li>Mobile responsive UI improvements</li>
+</ul>
+<p>This ongoing project demonstrates practical application of full-stack development concepts while solving real team collaboration challenges.</p>
 
       </div>
     </section>
@@ -537,6 +564,17 @@
   </article>
 
         
+          <div class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12">
+            <a
+              href="#the-top"
+              class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+              aria-label="Scroll to top"
+              title="Scroll to top"
+            >
+              &uarr;
+            </a>
+          </div>
+        
       </main><footer class="py-10 print:hidden">
   
   
@@ -587,7 +625,7 @@
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm sm:p-6 md:p-[10vh] lg:p-[12vh] dark:bg-neutral-900/50"
-  data-url="http://localhost:62322/"
+  data-url="http://localhost:1313/"
 >
   <div
     id="search-modal"
