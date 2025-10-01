@@ -17,8 +17,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="rgb(255,255,255)" />
   
-  <title>Learning Git &middot; Christopher Lee</title>
-    <meta name="title" content="Learning Git &middot; Christopher Lee" />
+  <title>Git Fundamentals &middot; Christopher Lee</title>
+    <meta name="title" content="Git Fundamentals &middot; Christopher Lee" />
   
   
   
@@ -71,7 +71,7 @@
   <meta
     name="description"
     content="
-      Git blog
+      Real lessons from learning Git the hard way
     "
   />
   
@@ -94,19 +94,21 @@
   
   <meta property="og:url" content="http://localhost:1313/blog/git/">
   <meta property="og:site_name" content="Christopher Lee">
-  <meta property="og:title" content="Learning Git">
-  <meta property="og:description" content="Git blog">
+  <meta property="og:title" content="Git Fundamentals">
+  <meta property="og:description" content="Real lessons from learning Git the hard way">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="blog">
-    <meta property="article:published_time" content="2024-03-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-03-10T00:00:00+00:00">
+    <meta property="article:published_time" content="2024-11-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-11-10T00:00:00+00:00">
     <meta property="article:tag" content="Git">
+    <meta property="article:tag" content="Version Control">
+    <meta property="article:tag" content="Developer Tools">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Learning Git">
-  <meta name="twitter:description" content="Git blog">
+  <meta name="twitter:title" content="Git Fundamentals">
+  <meta name="twitter:description" content="Real lessons from learning Git the hard way">
 
   
   <script type="application/ld+json">
@@ -114,10 +116,10 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Blog",
-    "name": "Learning Git",
-    "headline": "Learning Git",
-    "description": "Git blog",
-    "abstract": "Introduction The vast landscape of software development is governed by one tool: Git.",
+    "name": "Git Fundamentals",
+    "headline": "Git Fundamentals",
+    "description": "Real lessons from learning Git the hard way",
+    "abstract": "Let\u0026rsquo;s be honest about Git: everyone pretends to understand it, but most of us are secretly terrified we\u0026rsquo;ll accidentally delete the entire codebase with one wrong command.",
     "inLanguage": "en",
     "url" : "http:\/\/localhost:1313\/blog\/git\/",
     "author" : {
@@ -125,15 +127,15 @@
       "name": "Christopher Lee"
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-03-10T00:00:00\u002b00:00",
-    "datePublished": "2024-03-10T00:00:00\u002b00:00",
+    "dateCreated": "2024-11-10T00:00:00\u002b00:00",
+    "datePublished": "2024-11-10T00:00:00\u002b00:00",
     
-    "dateModified": "2024-03-10T00:00:00\u002b00:00",
+    "dateModified": "2024-11-10T00:00:00\u002b00:00",
     
-    "keywords": ["Git"],
+    "keywords": ["Git","Version Control","Developer Tools"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "596"
+    "wordCount": "1063"
   }
   </script>
 
@@ -416,7 +418,7 @@
     <a
       class="dark:underline-neutral-600 decoration-neutral-300 hover:underline"
       href="/blog/git/"
-      >Learning Git</a
+      >Git Fundamentals</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -425,7 +427,7 @@
 
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Learning Git
+        Git Fundamentals
       </h1>
       
         <div class="mb-12 mt-8 text-base text-neutral-500 print:hidden dark:text-neutral-400">
@@ -459,7 +461,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2024-03-10 00:00:00 &#43;0000 UTC">10 March 2024</time>
+      <time datetime="2024-11-10 00:00:00 &#43;0000 UTC">10 November 2024</time>
     
 
     
@@ -480,6 +482,18 @@
               >Git</a
             >
           
+            <a
+              href="/tags/version-control/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Version Control</a
+            >
+          
+            <a
+              href="/tags/developer-tools/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Developer Tools</a
+            >
+          
         
       
     </div>
@@ -493,33 +507,124 @@
     <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
       
       <div class="min-h-0 min-w-0 max-w-prose grow">
-        <h2 id="introduction" class="relative group">Introduction </h2><p>The vast landscape of software development is governed by one tool: Git. It&rsquo;s the backbone of collaboration, enabling developers to work seamlessly together, track changes efficiently, and maintain a coherent history of their projects. However, like many budding developers, my journey into understanding Git was initially daunting and filled with uncertainty. Yet, as I delved deeper into its intricacies, I discovered its immense value and transformed my workflow.</p>
-<h2 id="understanding-the-basics" class="relative group">Understanding the Basics </h2><p>My foray into Git began with a simple desire—to streamline my coding projects and collaborate more effectively with my peers. As a novice developer, the prospect of learning a new tool seemed daunting. Git&rsquo;s command-line interface appeared cryptic, and the plethora of commands felt overwhelming. However, armed with determination and a willingness to learn, I embarked on my journey.</p>
-<p>My initial steps involved grasping the fundamental concepts of Git. Understanding terms like repositories, commits, branches, and merges laid the groundwork for my comprehension. I devoured online tutorials, perused documentation, and sought guidance from experienced developers. Slowly but surely, the fog began to lift, and I started to appreciate Git&rsquo;s elegance.</p>
-<h2 id="exploring-branches" class="relative group">Exploring Branches </h2><p>One of the pivotal moments in my Git journey was comprehending the concept of branches. Branching allowed me to diverge from the main codebase, experiment with new features, and isolate changes without disrupting the main project. It was akin to creating alternate realities where I could test ideas freely, knowing that I could always revert if needed. This newfound freedom unleashed my creativity and empowered me to explore different avenues in my projects.</p>
-<p>
+        <p>Let&rsquo;s be honest about Git: everyone pretends to understand it, but most of us are secretly terrified we&rsquo;ll accidentally delete the entire codebase with one wrong command. If you&rsquo;ve ever stared at a merge conflict like it&rsquo;s written in ancient hieroglyphics, this post is for you.</p>
+<h2 id="why-git-feels-like-dark-magic" class="relative group">Why Git Feels Like Dark Magic </h2><p>When I first encountered Git, the tutorials made it sound simple: &ldquo;Just commit your changes and push!&rdquo; What they didn&rsquo;t mention was the existential crisis I&rsquo;d face when encountering my first detached HEAD state, or the panic of realizing I&rsquo;d been committing to the wrong branch for three days.</p>
+<p>The truth is, Git is conceptually simple but practically complex. It&rsquo;s like chess—you can learn how the pieces move in minutes, but mastering the game takes years.</p>
+<h2 id="the-mental-model-that-finally-clicked" class="relative group">The Mental Model That Finally Clicked </h2><p>After countless botched merges and accidental force pushes, here&rsquo;s the mental model that finally made Git make sense:</p>
+<p><strong>Git is a time machine for your code.</strong> Every commit is a snapshot in time. Branches are alternate timelines. Merging is combining timelines. Rebasing is rewriting history (with all the dangers that implies).</p>
+<p>Once I started thinking this way, commands started making intuitive sense:</p>
+<ul>
+<li><code>git checkout</code> = travel to a different point in time</li>
+<li><code>git reset --hard</code> = forcefully travel back in time (destroying everything that came after)</li>
+<li><code>git stash</code> = put current changes in a pocket dimension for safekeeping</li>
+</ul>
+<h2 id="the-commands-you-actually-need" class="relative group">The Commands You Actually Need </h2><p>Forget the 150+ Git commands. Here&rsquo;s what you&rsquo;ll use 95% of the time:</p>
+<h3 id="the-daily-workflow" class="relative group">The Daily Workflow </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git status              <span class="c1"># What&#39;s going on?</span>
+</span></span><span class="line"><span class="cl">git add .              <span class="c1"># Stage everything (or be specific)</span>
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;message&#34;</span> <span class="c1"># Save snapshot</span>
+</span></span><span class="line"><span class="cl">git pull               <span class="c1"># Get latest changes</span>
+</span></span><span class="line"><span class="cl">git push               <span class="c1"># Share your changes</span>
+</span></span></code></pre></div><h3 id="the-oh-no-commands" class="relative group">The &ldquo;Oh No&rdquo; Commands </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git diff                    <span class="c1"># What did I change?</span>
+</span></span><span class="line"><span class="cl">git log --oneline -10      <span class="c1"># What happened recently?</span>
+</span></span><span class="line"><span class="cl">git checkout -- filename   <span class="c1"># Undo changes to specific file</span>
+</span></span><span class="line"><span class="cl">git reset HEAD~1           <span class="c1"># Undo last commit (keep changes)</span>
+</span></span><span class="line"><span class="cl">git reset --hard HEAD~1    <span class="c1"># Nuclear option: destroy last commit</span>
+</span></span></code></pre></div><h3 id="the-collaboration-commands" class="relative group">The Collaboration Commands </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout -b feature-name  <span class="c1"># Create new timeline</span>
+</span></span><span class="line"><span class="cl">git merge main                <span class="c1"># Bring in changes from main</span>
+</span></span><span class="line"><span class="cl">git rebase main              <span class="c1"># Alternative to merge (rewrites history)</span>
+</span></span><span class="line"><span class="cl">git cherry-pick &lt;commit-id&gt;  <span class="c1"># Steal one commit from another branch</span>
+</span></span></code></pre></div><h2 id="branches-your-safety-net" class="relative group">Branches: Your Safety Net </h2><p>Here&rsquo;s what nobody told me about branches: they&rsquo;re free, disposable, and your best friend. Create branches liberally:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git checkout -b experiment/crazy-idea
+</span></span><span class="line"><span class="cl"><span class="c1"># Go wild, break things</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># If it works: merge it</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># If it doesn&#39;t: delete it and pretend it never happened</span>
+</span></span></code></pre></div><p>The branching epiphany came when I realized branches aren&rsquo;t precious. They&rsquo;re scratch paper. Make a mess, try things out, throw them away if they don&rsquo;t work.</p>
+<h2 id="the-merge-conflict-survival-guide" class="relative group">The Merge Conflict Survival Guide </h2><p>Merge conflicts aren&rsquo;t errors—they&rsquo;re Git asking for your help. Here&rsquo;s the systematic approach that turned panic into process:</p>
+<ol>
+<li><strong>Don&rsquo;t panic</strong> (easier said than done)</li>
+<li><strong>Understand what happened</strong>: Two people changed the same part of the same file</li>
+<li><strong>Open the conflicted file</strong> and look for:</li>
+</ol>
+<pre tabindex="0"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Your version
+=======
+Their version
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name
+</code></pre><ol start="4">
+<li><strong>Decide what to keep</strong>: Sometimes it&rsquo;s yours, sometimes theirs, often both</li>
+<li><strong>Remove the markers</strong> and save</li>
+<li><strong>Add and commit</strong> the resolution</li>
+</ol>
+<p>Pro tip: Use a merge tool like VS Code&rsquo;s built-in merger. It turns cryptic conflicts into visual choices.</p>
+<h2 id="rebasing-the-sharp-knife" class="relative group">Rebasing: The Sharp Knife </h2><p>Rebasing is Git&rsquo;s most powerful and dangerous feature. It literally rewrites history. Use it for:</p>
+<ul>
+<li>Cleaning up messy commit history before merging</li>
+<li>Keeping feature branches up-to-date with main</li>
+<li>Making your commits look like you knew what you were doing all along</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Interactive rebase to clean up last 3 commits</span>
+</span></span><span class="line"><span class="cl">git rebase -i HEAD~3
+</span></span></code></pre></div><p>But remember the golden rule: <strong>Never rebase commits that exist outside your local repository</strong>. If you&rsquo;ve pushed it, don&rsquo;t rebase it (unless you really know what you&rsquo;re doing).</p>
+<h2 id="the-mistakes-that-taught-me-the-most" class="relative group">The Mistakes That Taught Me the Most </h2><h3 id="the-force-push-disaster" class="relative group">The Force Push Disaster </h3><p>I once force-pushed to main and wiped out a colleague&rsquo;s entire day of work. Lesson learned:</p>
+<ul>
+<li>Never force push to shared branches</li>
+<li>If you must force push, use <code>--force-with-lease</code> (it&rsquo;s safer)</li>
+<li>Communicate with your team</li>
+</ul>
+<h3 id="the-commit-message-regret" class="relative group">The Commit Message Regret </h3><p>Early commits looked like:</p>
+<pre tabindex="0"><code>&#34;fix&#34;
+&#34;updates&#34;
+&#34;asdfasdf&#34;
+&#34;finally works&#34;
+</code></pre><p>Now I follow this format:</p>
+<pre tabindex="0"><code>type: brief description
 
-
-
-
-
-
-  
-  
-<figure><img src="https://www.example.com/branching_diagram.png" alt="Branching in Git" class="mx-auto my-0 rounded-md" />
-</figure>
-
-<em>Visual representation of branching in Git</em></p>
-<h2 id="advanced-functionalitie" class="relative group">Advanced Functionalitie </h2><p>As I grew more proficient, I ventured into more advanced Git functionalities. Rebasing, squashing commits, and resolving merge conflicts were once intimidating concepts that now became integral parts of my workflow. Git became not just a version control system but a powerful toolkit that enabled me to manage my projects with finesse.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Example of rebasing in Git</span>
-</span></span><span class="line"><span class="cl">git checkout feature-branch
-</span></span><span class="line"><span class="cl">git rebase main
-</span></span></code></pre></div><h2 id="overcoming-challenges" class="relative group">Overcoming Challenges </h2><p>However, like any journey of learning, I encountered roadblocks along the way. Git&rsquo;s unforgiving nature meant that a single misstep could wreak havoc on my project. Accidentally deleting files, botching merges, or losing track of changes were all too familiar pitfalls. Yet, with each mistake, I gleaned valuable lessons and honed my skills further.</p>
-<h2 id="collaborative-workflows" class="relative group">Collaborative Workflows </h2><p>Moreover, Git&rsquo;s collaborative nature became increasingly apparent as I worked on group projects. Branches transformed into collaborative spaces where team members could contribute code, review each other&rsquo;s work, and seamlessly integrate changes. Pull requests became the cornerstone of our workflow, facilitating code reviews and ensuring the quality of our codebase.</p>
-<p><em>Visual representation of a collaborative Git workflow</em></p>
-<h2 id="git-in-the-industry" class="relative group">Git in the Industry </h2><p>Perhaps the most profound realization during my Git journey was its ubiquity within the software development industry. Virtually every tech company, from startups to tech giants, relies on Git for version control. Mastery of Git not only enhanced my individual capabilities but also opened doors to collaboration and employment opportunities within the industry.</p>
-<h2 id="conclusion" class="relative group">Conclusion </h2><p>In hindsight, my journey into learning Git was not just about mastering a tool but embracing a mindset—the mindset of continuous improvement, collaboration, and adaptability. Git became more than just lines of code; it symbolized resilience in the face of challenges and the perseverance to overcome obstacles.</p>
-<p>As I continue to traverse the ever-evolving landscape of software development, Git remains an indispensable companion—a trusted ally that empowers me to tackle complex projects with confidence. My journey with Git may have had humble beginnings, but its impact on my development journey is profound and enduring.</p>
+Longer explanation if needed
+- Bullet points for multiple changes
+- Reference issue numbers (#123)
+</code></pre><h3 id="the-binary-file-bloat" class="relative group">The Binary File Bloat </h3><p>Committed a 100MB test video. Repository became sluggish forever. Lessons:</p>
+<ul>
+<li>Use <code>.gitignore</code> religiously</li>
+<li>Think twice before committing binaries</li>
+<li>Large files belong in Git LFS or somewhere else entirely</li>
+</ul>
+<h2 id="git-in-the-real-world" class="relative group">Git in the Real World </h2><h3 id="the-pull-request-dance" class="relative group">The Pull Request Dance </h3><p>Real development isn&rsquo;t just committing to main. It&rsquo;s:</p>
+<ol>
+<li>Create feature branch</li>
+<li>Make changes</li>
+<li>Push branch</li>
+<li>Open pull request</li>
+<li>Address review comments</li>
+<li>Squash and merge</li>
+</ol>
+<h3 id="the-unwritten-rules" class="relative group">The Unwritten Rules </h3><ul>
+<li>Commit early and often (you can clean up history later)</li>
+<li>Write commit messages for your future confused self</li>
+<li>Pull before you push (avoid unnecessary conflicts)</li>
+<li>When in doubt, make a backup branch</li>
+<li><code>git reflog</code> is your safety net—it tracks everything</li>
+</ul>
+<h2 id="advanced-techniques-worth-learning" class="relative group">Advanced Techniques Worth Learning </h2><h3 id="stashing-your-quick-save" class="relative group">Stashing: Your Quick Save </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git stash                  <span class="c1"># Quick save current changes</span>
+</span></span><span class="line"><span class="cl">git stash pop              <span class="c1"># Restore and delete stash</span>
+</span></span><span class="line"><span class="cl">git stash apply            <span class="c1"># Restore but keep stash</span>
+</span></span><span class="line"><span class="cl">git stash list             <span class="c1"># See all stashes</span>
+</span></span></code></pre></div><h3 id="bisect-binary-search-for-bugs" class="relative group">Bisect: Binary Search for Bugs </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git bisect start
+</span></span><span class="line"><span class="cl">git bisect bad                 <span class="c1"># Current commit is broken</span>
+</span></span><span class="line"><span class="cl">git bisect good &lt;commit-hash&gt;  <span class="c1"># This commit worked</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Git checks out commits for you to test</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Keep marking as good/bad until bug commit found</span>
+</span></span></code></pre></div><h3 id="worktrees-multiple-branches-simultaneously" class="relative group">Worktrees: Multiple Branches Simultaneously </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git worktree add ../project-hotfix hotfix-branch
+</span></span><span class="line"><span class="cl"><span class="c1"># Now you have two folders with different branches checked out</span>
+</span></span></code></pre></div><h2 id="the-path-to-git-confidence" class="relative group">The Path to Git Confidence </h2><p>Git mastery isn&rsquo;t about memorizing commands—it&rsquo;s about understanding the model and knowing how to recover from mistakes. Here&rsquo;s the progression:</p>
+<ol>
+<li><strong>Fear Stage</strong>: Copy-pasting commands, praying nothing breaks</li>
+<li><strong>Cautious Stage</strong>: Understanding basic commands, still scared of rebasing</li>
+<li><strong>Confident Stage</strong>: Comfortable with branches, merging, and basic recovery</li>
+<li><strong>Mastery Stage</strong>: Rebasing interactively, bisecting bugs, teaching others</li>
+</ol>
+<p>Most developers hover between stages 2 and 3, and that&rsquo;s perfectly fine.</p>
+<h2 id="final-thoughts" class="relative group">Final Thoughts </h2><p>Git is a powerful tool that becomes less intimidating with practice. Every developer has Git horror stories—force pushing to main, losing work, spending hours on merge conflicts. These aren&rsquo;t failures; they&rsquo;re rites of passage.</p>
+<p>The secret to Git confidence isn&rsquo;t avoiding mistakes—it&rsquo;s knowing how to recover from them. Keep a learning mindset, experiment in safe environments, and remember: someone, somewhere, has made a worse Git mistake than you&rsquo;re about to make.</p>
 
       </div>
     </section>
@@ -652,7 +757,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="group flex" href="/blog/encryption/">
+            <a class="group flex" href="/blog/devin/">
               <span
                 class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
                 ><span class="ltr:inline rtl:hidden">&larr;</span
@@ -661,11 +766,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Password Encryption Algorithms</span
+                  >Thoughts on Devin: AI Software Engineer</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-03-10 00:00:00 &#43;0000 UTC">10 March 2024</time>
+                    <time datetime="2024-03-14 00:00:00 &#43;0000 UTC">14 March 2024</time>
                   
                 </span>
               </span>
@@ -674,15 +779,15 @@
         </span>
         <span>
           
-            <a class="group flex text-right" href="/blog/hugo/">
+            <a class="group flex text-right" href="/blog/api/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Building Static Website with HUGO</span
+                  >RESTful APIs</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-03-13 00:00:00 &#43;0000 UTC">13 March 2024</time>
+                    <time datetime="2025-01-20 00:00:00 &#43;0000 UTC">20 January 2025</time>
                   
                 </span>
               </span>

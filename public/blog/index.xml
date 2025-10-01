@@ -6,49 +6,42 @@
     <description>Recent content in Blog on Christopher Lee</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cloud</title>
-      <link>http://localhost:1313/blog/cloud/</link>
-      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/cloud/</guid>
-      <description>What is Cloud Computing?</description>
+      <title>Inside AWS: Lessons from My Internship</title>
+      <link>http://localhost:1313/blog/aws-internship/</link>
+      <pubDate>Mon, 01 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/aws-internship/</guid>
+      <description>Three months at Amazon Web Services taught me more about real software engineering than two years of coursework.</description>
     </item>
     <item>
-      <title>RESTful API</title>
+      <title>Cloud Computing Fundamentals</title>
+      <link>http://localhost:1313/blog/cloud/</link>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/cloud/</guid>
+      <description>An in-depth exploration of cloud computing fundamentals, covering everything from basic concepts to advanced deployment strategies and containerization technologies.</description>
+    </item>
+    <item>
+      <title>RESTful APIs</title>
       <link>http://localhost:1313/blog/api/</link>
-      <pubDate>Wed, 20 Mar 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/api/</guid>
-      <description>Write about restful api here.</description>
+      <description>Let&amp;rsquo;s talk about building RESTful APIs that don&amp;rsquo;t fall apart in production.</description>
+    </item>
+    <item>
+      <title>Git Fundamentals</title>
+      <link>http://localhost:1313/blog/git/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/git/</guid>
+      <description>Let&amp;rsquo;s be honest about Git: everyone pretends to understand it, but most of us are secretly terrified we&amp;rsquo;ll accidentally delete the entire codebase with one wrong command.</description>
     </item>
     <item>
       <title>Thoughts on Devin: AI Software Engineer</title>
       <link>http://localhost:1313/blog/devin/</link>
       <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/devin/</guid>
-      <description>The field of software development is witnessing a paradigm shift with the introduction of Devin, an AI tool claiming the title of the world&amp;rsquo;s first &amp;ldquo;AI software engineer.</description>
-    </item>
-    <item>
-      <title>Building Static Website with HUGO</title>
-      <link>http://localhost:1313/blog/hugo/</link>
-      <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/hugo/</guid>
-      <description>In the realm of web development, crafting an online portfolio can often feel like a daunting task.</description>
-    </item>
-    <item>
-      <title>Learning Git</title>
-      <link>http://localhost:1313/blog/git/</link>
-      <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/git/</guid>
-      <description>Introduction The vast landscape of software development is governed by one tool: Git.</description>
-    </item>
-    <item>
-      <title>Password Encryption Algorithms</title>
-      <link>http://localhost:1313/blog/encryption/</link>
-      <pubDate>Sun, 10 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/encryption/</guid>
-      <description></description>
+      <description>When Cognition Labs announced Devin as the &amp;ldquo;world&amp;rsquo;s first AI software engineer,&amp;rdquo; the tech community&amp;rsquo;s reaction ranged from excitement to existential dread.</description>
     </item>
   </channel>
 </rss>

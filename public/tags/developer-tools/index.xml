@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developer Tools on Christopher Lee</title>
+    <link>http://localhost:1313/tags/developer-tools/</link>
+    <description>Recent content in Developer Tools on Christopher Lee</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 14 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/developer-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Devin and the Reality of AI &#34;Software Engineers&#34;: A Technical Analysis</title>
+      <link>http://localhost:1313/blog/devin/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/devin/</guid>
+      <description>When Cognition Labs announced Devin as the &amp;ldquo;world&amp;rsquo;s first AI software engineer,&amp;rdquo; the tech community&amp;rsquo;s reaction ranged from excitement to existential dread.</description>
+    </item>
+  </channel>
+</rss>

@@ -19,12 +19,12 @@
     
   
     
+  
+    
       <url>
             <loc>http://localhost:1313/blog/cloud/</loc>
             <lastmod>2024-03-20T00:00:00+00:00</lastmod>
           </url>
-    
-  
     
   
     
@@ -60,8 +60,6 @@
     
   
     
-  
-    
       <url>
             <loc>http://localhost:1313/blog/hugo/</loc>
             <lastmod>2024-03-13T00:00:00+00:00</lastmod>
@@ -73,17 +71,8 @@
     
   
     
-  
-    
       <url>
             <loc>http://localhost:1313/blog/git/</loc>
-            <lastmod>2024-03-10T00:00:00+00:00</lastmod>
-          </url>
-    
-  
-    
-      <url>
-            <loc>http://localhost:1313/blog/encryption/</loc>
             <lastmod>2024-03-10T00:00:00+00:00</lastmod>
           </url>
     

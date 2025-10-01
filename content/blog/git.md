@@ -1,55 +1,216 @@
 ---
-title: 'Learning Git'
-date: 2024-03-10
+title: 'Git Fundamentals'
+date: 2024-11-10
 draft: false
-description: 'Git blog'
+description: 'Real lessons from learning Git the hard way'
 slug: 'git'
-tags: ['Git']
+tags: ['Git', 'Version Control', 'Developer Tools']
 ---
 
-## Introduction
+Let's be honest about Git: everyone pretends to understand it, but most of us are secretly terrified we'll accidentally delete the entire codebase with one wrong command. If you've ever stared at a merge conflict like it's written in ancient hieroglyphics, this post is for you.
 
-The vast landscape of software development is governed by one tool: Git. It's the backbone of collaboration, enabling developers to work seamlessly together, track changes efficiently, and maintain a coherent history of their projects. However, like many budding developers, my journey into understanding Git was initially daunting and filled with uncertainty. Yet, as I delved deeper into its intricacies, I discovered its immense value and transformed my workflow.
+## Why Git Feels Like Dark Magic
 
-## Understanding the Basics
+When I first encountered Git, the tutorials made it sound simple: "Just commit your changes and push!" What they didn't mention was the existential crisis I'd face when encountering my first detached HEAD state, or the panic of realizing I'd been committing to the wrong branch for three days.
 
-My foray into Git began with a simple desire—to streamline my coding projects and collaborate more effectively with my peers. As a novice developer, the prospect of learning a new tool seemed daunting. Git's command-line interface appeared cryptic, and the plethora of commands felt overwhelming. However, armed with determination and a willingness to learn, I embarked on my journey.
+The truth is, Git is conceptually simple but practically complex. It's like chess—you can learn how the pieces move in minutes, but mastering the game takes years.
 
-My initial steps involved grasping the fundamental concepts of Git. Understanding terms like repositories, commits, branches, and merges laid the groundwork for my comprehension. I devoured online tutorials, perused documentation, and sought guidance from experienced developers. Slowly but surely, the fog began to lift, and I started to appreciate Git's elegance.
+## The Mental Model That Finally Clicked
 
-## Exploring Branches
+After countless botched merges and accidental force pushes, here's the mental model that finally made Git make sense:
 
-One of the pivotal moments in my Git journey was comprehending the concept of branches. Branching allowed me to diverge from the main codebase, experiment with new features, and isolate changes without disrupting the main project. It was akin to creating alternate realities where I could test ideas freely, knowing that I could always revert if needed. This newfound freedom unleashed my creativity and empowered me to explore different avenues in my projects.
+**Git is a time machine for your code.** Every commit is a snapshot in time. Branches are alternate timelines. Merging is combining timelines. Rebasing is rewriting history (with all the dangers that implies).
 
-![Branching in Git](https://www.example.com/branching_diagram.png)
-_Visual representation of branching in Git_
+Once I started thinking this way, commands started making intuitive sense:
 
-## Advanced Functionalitie
+- `git checkout` = travel to a different point in time
+- `git reset --hard` = forcefully travel back in time (destroying everything that came after)
+- `git stash` = put current changes in a pocket dimension for safekeeping
 
-As I grew more proficient, I ventured into more advanced Git functionalities. Rebasing, squashing commits, and resolving merge conflicts were once intimidating concepts that now became integral parts of my workflow. Git became not just a version control system but a powerful toolkit that enabled me to manage my projects with finesse.
+## The Commands You Actually Need
+
+Forget the 150+ Git commands. Here's what you'll use 95% of the time:
+
+### The Daily Workflow
 
 ```bash
-# Example of rebasing in Git
-git checkout feature-branch
-git rebase main
+git status              # What's going on?
+git add .              # Stage everything (or be specific)
+git commit -m "message" # Save snapshot
+git pull               # Get latest changes
+git push               # Share your changes
 ```
 
-## Overcoming Challenges
+### The "Oh No" Commands
 
-However, like any journey of learning, I encountered roadblocks along the way. Git's unforgiving nature meant that a single misstep could wreak havoc on my project. Accidentally deleting files, botching merges, or losing track of changes were all too familiar pitfalls. Yet, with each mistake, I gleaned valuable lessons and honed my skills further.
+```bash
+git diff                    # What did I change?
+git log --oneline -10      # What happened recently?
+git checkout -- filename   # Undo changes to specific file
+git reset HEAD~1           # Undo last commit (keep changes)
+git reset --hard HEAD~1    # Nuclear option: destroy last commit
+```
 
-## Collaborative Workflows
+### The Collaboration Commands
 
-Moreover, Git's collaborative nature became increasingly apparent as I worked on group projects. Branches transformed into collaborative spaces where team members could contribute code, review each other's work, and seamlessly integrate changes. Pull requests became the cornerstone of our workflow, facilitating code reviews and ensuring the quality of our codebase.
+```bash
+git checkout -b feature-name  # Create new timeline
+git merge main                # Bring in changes from main
+git rebase main              # Alternative to merge (rewrites history)
+git cherry-pick <commit-id>  # Steal one commit from another branch
+```
 
-_Visual representation of a collaborative Git workflow_
+## Branches: Your Safety Net
 
-## Git in the Industry
+Here's what nobody told me about branches: they're free, disposable, and your best friend. Create branches liberally:
 
-Perhaps the most profound realization during my Git journey was its ubiquity within the software development industry. Virtually every tech company, from startups to tech giants, relies on Git for version control. Mastery of Git not only enhanced my individual capabilities but also opened doors to collaboration and employment opportunities within the industry.
+```bash
+git checkout -b experiment/crazy-idea
+# Go wild, break things
+# If it works: merge it
+# If it doesn't: delete it and pretend it never happened
+```
 
-## Conclusion
+The branching epiphany came when I realized branches aren't precious. They're scratch paper. Make a mess, try things out, throw them away if they don't work.
 
-In hindsight, my journey into learning Git was not just about mastering a tool but embracing a mindset—the mindset of continuous improvement, collaboration, and adaptability. Git became more than just lines of code; it symbolized resilience in the face of challenges and the perseverance to overcome obstacles.
+## The Merge Conflict Survival Guide
 
-As I continue to traverse the ever-evolving landscape of software development, Git remains an indispensable companion—a trusted ally that empowers me to tackle complex projects with confidence. My journey with Git may have had humble beginnings, but its impact on my development journey is profound and enduring.
+Merge conflicts aren't errors—they're Git asking for your help. Here's the systematic approach that turned panic into process:
+
+1. **Don't panic** (easier said than done)
+2. **Understand what happened**: Two people changed the same part of the same file
+3. **Open the conflicted file** and look for:
+
+```
+<<<<<<< HEAD
+Your version
+=======
+Their version
+>>>>>>> branch-name
+```
+
+4. **Decide what to keep**: Sometimes it's yours, sometimes theirs, often both
+5. **Remove the markers** and save
+6. **Add and commit** the resolution
+
+Pro tip: Use a merge tool like VS Code's built-in merger. It turns cryptic conflicts into visual choices.
+
+## Rebasing: The Sharp Knife
+
+Rebasing is Git's most powerful and dangerous feature. It literally rewrites history. Use it for:
+
+- Cleaning up messy commit history before merging
+- Keeping feature branches up-to-date with main
+- Making your commits look like you knew what you were doing all along
+
+```bash
+# Interactive rebase to clean up last 3 commits
+git rebase -i HEAD~3
+```
+
+But remember the golden rule: **Never rebase commits that exist outside your local repository**. If you've pushed it, don't rebase it (unless you really know what you're doing).
+
+## The Mistakes That Taught Me the Most
+
+### The Force Push Disaster
+
+I once force-pushed to main and wiped out a colleague's entire day of work. Lesson learned:
+
+- Never force push to shared branches
+- If you must force push, use `--force-with-lease` (it's safer)
+- Communicate with your team
+
+### The Commit Message Regret
+
+Early commits looked like:
+
+```
+"fix"
+"updates"
+"asdfasdf"
+"finally works"
+```
+
+Now I follow this format:
+
+```
+type: brief description
+
+Longer explanation if needed
+- Bullet points for multiple changes
+- Reference issue numbers (#123)
+```
+
+### The Binary File Bloat
+
+Committed a 100MB test video. Repository became sluggish forever. Lessons:
+
+- Use `.gitignore` religiously
+- Think twice before committing binaries
+- Large files belong in Git LFS or somewhere else entirely
+
+## Git in the Real World
+
+### The Pull Request Dance
+
+Real development isn't just committing to main. It's:
+
+1. Create feature branch
+2. Make changes
+3. Push branch
+4. Open pull request
+5. Address review comments
+6. Squash and merge
+
+### The Unwritten Rules
+
+- Commit early and often (you can clean up history later)
+- Write commit messages for your future confused self
+- Pull before you push (avoid unnecessary conflicts)
+- When in doubt, make a backup branch
+- `git reflog` is your safety net—it tracks everything
+
+## Advanced Techniques Worth Learning
+
+### Stashing: Your Quick Save
+
+```bash
+git stash                  # Quick save current changes
+git stash pop              # Restore and delete stash
+git stash apply            # Restore but keep stash
+git stash list             # See all stashes
+```
+
+### Bisect: Binary Search for Bugs
+
+```bash
+git bisect start
+git bisect bad                 # Current commit is broken
+git bisect good <commit-hash>  # This commit worked
+# Git checks out commits for you to test
+# Keep marking as good/bad until bug commit found
+```
+
+### Worktrees: Multiple Branches Simultaneously
+
+```bash
+git worktree add ../project-hotfix hotfix-branch
+# Now you have two folders with different branches checked out
+```
+
+## The Path to Git Confidence
+
+Git mastery isn't about memorizing commands—it's about understanding the model and knowing how to recover from mistakes. Here's the progression:
+
+1. **Fear Stage**: Copy-pasting commands, praying nothing breaks
+2. **Cautious Stage**: Understanding basic commands, still scared of rebasing
+3. **Confident Stage**: Comfortable with branches, merging, and basic recovery
+4. **Mastery Stage**: Rebasing interactively, bisecting bugs, teaching others
+
+Most developers hover between stages 2 and 3, and that's perfectly fine.
+
+## Final Thoughts
+
+Git is a powerful tool that becomes less intimidating with practice. Every developer has Git horror stories—force pushing to main, losing work, spending hours on merge conflicts. These aren't failures; they're rites of passage.
+
+The secret to Git confidence isn't avoiding mistakes—it's knowing how to recover from them. Keep a learning mindset, experiment in safe environments, and remember: someone, somewhere, has made a worse Git mistake than you're about to make.

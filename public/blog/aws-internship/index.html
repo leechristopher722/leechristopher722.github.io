@@ -1,0 +1,965 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="rgb(255,255,255)" />
+  
+  <title>Inside AWS: Lessons from My Internship &middot; Christopher Lee</title>
+    <meta name="title" content="Inside AWS: Lessons from My Internship &middot; Christopher Lee" />
+  
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.022d0ebc3b46a335eb1c7ef79b7f2de143d7cd5156d433638592ef1ce5f8554e.js"
+    integrity="sha256-Ai0OvDtGozXrHH73m38t4UPXzVFW1DNjhZLvHOX4VU4="
+  ></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.b0557927163f7b5770bfed5032014c753aaf2bb8049230d1ca6f7ee2d7704fb8.css"
+    integrity="sha256-sFV5JxY/e1dwv&#43;1QMgFMdTqvK7gEkjDRym9&#43;4tdwT7g="
+  />
+  
+    
+    
+    
+  
+  
+  
+  
+    
+    
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.d85fab7ccfc2112e9c50ae4adc7fa76fa179c95f40e02a11e18eb397acb6139e.js"
+      integrity="sha256-2F&#43;rfM/CES6cUK5K3H&#43;nb6F5yV9A4CoR4Y6zl6y2E54="
+      data-copy="Copy"
+      data-copied="Copied"
+    ></script>
+  
+  
+  <meta
+    name="description"
+    content="
+      Real insights from building production systems at Amazon Web Services
+    "
+  />
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/blog/aws-internship/" />
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/blog/aws-internship/">
+  <meta property="og:site_name" content="Christopher Lee">
+  <meta property="og:title" content="Inside AWS: Lessons from My Internship">
+  <meta property="og:description" content="Real insights from building production systems at Amazon Web Services">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-09-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-01T00:00:00+00:00">
+    <meta property="article:tag" content="AWS">
+    <meta property="article:tag" content="Internship">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="article:tag" content="Career">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Inside AWS: Lessons from My Internship">
+  <meta name="twitter:description" content="Real insights from building production systems at Amazon Web Services">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blog",
+    "name": "Inside AWS: Lessons from My Internship",
+    "headline": "Inside AWS: Lessons from My Internship",
+    "description": "Real insights from building production systems at Amazon Web Services",
+    "abstract": "Three months at Amazon Web Services taught me more about real software engineering than two years of coursework.",
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/blog\/aws-internship\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Christopher Lee"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-09-01T00:00:00\u002b00:00",
+    "datePublished": "2025-09-01T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-09-01T00:00:00\u002b00:00",
+    
+    "keywords": ["AWS","Internship","Software Engineering","Career"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1398"
+  }
+  </script>
+
+
+  
+  <meta name="author" content="Christopher Lee" />
+  
+    
+      <link href="mailto:leechristopher722@gmail.com" rel="me" />
+    
+      <link href="https://github.com/leechristopher722" rel="me" />
+    
+      <link href="https://www.linkedin.com/in/christopher-lee-0722/" rel="me" />
+    
+      <link href="https://www.instagram.com/chrislee722_/" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
+        >Skip to main content</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 print:hidden sm:py-10 dark:text-neutral">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="z-40 flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >Christopher Lee</a
+  >
+
+    </div>
+    
+      
+      <label id="menu-button" for="menu-controller" class="block sm:hidden">
+        <input type="checkbox" id="menu-controller" class="hidden" />
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="invisible fixed inset-0 z-30 m-auto h-full w-full cursor-default overflow-auto bg-neutral-100/50 opacity-0 backdrop-blur-sm transition-opacity dark:bg-neutral-900/50"
+        >
+          <ul
+            class="mx-auto flex w-full max-w-7xl list-none flex-col overflow-visible px-6 py-6 text-end sm:px-14 sm:py-10 sm:pt-10 md:px-24 lg:px-32"
+          >
+            <li class="mb-1">
+              <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400"
+                ><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span></span
+              >
+            </li>
+            
+              
+                
+                <li class="group mb-1">
+                  
+                    <a
+                      href="/about/"
+                      title=""
+                      onclick="close_menu()"
+                      
+                      ><span
+                          class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                          >About</span
+                        >
+                      </a
+                    >
+                  
+                </li>
+              
+                
+                <li class="group mb-1">
+                  
+                    <a
+                      href="/blog/"
+                      title=""
+                      onclick="close_menu()"
+                      
+                      ><span
+                          class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                          >Blog</span
+                        >
+                      </a
+                    >
+                  
+                </li>
+              
+                
+                <li class="group mb-1">
+                  
+                    <a
+                      href="/projects/"
+                      title=""
+                      onclick="close_menu()"
+                      
+                      ><span
+                          class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                          >Projects</span
+                        >
+                      </a
+                    >
+                  
+                </li>
+              
+                
+                  
+                
+                <li class="group mb-1">
+                  
+                    
+                    
+                      <button
+                        id="search-button-1"
+                        title="Search (/)"
+                      >
+                        
+                          <span
+                            class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                          ><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span
+                            class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                            ></span
+                          >
+                        
+                      </button>
+                    
+                  
+                </li>
+              
+              
+            
+          </ul>
+        </div>
+      </label>
+      
+      <ul class="hidden list-none flex-row text-end sm:flex">
+        
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              
+                <a
+                  href="/about/"
+                  title=""
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >About</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              
+                <a
+                  href="/blog/"
+                  title=""
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              
+                <a
+                  href="/projects/"
+                  title=""
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Projects</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+              
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              
+                
+                
+                  <button
+                    id="search-button-2"
+                    title="Search (/)"
+                  >
+                    
+                      <span
+                        class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                      ><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span
+                        class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                        ></span
+                      >
+                    
+                  </button>
+                
+              
+            </li>
+          
+          
+
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex grow flex-col">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 print:hidden dark:text-neutral-400">
+  
+  
+    
+  
+    
+  
+  <li class="hidden inline">
+    <a
+      class="dark:underline-neutral-600 decoration-neutral-300 hover:underline"
+      href="/"
+      >Christopher Lee</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class=" inline">
+    <a
+      class="dark:underline-neutral-600 decoration-neutral-300 hover:underline"
+      href="/blog/"
+      >Blog</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden inline">
+    <a
+      class="dark:underline-neutral-600 decoration-neutral-300 hover:underline"
+      href="/blog/aws-internship/"
+      >Inside AWS: Lessons from My Internship</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Inside AWS: Lessons from My Internship
+      </h1>
+      
+        <div class="mb-12 mt-8 text-base text-neutral-500 print:hidden dark:text-neutral-400">
+          
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-09-01 00:00:00 &#43;0000 UTC">1 September 2025</time>
+    
+
+    
+    
+  </div>
+
+  
+  
+    <div class="my-1 flex flex-wrap text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+      
+        
+      
+        
+          
+            <a
+              href="/tags/aws/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >AWS</a
+            >
+          
+            <a
+              href="/tags/internship/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Internship</a
+            >
+          
+            <a
+              href="/tags/software-engineering/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Software Engineering</a
+            >
+          
+            <a
+              href="/tags/career/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Career</a
+            >
+          
+        
+      
+    </div>
+  
+
+
+        </div>
+      
+      
+    </header>
+    <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <p>Three months at Amazon Web Services taught me more about real software engineering than two years of coursework. Not because school isn&rsquo;t valuable—it absolutely is—but because building systems that handle millions of dollars in enterprise contracts hits different than implementing data structures for homework.</p>
+<p>Here&rsquo;s what I learned during my internship on the EC2 Private Pricing team, where I built an automated workflow system to extend AWS&rsquo;s enterprise discount system from US-only to international markets.</p>
+<h2 id="the-reality-of-big-tech-engineering" class="relative group">The Reality of Big Tech Engineering </h2><h3 id="two-pizza-teams-actually-work" class="relative group">Two-Pizza Teams Actually Work </h3><p>Amazon&rsquo;s famous &ldquo;two-pizza team&rdquo; rule isn&rsquo;t just corporate folklore. My team had eight people, and that small size meant:</p>
+<ul>
+<li>Direct access to senior engineers and principal architects</li>
+<li>Ownership of end-to-end features</li>
+<li>Quick decision-making without layers of bureaucracy</li>
+<li>Everyone knew what everyone else was working on</li>
+</ul>
+<p>The flip side? No hiding. Your contributions (or lack thereof) are immediately visible. There&rsquo;s nowhere to coast.</p>
+<h3 id="the-development-rhythm" class="relative group">The Development Rhythm </h3><p><strong>Daily Standups (10 minutes, actually enforced)</strong>
+&ldquo;What I did yesterday, what I&rsquo;m doing today, any blockers.&rdquo; That&rsquo;s it. No status reports, no lengthy discussions. Blocked? We&rsquo;d handle it after standup.</p>
+<p><strong>Two-Week Sprints</strong>
+Sprint planning on Monday, retrospective and demo on Friday of week two. The predictability helped me plan my work and manage expectations—both my manager&rsquo;s and my own.</p>
+<p><strong>Code Reviews: The Real Education</strong>
+Every single line of production code needed review from a senior engineer. Initially intimidating, it became the most valuable part of my internship. Comments like:</p>
+<ul>
+<li>&ldquo;This works, but have you considered the latency impact at scale?&rdquo;</li>
+<li>&ldquo;What happens when DynamoDB throttles this request?&rdquo;</li>
+<li>&ldquo;Let&rsquo;s add metrics here—we&rsquo;ll want to monitor this in production&rdquo;</li>
+</ul>
+<p>These weren&rsquo;t nitpicks. They were lessons in thinking at AWS scale.</p>
+<h2 id="designing-for-the-real-world" class="relative group">Designing for the Real World </h2><h3 id="my-first-design-review-disaster" class="relative group">My First Design Review Disaster </h3><p>Week 2: I presented my initial design—a straightforward solution for handling Indian marketplace pricing. I&rsquo;d spent days on it, feeling confident.</p>
+<p>The feedback was brutal but constructive:</p>
+<ul>
+<li>&ldquo;What about when we expand to Brazil?&rdquo;</li>
+<li>&ldquo;How does this handle currency fluctuations?&rdquo;</li>
+<li>&ldquo;What&rsquo;s the rollback strategy if this fails?&rdquo;</li>
+<li>&ldquo;Where are the metrics and alarms?&rdquo;</li>
+</ul>
+<p>I hadn&rsquo;t thought about any of that. School projects succeed if they work. Production systems need to work, scale, fail gracefully, recover automatically, and integrate with existing infrastructure.</p>
+<h3 id="the-pivot-that-changed-everything" class="relative group">The Pivot That Changed Everything </h3><p>Week 4: Business requirements changed. Instead of just India, we needed to support any future international marketplace. My specific solution became useless overnight.</p>
+<p>This is where my manager taught me a crucial lesson: &ldquo;Design for change. The only constant at AWS is that requirements will evolve.&rdquo;</p>
+<h3 id="the-second-design-building-for-tomorrow" class="relative group">The Second Design: Building for Tomorrow </h3><p>Armed with feedback and a broader scope, I took a different approach:</p>
+<p><strong>Before jumping to solutions, I asked:</strong></p>
+<ul>
+<li>What problem are we actually solving?</li>
+<li>Who are our customers (internal and external)?</li>
+<li>What does success look like in metrics?</li>
+<li>What are the non-negotiables (latency, availability, security)?</li>
+</ul>
+<p><strong>The new design principles:</strong></p>
+<ul>
+<li>Configuration over code (new marketplaces via config, not code changes)</li>
+<li>Modular components (each piece does one thing well)</li>
+<li>Comprehensive monitoring (know about issues before customers do)</li>
+<li>Gradual rollout capability (test with small traffic percentages)</li>
+</ul>
+<p><strong>The stakeholder strategy:</strong>
+Instead of waiting for the formal review, I scheduled informal chats with:</p>
+<ul>
+<li>The principal engineer (architecture patterns)</li>
+<li>The operations team (deployment and monitoring)</li>
+<li>The security team (compliance requirements)</li>
+<li>Sister teams (integration points)</li>
+</ul>
+<p>By the time the formal review came, I&rsquo;d already addressed 90% of potential concerns. The review became a refinement session, not a redesign session.</p>
+<h2 id="the-code-quality-awakening" class="relative group">The Code Quality Awakening </h2><h3 id="school-code-vs-production-code" class="relative group">School Code vs Production Code </h3><p><strong>School:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calculate_discount</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">discount_rate</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">price</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">discount_rate</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Production:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calculate_discount</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">price</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">discount_rate</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">currency</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">marketplace</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PricingResult</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Calculate customer-specific discount for a given marketplace.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Args:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        price: Base price in specified currency
+</span></span></span><span class="line"><span class="cl"><span class="s2">        discount_rate: Decimal between 0 and 1
+</span></span></span><span class="line"><span class="cl"><span class="s2">        currency: ISO 4217 currency code
+</span></span></span><span class="line"><span class="cl"><span class="s2">        customer_id: Unique customer identifier
+</span></span></span><span class="line"><span class="cl"><span class="s2">        marketplace: Target marketplace code
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Returns:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        PricingResult containing final price and audit metadata
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Raises:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        InvalidPriceError: If price is negative or exceeds limits
+</span></span></span><span class="line"><span class="cl"><span class="s2">        InvalidDiscountError: If discount rate outside valid range
+</span></span></span><span class="line"><span class="cl"><span class="s2">        MarketplaceNotSupportedError: If marketplace not configured
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Validate inputs</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_validate_price</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">currency</span><span class="p">,</span> <span class="n">marketplace</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_validate_discount_rate</span><span class="p">(</span><span class="n">discount_rate</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_validate_marketplace_support</span><span class="p">(</span><span class="n">marketplace</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Log for audit trail</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Calculating discount for customer=</span><span class="si">{</span><span class="n">customer_id</span><span class="si">}</span><span class="s2">, &#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="sa">f</span><span class="s2">&#34;marketplace=</span><span class="si">{</span><span class="n">marketplace</span><span class="si">}</span><span class="s2">, base_price=</span><span class="si">{</span><span class="n">price</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Calculate with proper decimal precision</span>
+</span></span><span class="line"><span class="cl">    <span class="n">final_price</span> <span class="o">=</span> <span class="n">price</span> <span class="o">*</span> <span class="p">(</span><span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">discount_rate</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Emit metrics</span>
+</span></span><span class="line"><span class="cl">    <span class="n">metrics</span><span class="o">.</span><span class="n">record_pricing_calculation</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">marketplace</span><span class="o">=</span><span class="n">marketplace</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">customer_segment</span><span class="o">=</span><span class="n">_get_customer_segment</span><span class="p">(</span><span class="n">customer_id</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">discount_applied</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">discount_rate</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">PricingResult</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">final_price</span><span class="o">=</span><span class="n">final_price</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">currency</span><span class="o">=</span><span class="n">currency</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">calculation_timestamp</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">        <span class="n">audit_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span></code></pre></div><p>The difference? Production code assumes everything can and will go wrong.</p>
+<h3 id="testing-the-unsung-hero" class="relative group">Testing: The Unsung Hero </h3><p>School projects: &ldquo;It works on my machine!&rdquo;
+AWS: &ldquo;Here&rsquo;s proof it works everywhere, always.&rdquo;</p>
+<p>I wrote:</p>
+<ul>
+<li>Unit tests (every function, every edge case)</li>
+<li>Integration tests (components working together)</li>
+<li>Load tests (what happens at 1000 requests/second?)</li>
+<li>Failure tests (what if DynamoDB is down?)</li>
+<li>Rollback tests (can we revert safely?)</li>
+</ul>
+<p>The test code was 3x longer than the actual code. That&rsquo;s normal.</p>
+<h2 id="time-management-in-the-real-world" class="relative group">Time Management in the Real World </h2><h3 id="the-milestone-mindset" class="relative group">The Milestone Mindset </h3><p>My manager introduced me to working backwards from deadlines:</p>
+<ul>
+<li>Week 12: Code complete</li>
+<li>Week 11: Final testing and documentation</li>
+<li>Week 10: Code review and revisions</li>
+<li>Week 8-9: Implementation</li>
+<li>Week 6-7: Prototype and early feedback</li>
+<li>Week 3-5: Design and review</li>
+<li>Week 1-2: Onboarding and understanding context</li>
+</ul>
+<p>This wasn&rsquo;t a suggestion—it was survival. Missing internship deadlines means no return offer.</p>
+<h3 id="managing-blockers" class="relative group">Managing Blockers </h3><p><strong>The 30-Minute Rule</strong>: Stuck for 30 minutes? Reach out. Pride has no place when you&rsquo;re on a deadline.</p>
+<p>My escalation path:</p>
+<ol>
+<li>Check documentation and code</li>
+<li>Ask team chat</li>
+<li>Direct message a teammate</li>
+<li>Schedule time with my mentor</li>
+<li>Escalate to manager</li>
+</ol>
+<p>I initially felt bad about asking questions. My mentor&rsquo;s perspective: &ldquo;You&rsquo;re an intern. Not asking questions would be weird.&rdquo;</p>
+<h2 id="the-ai-revolution-i-didnt-expect" class="relative group">The AI Revolution I Didn&rsquo;t Expect </h2><p>Amazon&rsquo;s internal AI tools transformed how I worked. Not ChatGPT—something more powerful because it understood Amazon&rsquo;s codebase, patterns, and standards.</p>
+<p><strong>Understanding existing code:</strong>
+&ldquo;Explain what this Lambda function does and how it interacts with DynamoDB&rdquo;
+<em>Gets detailed explanation with sequence diagrams</em></p>
+<p><strong>Writing new code:</strong>
+&ldquo;Generate a Lambda handler that processes SNS messages for price updates, following team conventions&rdquo;
+<em>Gets production-ready code with error handling, logging, and metrics</em></p>
+<p><strong>Debugging:</strong>
+&ldquo;This DynamoDB query is timing out in production but works locally. What could cause this?&rdquo;
+<em>Gets list of likely causes ranked by probability</em></p>
+<p>The productivity boost was insane. Tasks that would&rsquo;ve taken hours took minutes. But here&rsquo;s the key: AI accelerated my learning, it didn&rsquo;t replace it. I still needed to understand why the AI&rsquo;s suggestions worked and when they didn&rsquo;t apply.</p>
+<h2 id="the-soft-skills-nobody-talks-about" class="relative group">The Soft Skills Nobody Talks About </h2><h3 id="communication-is-code" class="relative group">Communication Is Code </h3><p>Writing clear Slack messages, emails, and documentation was as important as writing code. The template that worked:</p>
+<p><strong>Context</strong>: What are you working on?
+<strong>Problem</strong>: What specific issue are you facing?
+<strong>What you&rsquo;ve tried</strong>: Shows you&rsquo;ve put in effort
+<strong>Specific ask</strong>: What exactly do you need?</p>
+<h3 id="managing-up" class="relative group">Managing Up </h3><p>Weekly 1:1s with my manager weren&rsquo;t status updates—those were in written reports. Instead:</p>
+<ul>
+<li>Strategic questions about approach</li>
+<li>Career development discussions</li>
+<li>Feedback on what I could improve</li>
+<li>Understanding team/company priorities</li>
+</ul>
+<h3 id="the-feedback-loop" class="relative group">The Feedback Loop </h3><p>Mid-internship review revealed I was too heads-down:
+&ldquo;Your code is solid, but we don&rsquo;t see you engaging with the broader team.&rdquo;</p>
+<p>The fix: I started attending optional architecture reviews, asking questions in team meetings, and sharing what I learned in team knowledge-sharing sessions.</p>
+<h2 id="the-seattle-experience" class="relative group">The Seattle Experience </h2><p>Beyond work, Seattle was incredible. The AWS office had everything—free food, gym, game rooms—but what mattered was the people. My team grabbed lunch together daily, debating everything from system design to the best coffee shops.</p>
+<p>Weekends meant exploring Pike Place Market, hiking Rattlesnake Ledge, and yes, visiting the original Starbucks (overrated, but you have to do it).</p>
+<h2 id="the-lasting-impact" class="relative group">The Lasting Impact </h2><p>This internship changed my perspective on software engineering:</p>
+<ol>
+<li><strong>Scale matters</strong>: A solution that works for 10 users might collapse at 10,000</li>
+<li><strong>Code is communication</strong>: Others will read, modify, and depend on your code</li>
+<li><strong>Design for change</strong>: Requirements will evolve, plan for it</li>
+<li><strong>Metrics over feelings</strong>: &ldquo;I think it&rsquo;s fast&rdquo; vs &ldquo;P99 latency is 47ms&rdquo;</li>
+<li><strong>Ownership mindset</strong>: You own your code in production, not just until merge</li>
+</ol>
+<h2 id="final-thoughts" class="relative group">Final Thoughts </h2><p>The internship wasn&rsquo;t just about learning AWS services or writing production code. It was about understanding how world-class engineering organizations operate, how to think systematically about problems, and how to build solutions that scale.</p>
+<p>Most importantly, it confirmed what I suspected: I love this work. The complexity, the scale, the impact—building systems that power the internet is incredibly fulfilling.</p>
+<p>To future interns: embrace the discomfort of not knowing things, ask questions shamelessly, and remember that everyone—even principal engineers—was once where you are.</p>
+
+      </div>
+    </section>
+    <footer class="max-w-prose pt-8 print:hidden">
+      
+  <div class="flex">
+    
+    
+    
+      
+      
+        
+        
+
+
+
+
+
+
+
+
+  
+    <picture
+      class="!mb-0 !mt-0 me-4 w-24 h-auto rounded-full"
+      
+    >
+      
+      
+      
+      
+      <img
+        width="1024"
+        height="1100"
+        class="!mb-0 !mt-0 me-4 w-24 h-auto rounded-full"
+        alt="Christopher Lee"
+        loading="lazy" decoding="async"
+        
+          src="/img/avatartion_hu0e2a4256fb5bcd20e8dd2794a6333857_1126479_660x0_resize_q75_box.jpg"
+          srcset="/img/avatartion_hu0e2a4256fb5bcd20e8dd2794a6333857_1126479_330x0_resize_q75_box.jpg 330w,/img/avatartion_hu0e2a4256fb5bcd20e8dd2794a6333857_1126479_660x0_resize_q75_box.jpg 660w
+          
+            ,/img/avatartion.jpg 1024w
+          
+          
+            ,/img/avatartion.jpg 1024w
+          "
+          sizes="100vw"
+        
+      />
+    </picture>
+  
+
+
+      
+    
+    <div class="place-self-center">
+      
+        <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+          Author
+        </div>
+        <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+          Christopher Lee
+        </div>
+      
+      
+        <div class="text-sm text-neutral-700 dark:text-neutral-400">Software Engineer building enterprise solutions at scale</div>
+      
+      <div class="text-2xl sm:text-lg">
+<div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+	 
+	<a
+		class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+		style="will-change: transform"
+		href="mailto:leechristopher722@gmail.com"
+		target="_blank"
+		aria-label="Email"
+		rel="me noopener noreferrer"
+		><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+</span></a
+	>
+	  
+	<a
+		class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+		style="will-change: transform"
+		href="https://github.com/leechristopher722"
+		target="_blank"
+		aria-label="Github"
+		rel="me noopener noreferrer"
+		><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></a
+	>
+	  
+	<a
+		class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+		style="will-change: transform"
+		href="https://www.linkedin.com/in/christopher-lee-0722/"
+		target="_blank"
+		aria-label="Linkedin"
+		rel="me noopener noreferrer"
+		><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></a
+	>
+	  
+	<a
+		class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+		style="will-change: transform"
+		href="https://www.instagram.com/chrislee722_/"
+		target="_blank"
+		aria-label="Instagram"
+		rel="me noopener noreferrer"
+		><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+</span></a
+	>
+	 
+</div>
+
+</div>
+    </div>
+  </div>
+
+
+      
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="group flex" href="/blog/cloud/">
+              <span
+                class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&larr;</span
+                ><span class="ltr:hidden rtl:inline">&rarr;</span></span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Cloud Computing Fundamentals</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-04-20 00:00:00 &#43;0000 UTC">20 April 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+          <div class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12">
+            <a
+              href="#the-top"
+              class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+              aria-label="Scroll to top"
+              title="Scroll to top"
+            >
+              &uarr;
+            </a>
+          </div>
+        
+      </main><footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            &copy;
+            2025
+            Christopher Lee
+        </p>
+      
+      
+      
+    </div>
+    <div class="flex flex-row items-center">
+      
+      
+      
+      
+        <div
+          class="me-14 cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        >
+          <button id="appearance-switcher-0" type="button" aria-label="appearance switcher">
+            <div
+              class="flex h-12 w-12 items-center justify-center dark:hidden"
+              title="Switch to dark appearance"
+            >
+              <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+            </div>
+            <div
+              class="hidden h-12 w-12 items-center justify-center dark:flex"
+              title="Switch to light appearance"
+            >
+              <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+            </div>
+          </button>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm sm:p-6 md:p-[10vh] lg:p-[12vh] dark:bg-neutral-900/50"
+  data-url="http://localhost:1313/"
+>
+  <div
+    id="search-modal"
+    class="top-20 mx-auto flex min-h-0 w-full max-w-3xl flex-col rounded-md border border-neutral-200 bg-neutral shadow-lg dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex flex-none items-center justify-between px-2">
+      <form class="flex min-w-0 flex-auto items-center">
+        <div class="flex h-8 w-8 items-center justify-center text-neutral-400">
+          <span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="mx-1 flex h-12 flex-auto appearance-none bg-transparent focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex h-8 w-8 items-center justify-center text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto overflow-auto px-2">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>

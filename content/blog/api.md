@@ -1,257 +1,339 @@
 ---
-title: 'RESTful API'
-date: 2024-03-20
+title: 'RESTful APIs'
+date: 2025-01-20
 draft: false
-description: 'Backend Web Dev'
+description: 'A practical guide to building secure, scalable RESTful APIs with Node.js and MongoDB'
 slug: 'api'
-tags: ['Backend Development']
+tags: ['Backend Development', 'Node.js', 'REST API', 'MongoDB', 'Security']
 ---
 
-Write about restful api here.
-
-API:
-Application Programming Interface. Piece of software that can be used by another piece of software, in order to allow applications to talk to each other.
+Let's talk about building RESTful APIs that don't fall apart in production. After spending months building and rebuilding backend services, I've learned that creating an API is easy—creating one that's secure, maintainable, and performs well under pressure is where the real challenge lies.
 
-REST:
+## What Even Is a RESTful API?
 
-1. Separate API into logical resources
-   - users
-   - projects
-   - bugs
-   - teams
-2. Expose structured, resource-based urls
-   - \*//www.myproject.com/addNewProject (not good)
-   - \*//www.myproject.com/projects/8(Project ID)
-     - (use HTTP Method such as 'get')
-3. Use HTTP methods
-   - Create: Post
-   - Read: Get
-   - Update: Put / Patch (for patch, only need part of object)
-   - Delete: Delete
-4. Send data as JSON
-5. Be stateless
-   - All state is handled on the client
-   - Server should not have to remember previous requests
+Before diving into the implementation details, let's demystify this term. An API (Application Programming Interface) is essentially a contract between different pieces of software, allowing them to communicate. REST (Representational State Transfer) is just a set of conventions that makes these APIs predictable and easy to work with.
 
-Only use app.js for express related configs & more
-For env variables, deal with it in server.js
+Think of it like ordering at a restaurant. You (the client) look at a menu (API documentation), place an order using specific terms the waiter understands (HTTP methods), and receive your food in a predictable format (JSON response). The kitchen doesn't need to know who you are between visits (stateless), and the menu items are organized logically (resources).
 
-Environment Variables
+## The REST Principles That Actually Matter
 
-- Dev Environment
-  - NODE_ENV = development
-- Prod Environment
-  - NODE_ENV = production
+After building several APIs, I've found these five principles make the biggest difference:
 
-MongoDB
+### 1. Resources Are King
 
-- NoSQL database
-- Collections (tables)
-  - Documents (rows)
-- Scalable & Flexible
+Instead of thinking about actions, think about resources. Don't create endpoints like:
 
-Mongoose
+```
+POST /createNewUser
+GET /getAllProjects
+POST /updateUserEmail
+```
 
-- Object Data Modeling(ODM) library for MongoDB and Node.js, higher level abstraction
-- rqpid and simple development of mongoDB database interactions
-  - schemas, easy data validations, simple query api, middleware etc.
-    - schema: where we model data, describing structure, default vals, and validation
-- Mongoose model: wrapper for the schema, pproviding an interface to the database for CRUD operations
+Instead, organize around resources:
 
-## MVC
+```
+POST   /users          (create user)
+GET    /projects       (get all projects)
+PATCH  /users/123      (update user)
+```
 
-- Separate Business Logic & Application Logic
+This mental shift from "what action am I performing" to "what resource am I manipulating" makes your API intuitive.
 
-  - Application Logic (Controller)
-    - Only concerned with application's implementation
-    - managing req and res
-    - more of technical aspects
-    - bridge between model and view
-  - Business Logic (Model)
-    - Code tath actualy solves the business problem
-    - Directly related to business rules
-    - EX
-      1. Creating new tours in database
-      2. Check if user pw is correct
-      3. Validating user input data
-      4. Ensuring only users who bought a tour can review it
-  - Fat Models & Thin Controllers:
-    offload as much logic as possible onto the model, and keep controllers as simple as possible
+### 2. HTTP Methods Have Meaning
 
-- Model
-  - Applications data, Business logic
-- Controller
-  - Handle application requests, interact with models, send back responses to client
-- View
-  - GUI, server-side rendered wbesites
+Each HTTP method has a specific purpose:
 
-Alias
+- **GET**: Reading data (never changes anything)
+- **POST**: Creating new resources
+- **PUT**: Replacing entire resources
+- **PATCH**: Updating parts of resources
+- **DELETE**: Removing resources
 
-- Creating middleware for popular routers/requests
+Here's a mistake I made early on: using POST for everything because "it works." Sure, it works, but when another developer (or future you) tries to understand the API, they'll curse your name.
 
-Aggregation Pipeline
+### 3. Statelessness Isn't Optional
 
-- For grouping, sorting, filtering data to get statistics that are useful for ex business needs
+Every request must contain all information needed to understand it. The server shouldn't remember previous requests. This sounds simple until you're tempted to store user session data on the server "just this once." Don't. Use JWTs or similar tokens to maintain state on the client side.
 
-Mongoose Middleware:
+## The MVC Pattern: Keeping Your Sanity
 
-- Document Middleware: before or after saving documents
-- Query Middleware:
-- Aggregation Middleware:
-- Model Middleware
+When I first started, my route files were a disaster—database queries mixed with business logic mixed with response formatting. Enter the MVC pattern:
 
-## Data Sanitization & Validation
+```javascript
+// Model (models/userModel.js)
+// Handles data and business logic
+const User = {
+	async create(userData) {
+		// Validation logic
+		if (!userData.email) throw new Error('Email required');
+		// Database interaction
+		return await db.users.insert(userData);
+	},
+};
 
-- Setting models for each data types
+// Controller (controllers/userController.js)
+// Handles requests and responses
+const createUser = async (req, res) => {
+	try {
+		const user = await User.create(req.body);
+		res.status(201).json({ status: 'success', data: user });
+	} catch (error) {
+		res.status(400).json({ status: 'error', message: error.message });
+	}
+};
 
-## Errors in Express
+// Routes (routes/userRoutes.js)
+// Defines endpoints
+router.post('/users', createUser);
+```
 
-1. Operational error
+**Fat models, thin controllers** became my mantra. Push business logic into models, keep controllers focused on handling HTTP concerns.
 
-- Problems that we can predict will happen at some point
-- Invalid user input, failed to connect to server, request timeout, invalid path accessed, etc.
+## MongoDB & Mongoose: The Dynamic Duo
 
--> Create a global express handling middleware so that all operational errors end up there.
+Coming from SQL, MongoDB felt like freedom—no rigid schemas, nested documents, easy scaling. But with great power comes great responsibility. Here's what I learned:
 
-2. Programming error
+### Schema Design Matters (Even in NoSQL)
 
-- Bugs in code
+Just because MongoDB is schemaless doesn't mean your data should be. Mongoose schemas saved me from myself:
 
-## User Authentication & Authorization
+```javascript
+const projectSchema = new mongoose.Schema({
+	name: {
+		type: String,
+		required: [true, 'Project must have a name'],
+		trim: true,
+		maxlength: [100, 'Name too long'],
+	},
+	status: {
+		type: String,
+		enum: ['active', 'completed', 'archived'],
+		default: 'active',
+	},
+	team: [
+		{
+			type: mongoose.Schema.ObjectId,
+			ref: 'User',
+		},
+	],
+});
+```
 
-- bcrypt for password hashing => Argon2 is the newest algorithm among these and is currently considered to be the strongest password hashing algorithm available. It is designed to be memory-hard, meaning that it requires a lot of memory to compute. This makes it difficult for attackers to use specialized hardware like GPUs and ASICs to crack passwords. Argon2 has several parameters that need to be kept in mind when using it, such as the amount of memory to use and the number of iterations to perform.
+### The Reference vs Embed Dilemma
 
-Bcrypt is an older algorithm but is still widely used and considered to be secure. It is designed to be computationally expensive, meaning that it requires a lot of processing power to compute. Bcrypt has a cost parameter that determines the number of iterations to perform, and it also has a work factor that determines the amount of memory to use.
+This drove me crazy initially. When should you embed documents vs reference them?
 
-Scrypt is similar to bcrypt in that it is also designed to be computationally expensive. However, it is also designed to be memory-hard, like Argon2. Scrypt has several parameters that need to be kept in mind, such as the amount of memory to use and the number of iterations to perform.
+**Embed when:**
 
-PBKDF2 is a key derivation function that is designed to be computationally expensive. It is often used in conjunction with other algorithms, such as SHA-256 or SHA-512, to create a stronger password hashing function. PBKDF2 has a number of parameters, such as the number of iterations to perform and the length of the derived key.
+- Data is accessed together (user profile + preferences)
+- One-to-few relationships (blog post + comments)
+- Data won't grow unbounded
 
-When choosing which algorithm to use, it's important to consider the specific requirements of your use case. Factors such as the number of users, the computing resources available, and the security requirements should all be taken into account. In general, newer algorithms like Argon2 are considered to be stronger than older ones like bcrypt and PBKDF2, but they may require more memory or processing power to compute. It's also important to keep in mind that password hashing is just one aspect of password security, and other measures like password policies and multi-factor authentication should also be used to improve security.
+**Reference when:**
 
-- JSON WEB TOKEN WRITE HOW IT WORKS
+- Data needs independent queries (users in a project)
+- Many-to-many relationships
+- Large documents that change frequently
 
-- User AUTH IS SERIOUS AND IMPORTANT: DO IT RIGHT
+I learned this the hard way when I embedded all project tickets inside project documents. Worked great until projects had thousands of tickets and every query returned megabytes of data.
 
-- Sent email for resetting password
+## Security: Where Things Get Serious
 
-## Security Practices
+Security isn't optional, and "I'll add it later" is a dangerous game. Here's my security checklist that's saved me multiple times:
 
-1. Copmromised Database
+### Password Security: Beyond Bcrypt
 
-- Encrypt passwords with salt and hash (argon2)
-- Encrypt password reset tokens (sha256)
+While everyone talks about bcrypt, I switched to Argon2 after diving into the research. It's memory-hard, making GPU attacks impractical:
 
-2. Brute force attacks
+```javascript
+const argon2 = require('argon2');
 
-- Make login requests be slow (argon2)
-- Implement rate limiting (express-rate-limit)
-- Implement maximum login attempts (not implemented)
+// Hashing
+const hash = await argon2.hash(password, {
+	type: argon2.argon2id,
+	memoryCost: 2 ** 16,
+	timeCost: 3,
+	parallelism: 1,
+});
 
-3. Cross-site scripting(XSS) attacks
+// Verifying
+const valid = await argon2.verify(hash, password);
+```
 
-- Store JWT in HTTP only cookies
-- Sanitize user input data
-- Set special HTTP headers (helmet package)
+### JWT Implementation That Actually Works
 
-4. Denial-of-Service (DOS) attack
+JWTs are powerful but easy to mess up. Store them in httpOnly cookies, not localStorage:
 
-- Implement rate limiting (express-rate-limit)
-- Limit body payload (in body-parser)
-- Avoid evil regular expressions
+```javascript
+const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+	expiresIn: '7d',
+});
 
-5. NoSQL Query Injection
+res.cookie('jwt', token, {
+	httpOnly: true,
+	secure: process.env.NODE_ENV === 'production',
+	sameSite: 'strict',
+	maxAge: 7 * 24 * 60 * 60 * 1000,
+});
+```
 
-- Use mongoose for MongoDB (schemaTypes)
-- Sanitize user input data
+### The Security Measures That Saved Me
 
-6. Other practices
+1. **Rate Limiting**: Stopped a DDoS attempt cold
 
-- Always use HTTPS
-- Create random password reset token with expiry dates
-- Deny access to JWT after password change
-- Don't commit sensitive config data to Git
-- Don't send error details to clients
-- Prevent Cross-Site Request Forgery (csurf package)
-- Require re-authentication before a high-value action
-- Implement a blacklist of untrusted JWT
-- Confirm user email address after first creating account
-- Keep user logged in with refresh tokens
-- Implement two-factor authentication
-- Prevent parameter pollution causing Uncaught Exceptions
+```javascript
+const limiter = rateLimit({
+	max: 100,
+	windowMs: 15 * 60 * 1000,
+	message: 'Too many requests',
+});
+app.use('/api', limiter);
+```
 
-## Data Modeling
+2. **Input Sanitization**: Prevented NoSQL injection
 
-1. Different types of relationships between data
+```javascript
+const mongoSanitize = require('express-mongo-sanitize');
+app.use(mongoSanitize());
+```
 
-   - 1:1
-   - 1:Many
-     - 1:Few
-     - 1:Many
-     - 1:Ton
-   - Many:Many
+3. **Security Headers**: Basic but effective
 
-2. Referencing/normalization vs Embedding/denormalization
+```javascript
+const helmet = require('helmet');
+app.use(helmet());
+```
 
-   - Referenced
-     - Pro: Easier to query each document on its own
-     - Con: need 2 queries to get data from referenced document
-   - Embedded
-     - Pro: can get all the information in one query
-     - Con: impossible to query embedded document on its own
+## Performance Optimizations That Matter
 
-3. Embedding or referencing decisions
+### Indexing: The Low-Hanging Fruit
 
-   - Relationship type
-   - Data access patterns
-   - Data closeness
+Adding indexes to frequently queried fields improved response times by 10x:
 
-4. Different types of referencing
+```javascript
+projectSchema.index({ status: 1, createdAt: -1 });
+projectSchema.index({ 'team.userId': 1 });
+```
 
-- Child referencing
-- Parent referencing (Best One)
-- Two-way referencing
+But remember: indexes use memory and slow down writes. Profile your queries first:
 
-FACTORY FUNCTION
+```javascript
+const explanation = await Project.find({ status: 'active' }).explain(
+	'executionStats'
+);
+console.log(explanation.executionStats);
+```
 
-- Works bc of JAVASCRIPT CLOSURES: Inner function gets access to vars of outer functions even after it is returned
+### The Aggregation Pipeline Magic
 
-USE INDEXES TO IMPROVE DB READ PERFORMANCE: Consider read-write pattern, compare query of using exact field with cost of using index
+Instead of fetching all documents and processing in Node.js, use MongoDB's aggregation pipeline:
 
-- It takes memory to use indexes. Only use on low Write-Read ratio documents (More reads than writes)
+```javascript
+const stats = await Project.aggregate([
+	{ $match: { status: 'active' } },
+	{ $unwind: '$team' },
+	{
+		$group: {
+			_id: '$team',
+			projectCount: { $sum: 1 },
+			avgCompletion: { $avg: '$completionRate' },
+		},
+	},
+	{ $sort: { projectCount: -1 } },
+]);
+```
 
-## TODO::Implement caching to prevent multiple requests of same data.
+### Caching Strategy (My TODO That Became Reality)
 
-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage
-- Cookies vs Web Storage API vs IndexedDB
-  - For better performance and/or larger datasets, IndexedDB is better
-  - However, only used for simple use cases
+I procrastinated on caching until our API started timing out. Redis solved it:
 
-## Handlebars SUCK
+```javascript
+const cached = await redis.get(`project:${id}`);
+if (cached) return JSON.parse(cached);
 
-- Cannot directly access res.locals, but pug can
-- ## Does not have extends, but only partials
+const project = await Project.findById(id);
+await redis.setex(`project:${id}`, 3600, JSON.stringify(project));
+return project;
+```
 
-## TO provide current project ID into JS Frontend Code, create a hidden field in HTML/Pug with req.body.project.\_id included
+## Lessons from Production Disasters
 
-## TODO: Instead of deleting tickets & projects, mark them as inactive and simply don't display it to user.
+### The Cascading Delete Nightmare
 
-## Implemented Client-Side Rendering with frontend JS for comments on Tickets to reduce initial loading time and inefficient data retrievals
+I once deleted a user and watched in horror as all their projects, tickets, and comments vanished. Now I use soft deletes:
 
-To Learn
+```javascript
+userSchema.add({
+	isActive: { type: Boolean, default: true },
+});
 
-- Promise
-- Feedback Loop
-- function() {} vs () => {}
-- Static Method vs Review Method
+userSchema.pre(/^find/, function () {
+	this.find({ isActive: { $ne: false } });
+});
+```
 
-# Choices Made
+### The Factory Function Pattern That Saved My Controllers
 
-1. MongoDB choice: mySQL, noSQL, postgreSQL (child vs parent vs 2 way refenrencing vs embedding)
-2. How I applied MVC
-3. Security measures done (pw on DB, argon2, and more)
-4. Performance improvements
-5. Which templating engines to use (Pug, handlebars, ejs)
-   Which frontend framework should be used?
+Repeating try-catch blocks everywhere was painful. Factory functions cleaned it up:
 
-## Created a middleware that stores three recently viewed projects in cookie.
+```javascript
+const catchAsync = (fn) => {
+	return (req, res, next) => {
+		fn(req, res, next).catch(next);
+	};
+};
+
+// Clean controller without try-catch
+const getProject = catchAsync(async (req, res, next) => {
+	const project = await Project.findById(req.params.id);
+	if (!project) {
+		return next(new AppError('Project not found', 404));
+	}
+	res.json({ status: 'success', data: project });
+});
+```
+
+### Client-Side Rendering for Dynamic Content
+
+Loading all comments with the initial page load was killing performance. Moving to client-side rendering for comments cut initial load time by 40%:
+
+```javascript
+// Instead of server-side rendering all comments
+// Load them dynamically when needed
+async function loadComments(ticketId) {
+	const response = await fetch(`/api/tickets/${ticketId}/comments`);
+	const comments = await response.json();
+	renderComments(comments.data);
+}
+```
+
+## The Tools That Make Life Easier
+
+After trying different setups, here's my go-to stack:
+
+- **Express.js**: Still the most flexible Node.js framework
+- **MongoDB + Mongoose**: Perfect for rapidly evolving schemas
+- **Pug**: For server-side rendering (yes, better than Handlebars)
+- **Morgan**: HTTP request logger that's saved debugging hours
+- **PM2**: Process manager for production
+- **Postman**: API testing and documentation
+
+## Looking Back: What I'd Do Differently
+
+1. **Start with TypeScript**: The type safety would've prevented countless runtime errors
+2. **Write tests first**: TDD feels slow initially but saves time long-term
+3. **Document as you go**: Your future self will thank you
+4. **Use DataLoader pattern**: Solves N+1 query problems elegantly
+5. **Implement observability early**: Logs, metrics, and traces from day one
+
+## Final Thoughts
+
+Building RESTful APIs is a journey of continuous learning. Every production issue teaches you something new, every security breach you read about adds to your checklist, and every performance bottleneck makes you a better developer.
+
+The key is starting simple and iterating. Don't try to implement every best practice from day one—you'll never ship. Start with the basics: clean separation of concerns, basic security, and consistent patterns. Then improve incrementally.
+
+Remember: the best API is not the one with the most features or the cleverest abstractions. It's the one that's still running smoothly at 3 AM when you're fast asleep, handling thousands of requests without breaking a sweat.
+
+---
+
+_Currently working on: Implementing GraphQL alongside REST, exploring Deno as an alternative to Node.js, and diving deeper into microservices architecture. The learning never stops._
