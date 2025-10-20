@@ -6,8 +6,15 @@
     <description>Recent content in Blog on Christopher Lee</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blockchain: Beyond the Hype</title>
+      <link>http://localhost:1313/blog/blockchain/</link>
+      <pubDate>Mon, 20 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/blockchain/</guid>
+      <description>Blockchain has been called everything from &amp;ldquo;the most important invention since the internet&amp;rdquo; to &amp;ldquo;a solution looking for a problem.</description>
+    </item>
     <item>
       <title>Inside AWS: Lessons from My Internship</title>
       <link>http://localhost:1313/blog/aws-internship/</link>
