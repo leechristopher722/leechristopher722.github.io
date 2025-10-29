@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interview Prep on Christopher Lee</title>
+    <link>http://localhost:1313/tags/interview-prep/</link>
+    <description>Recent content in Interview Prep on Christopher Lee</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/interview-prep/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode Guide</title>
+      <link>http://localhost:1313/blog/leetcode-guide/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/leetcode-guide/</guid>
+      <description>Let&amp;rsquo;s address the elephant in the room: LeetCode isn&amp;rsquo;t about becoming a better programmer.</description>
+    </item>
+  </channel>
+</rss>

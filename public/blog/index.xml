@@ -6,8 +6,15 @@
     <description>Recent content in Blog on Christopher Lee</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LeetCode Guide</title>
+      <link>http://localhost:1313/blog/leetcode-guide/</link>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/leetcode-guide/</guid>
+      <description>Let&amp;rsquo;s address the elephant in the room: LeetCode isn&amp;rsquo;t about becoming a better programmer.</description>
+    </item>
     <item>
       <title>Blockchain: Beyond the Hype</title>
       <link>http://localhost:1313/blog/blockchain/</link>

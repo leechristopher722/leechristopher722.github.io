@@ -1,0 +1,1174 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="rgb(255,255,255)" />
+  
+  <title>LeetCode Guide &middot; Christopher Lee</title>
+    <meta name="title" content="LeetCode Guide &middot; Christopher Lee" />
+  
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.022d0ebc3b46a335eb1c7ef79b7f2de143d7cd5156d433638592ef1ce5f8554e.js"
+    integrity="sha256-Ai0OvDtGozXrHH73m38t4UPXzVFW1DNjhZLvHOX4VU4="
+  ></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.b0557927163f7b5770bfed5032014c753aaf2bb8049230d1ca6f7ee2d7704fb8.css"
+    integrity="sha256-sFV5JxY/e1dwv&#43;1QMgFMdTqvK7gEkjDRym9&#43;4tdwT7g="
+  />
+  
+    
+    
+    
+  
+  
+  
+  
+    
+    
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.d85fab7ccfc2112e9c50ae4adc7fa76fa179c95f40e02a11e18eb397acb6139e.js"
+      integrity="sha256-2F&#43;rfM/CES6cUK5K3H&#43;nb6F5yV9A4CoR4Y6zl6y2E54="
+      data-copy="Copy"
+      data-copied="Copied"
+    ></script>
+  
+  
+  <meta
+    name="description"
+    content="
+      A comprehensive guide to mastering technical interviews through deliberate practice
+    "
+  />
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/blog/leetcode-guide/" />
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/blog/leetcode-guide/">
+  <meta property="og:site_name" content="Christopher Lee">
+  <meta property="og:title" content="LeetCode Guide">
+  <meta property="og:description" content="A comprehensive guide to mastering technical interviews through deliberate practice">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-10-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-29T00:00:00+00:00">
+    <meta property="article:tag" content="Algorithms">
+    <meta property="article:tag" content="Data Structures">
+    <meta property="article:tag" content="Interview Prep">
+    <meta property="article:tag" content="LeetCode">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="LeetCode Guide">
+  <meta name="twitter:description" content="A comprehensive guide to mastering technical interviews through deliberate practice">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Blog",
+    "name": "LeetCode Guide",
+    "headline": "LeetCode Guide",
+    "description": "A comprehensive guide to mastering technical interviews through deliberate practice",
+    "abstract": "Let\u0026rsquo;s address the elephant in the room: LeetCode isn\u0026rsquo;t about becoming a better programmer.",
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/blog\/leetcode-guide\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Christopher Lee"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-10-29T00:00:00\u002b00:00",
+    "datePublished": "2025-10-29T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-10-29T00:00:00\u002b00:00",
+    
+    "keywords": ["Algorithms","Data Structures","Interview Prep","LeetCode"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1493"
+  }
+  </script>
+
+
+  
+  <meta name="author" content="Christopher Lee" />
+  
+    
+      <link href="mailto:leechristopher722@gmail.com" rel="me" />
+    
+      <link href="https://github.com/leechristopher722" rel="me" />
+    
+      <link href="https://www.linkedin.com/in/christopher-lee-0722/" rel="me" />
+    
+      <link href="https://www.instagram.com/chrislee722_/" rel="me" />
+    
+  
+  
+  
+
+
+
+
+
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral"
+  >
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="-translate-y-8 rounded-b-lg bg-primary-200 px-3 py-1 text-sm focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="pe-2 font-bold text-primary-600 dark:text-primary-400">&darr;</span
+        >Skip to main content</a
+      >
+    </div>
+    
+    
+      <header class="py-6 font-semibold text-neutral-900 print:hidden sm:py-10 dark:text-neutral">
+  <nav class="flex items-start justify-between sm:items-center">
+    
+    <div class="z-40 flex flex-row items-center">
+      
+  <a
+    class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+    rel="me"
+    href="/"
+    >Christopher Lee</a
+  >
+
+    </div>
+    
+      
+      <label id="menu-button" for="menu-controller" class="block sm:hidden">
+        <input type="checkbox" id="menu-controller" class="hidden" />
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="invisible fixed inset-0 z-30 m-auto h-full w-full cursor-default overflow-auto bg-neutral-100/50 opacity-0 backdrop-blur-sm transition-opacity dark:bg-neutral-900/50"
+        >
+          <ul
+            class="mx-auto flex w-full max-w-7xl list-none flex-col overflow-visible px-6 py-6 text-end sm:px-14 sm:py-10 sm:pt-10 md:px-24 lg:px-32"
+          >
+            <li class="mb-1">
+              <span class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400"
+                ><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span></span
+              >
+            </li>
+            
+              
+                
+                <li class="group mb-1">
+                  
+                    <a
+                      href="/about/"
+                      title=""
+                      onclick="close_menu()"
+                      
+                      ><span
+                          class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                          >About</span
+                        >
+                      </a
+                    >
+                  
+                </li>
+              
+                
+                <li class="group mb-1">
+                  
+                    <a
+                      href="/blog/"
+                      title=""
+                      onclick="close_menu()"
+                      
+                      ><span
+                          class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                          >Blog</span
+                        >
+                      </a
+                    >
+                  
+                </li>
+              
+                
+                <li class="group mb-1">
+                  
+                    <a
+                      href="/projects/"
+                      title=""
+                      onclick="close_menu()"
+                      
+                      ><span
+                          class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                          >Projects</span
+                        >
+                      </a
+                    >
+                  
+                </li>
+              
+                
+                  
+                
+                <li class="group mb-1">
+                  
+                    
+                    
+                      <button
+                        id="search-button-1"
+                        title="Search (/)"
+                      >
+                        
+                          <span
+                            class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                          ><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span
+                            class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                            ></span
+                          >
+                        
+                      </button>
+                    
+                  
+                </li>
+              
+              
+            
+          </ul>
+        </div>
+      </label>
+      
+      <ul class="hidden list-none flex-row text-end sm:flex">
+        
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              
+                <a
+                  href="/about/"
+                  title=""
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >About</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              
+                <a
+                  href="/blog/"
+                  title=""
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Blog</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              
+                <a
+                  href="/projects/"
+                  title=""
+                  
+                  ><span
+                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                      >Projects</span
+                    >
+                  </a
+                >
+              
+            </li>
+          
+            
+              
+            
+            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0">
+              
+                
+                
+                  <button
+                    id="search-button-2"
+                    title="Search (/)"
+                  >
+                    
+                      <span
+                        class="group-dark:hover:text-primary-400 transition-colors group-hover:text-primary-600"
+                      ><span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></span><span
+                        class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+                        ></span
+                      >
+                    
+                  </button>
+                
+              
+            </li>
+          
+          
+
+        
+      </ul>
+    
+  </nav>
+</header>
+
+    
+    <div class="relative flex grow flex-col">
+      <main id="main-content" class="grow">
+        
+  <article>
+    <header class="max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 print:hidden dark:text-neutral-400">
+  
+  
+    
+  
+    
+  
+  <li class="hidden inline">
+    <a
+      class="dark:underline-neutral-600 decoration-neutral-300 hover:underline"
+      href="/"
+      >Christopher Lee</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class=" inline">
+    <a
+      class="dark:underline-neutral-600 decoration-neutral-300 hover:underline"
+      href="/blog/"
+      >Blog</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden inline">
+    <a
+      class="dark:underline-neutral-600 decoration-neutral-300 hover:underline"
+      href="/blog/leetcode-guide/"
+      >LeetCode Guide</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        LeetCode Guide
+      </h1>
+      
+        <div class="mb-12 mt-8 text-base text-neutral-500 print:hidden dark:text-neutral-400">
+          
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-10-29 00:00:00 &#43;0000 UTC">29 October 2025</time>
+    
+
+    
+    
+  </div>
+
+  
+  
+    <div class="my-1 flex flex-wrap text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+      
+        
+      
+        
+          
+            <a
+              href="/tags/algorithms/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Algorithms</a
+            >
+          
+            <a
+              href="/tags/data-structures/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Data Structures</a
+            >
+          
+            <a
+              href="/tags/interview-prep/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >Interview Prep</a
+            >
+          
+            <a
+              href="/tags/leetcode/"
+              class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
+              >LeetCode</a
+            >
+          
+        
+      
+    </div>
+  
+
+
+        </div>
+      
+      
+    </header>
+    <section class="prose mt-0 flex max-w-full flex-col dark:prose-invert lg:flex-row">
+      
+      <div class="min-h-0 min-w-0 max-w-prose grow">
+        <p>Let&rsquo;s address the elephant in the room: LeetCode isn&rsquo;t about becoming a better programmer. It&rsquo;s about passing technical interviews. The skills overlap, but they&rsquo;re not identical. Accepting this makes the process less frustrating.</p>
+<h2 id="the-pattern-recognition-game" class="relative group">The Pattern Recognition Game </h2><p>Technical interviews aren&rsquo;t testing if you can invent algorithms—they&rsquo;re testing if you can recognize and apply patterns. Here are the patterns that cover 90% of problems:</p>
+<h3 id="1-two-pointers" class="relative group">1. Two Pointers </h3><p><strong>When to use</strong>: Arrays, strings, linked lists with comparison or search operations</p>
+<p><strong>Classic Problems</strong>:</p>
+<ul>
+<li>Two Sum (sorted array)</li>
+<li>Container With Most Water</li>
+<li>Trapping Rain Water</li>
+<li>Remove Duplicates</li>
+</ul>
+<p><strong>The Template</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">two_pointer_template</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Process current state</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">condition_met</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">need_smaller</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">right</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">not_found</span>
+</span></span></code></pre></div><p><strong>Key Insight</strong>: Often converts O(n²) brute force to O(n) or O(n log n) with sorting.</p>
+<h3 id="2-sliding-window" class="relative group">2. Sliding Window </h3><p><strong>When to use</strong>: Subarray/substring problems with contiguous elements</p>
+<p><strong>Fixed Window</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fixed_window</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">window_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">max_sum</span> <span class="o">=</span> <span class="n">window_sum</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">window_sum</span> <span class="o">=</span> <span class="n">window_sum</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">max_sum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_sum</span><span class="p">,</span> <span class="n">window_sum</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">max_sum</span>
+</span></span></code></pre></div><p><strong>Variable Window</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">variable_window</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">condition</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">window</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># or whatever you&#39;re tracking</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Expand window</span>
+</span></span><span class="line"><span class="cl">        <span class="n">add_to_window</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># Contract window while invalid</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="ow">not</span> <span class="n">valid</span><span class="p">(</span><span class="n">window</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">remove_from_window</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># Update result</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span>
+</span></span></code></pre></div><h3 id="3-fast--slow-pointers" class="relative group">3. Fast &amp; Slow Pointers </h3><p><strong>When to use</strong>: Cycle detection, middle element, linked list problems</p>
+<p><strong>Classic Applications</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">has_cycle</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">slow</span> <span class="o">=</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">slow</span> <span class="o">==</span> <span class="n">fast</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">find_middle</span><span class="p">(</span><span class="n">head</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">slow</span> <span class="o">=</span> <span class="n">fast</span> <span class="o">=</span> <span class="n">head</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">fast</span> <span class="ow">and</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">slow</span> <span class="o">=</span> <span class="n">slow</span><span class="o">.</span><span class="n">next</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fast</span> <span class="o">=</span> <span class="n">fast</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">slow</span>
+</span></span></code></pre></div><h3 id="4-tree-traversal-patterns" class="relative group">4. Tree Traversal Patterns </h3><p><strong>The Three Questions for Any Tree Problem</strong>:</p>
+<ol>
+<li>Can I solve it by visiting nodes in a specific order? (Traversal)</li>
+<li>Can I solve it by getting info from children first? (Post-order)</li>
+<li>Can I solve it top-down passing info to children? (Pre-order)</li>
+</ol>
+<p><strong>The Universal Template</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tree_recursion</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">additional_params</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Base case</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">base_value</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Pre-order processing</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Recurse</span>
+</span></span><span class="line"><span class="cl">    <span class="n">left_result</span> <span class="o">=</span> <span class="n">tree_recursion</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">updated_params</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">right_result</span> <span class="o">=</span> <span class="n">tree_recursion</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">updated_params</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Post-order processing</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">combined_result</span>
+</span></span></code></pre></div><h3 id="5-bfs--level-order" class="relative group">5. BFS / Level-Order </h3><p><strong>When to use</strong>: Shortest path, level-by-level processing, trees/graphs</p>
+<p><strong>The Template That Handles Everything</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bfs_template</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">queue</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">start</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span> <span class="o">=</span> <span class="p">{</span><span class="n">start</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">level</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Process entire level at once</span>
+</span></span><span class="line"><span class="cl">        <span class="n">level_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">level_size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># Process node</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">is_target</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">level</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1"># Add neighbors</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="n">get_neighbors</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">neighbor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neighbor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></span></code></pre></div><h3 id="6-dfs--backtracking" class="relative group">6. DFS / Backtracking </h3><p><strong>When to use</strong>: All paths, all combinations, all permutations, puzzles</p>
+<p><strong>The Backtracking Template</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">backtrack</span><span class="p">(</span><span class="n">choices</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Base case</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">is_complete</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">[:])</span>  <span class="c1"># Important: copy the path</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">choice</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">choices</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Skip invalid choices</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">is_valid</span><span class="p">(</span><span class="n">choice</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># Make choice</span>
+</span></span><span class="line"><span class="cl">        <span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># Recurse with remaining choices</span>
+</span></span><span class="line"><span class="cl">        <span class="n">backtrack</span><span class="p">(</span><span class="n">choices</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:],</span> <span class="n">path</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># or choices[:i] + choices[i+1:] for perms</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># Undo choice</span>
+</span></span><span class="line"><span class="cl">        <span class="n">path</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="7-dynamic-programming" class="relative group">7. Dynamic Programming </h3><p><strong>The Two Questions</strong>:</p>
+<ol>
+<li>Can I break this into overlapping subproblems?</li>
+<li>Can I define the solution recursively?</li>
+</ol>
+<p><strong>Top-Down (Memoization)</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dp_recursive</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">memo</span><span class="o">=</span><span class="p">{}):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Base case</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">base_value</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Check memo</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">memo</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Recurrence relation</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp_recursive</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">dp_recursive</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># or whatever</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">memo</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</span></span></code></pre></div><p><strong>Bottom-Up (Tabulation)</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dp_iterative</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">base_value</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">base1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">base2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># recurrence relation</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</span></span></code></pre></div><p><strong>Space Optimization</strong> (when you only need previous few values):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dp_optimized</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">base_value</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">prev2</span><span class="p">,</span> <span class="n">prev1</span> <span class="o">=</span> <span class="n">base1</span><span class="p">,</span> <span class="n">base2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">current</span> <span class="o">=</span> <span class="n">prev1</span> <span class="o">+</span> <span class="n">prev2</span>
+</span></span><span class="line"><span class="cl">        <span class="n">prev2</span><span class="p">,</span> <span class="n">prev1</span> <span class="o">=</span> <span class="n">prev1</span><span class="p">,</span> <span class="n">current</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">prev1</span>
+</span></span></code></pre></div><h3 id="8-binary-search" class="relative group">8. Binary Search </h3><p><strong>Beyond Sorted Arrays</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">binary_search_template</span><span class="p">(</span><span class="n">search_space</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">min_value</span><span class="p">,</span> <span class="n">max_value</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">(</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">condition</span><span class="p">(</span><span class="n">mid</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span>  <span class="c1"># or left = mid + 1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># or right = mid</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">left</span>
+</span></span></code></pre></div><p><strong>The Trick</strong>: If you can frame the problem as &ldquo;find the minimum/maximum value where condition is true,&rdquo; use binary search.</p>
+<h2 id="data-structure-instant-decisions" class="relative group">Data Structure Instant Decisions </h2><h3 id="when-to-use-what" class="relative group">When to Use What </h3><p><strong>Array/List</strong>:</p>
+<ul>
+<li>Need index access</li>
+<li>Fixed size or know size upfront</li>
+<li>Cache-friendly operations</li>
+</ul>
+<p><strong>HashMap/Dict</strong>:</p>
+<ul>
+<li>O(1) lookup needed</li>
+<li>Counting occurrences</li>
+<li>Mapping relationships</li>
+<li>Finding pairs/complements</li>
+</ul>
+<p><strong>Set</strong>:</p>
+<ul>
+<li>Uniqueness matters</li>
+<li>O(1) membership testing</li>
+<li>Finding duplicates</li>
+</ul>
+<p><strong>Stack</strong>:</p>
+<ul>
+<li>Matching brackets/parentheses</li>
+<li>Nearest greater/smaller element</li>
+<li>Evaluate expressions</li>
+<li>Backtracking (implicit with recursion)</li>
+</ul>
+<p><strong>Queue/Deque</strong>:</p>
+<ul>
+<li>BFS</li>
+<li>Level-order traversal</li>
+<li>Sliding window maximum</li>
+<li>Process in order</li>
+</ul>
+<p><strong>Heap/Priority Queue</strong>:</p>
+<ul>
+<li>K-th largest/smallest</li>
+<li>Top K frequent</li>
+<li>Merge K sorted lists</li>
+<li>Dijkstra&rsquo;s algorithm</li>
+</ul>
+<p><strong>Trie</strong>:</p>
+<ul>
+<li>Prefix matching</li>
+<li>Autocomplete</li>
+<li>Word search in grid</li>
+</ul>
+<h2 id="the-time-complexity-reality-check" class="relative group">The Time Complexity Reality Check </h2><p>Stop memorizing—understand the patterns:</p>
+<p><strong>O(1)</strong>: Direct access, math operations
+<strong>O(log n)</strong>: Binary search, balanced tree operations
+<strong>O(n)</strong>: Single pass through data
+<strong>O(n log n)</strong>: Sorting, divide &amp; conquer
+<strong>O(n²)</strong>: Nested loops, comparing all pairs
+<strong>O(2ⁿ)</strong>: Subsets, recursive branching
+<strong>O(n!)</strong>: Permutations</p>
+<p><strong>The Interview Optimization Path</strong>:</p>
+<ol>
+<li>Brute force (usually O(n²) or worse)</li>
+<li>Can I sort first? (O(n log n))</li>
+<li>Can I use a hash map? (O(n) space for O(1) lookup)</li>
+<li>Can I use two pointers? (O(1) space)</li>
+<li>Is there a greedy approach?</li>
+<li>Do I need DP?</li>
+</ol>
+<h2 id="common-gotchas-and-how-to-avoid-them" class="relative group">Common Gotchas and How to Avoid Them </h2><h3 id="python-specific-traps" class="relative group">Python Specific Traps </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Gotcha 1: Mutable default arguments</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bad</span><span class="p">(</span><span class="n">arr</span><span class="o">=</span><span class="p">[]):</span>  <span class="c1"># DON&#39;T</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">arr</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">good</span><span class="p">(</span><span class="n">arr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># DO</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">arr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">arr</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Gotcha 2: Integer division</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">//</span> <span class="n">b</span>  <span class="c1"># Floor division (what you usually want)</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Truncation toward zero (different for negatives!)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Gotcha 3: List reference vs copy</span>
+</span></span><span class="line"><span class="cl"><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_path</span><span class="p">)</span>  <span class="c1"># BAD - stores reference</span>
+</span></span><span class="line"><span class="cl"><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_path</span><span class="p">[:])</span>  <span class="c1"># GOOD - stores copy</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Gotcha 4: String immutability</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>  <span class="c1"># ERROR - strings are immutable</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>  <span class="c1"># Convert to list first</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="the-edge-cases-checklist" class="relative group">The Edge Cases Checklist </h3><p>Always test:</p>
+<ul>
+<li>Empty input ([], &ldquo;&rdquo;, None)</li>
+<li>Single element</li>
+<li>All same elements</li>
+<li>Negative numbers</li>
+<li>Overflow (for int problems)</li>
+<li>Cycles (for graphs/linked lists)</li>
+<li>Disconnected components (for graphs)</li>
+</ul>
+<h2 id="the-interview-strategy" class="relative group">The Interview Strategy </h2><h3 id="before-you-code" class="relative group">Before You Code </h3><ol>
+<li><strong>Clarify constraints</strong>: Input size? Value ranges? Can I modify input?</li>
+<li><strong>Work through examples</strong>: Start small, find patterns</li>
+<li><strong>Discuss approach</strong>: Brute force → optimized</li>
+<li><strong>Analyze complexity</strong>: Time and space</li>
+<li><strong>Then code</strong>: Only after agreement on approach</li>
+</ol>
+<h3 id="while-coding" class="relative group">While Coding </h3><ul>
+<li><strong>Think out loud</strong>: Silence is your enemy</li>
+<li><strong>Write clean code</strong>: Variable names matter</li>
+<li><strong>Handle edges</strong>: But don&rsquo;t obsess initially</li>
+<li><strong>Test as you go</strong>: Don&rsquo;t wait until the end</li>
+</ul>
+<h3 id="the-45-minute-timeline" class="relative group">The 45-Minute Timeline </h3><ul>
+<li>0-5 min: Understand problem</li>
+<li>5-10 min: Work through examples</li>
+<li>10-15 min: Discuss approach</li>
+<li>15-35 min: Code solution</li>
+<li>35-40 min: Test and debug</li>
+<li>40-45 min: Discuss optimizations</li>
+</ul>
+<h2 id="the-practice-strategy-that-works" class="relative group">The Practice Strategy That Works </h2><h3 id="week-1-2-fundamentals" class="relative group">Week 1-2: Fundamentals </h3><ul>
+<li>5 array problems</li>
+<li>5 string problems</li>
+<li>5 linked list problems</li>
+<li>Focus on brute force, don&rsquo;t optimize yet</li>
+</ul>
+<h3 id="week-3-4-core-patterns" class="relative group">Week 3-4: Core Patterns </h3><ul>
+<li>10 two-pointer problems</li>
+<li>10 sliding window problems</li>
+<li>Learn the templates, apply mechanically</li>
+</ul>
+<h3 id="week-5-6-trees-and-graphs" class="relative group">Week 5-6: Trees and Graphs </h3><ul>
+<li>10 tree problems</li>
+<li>10 graph problems (BFS/DFS)</li>
+<li>Master the traversal templates</li>
+</ul>
+<h3 id="week-7-8-dynamic-programming" class="relative group">Week 7-8: Dynamic Programming </h3><ul>
+<li>Start with classic problems (Fibonacci, coin change)</li>
+<li>Focus on identifying recurrence relations</li>
+<li>Don&rsquo;t memorize solutions</li>
+</ul>
+<h3 id="week-9-12-mixed-practice" class="relative group">Week 9-12: Mixed Practice </h3><ul>
+<li>3-5 problems daily</li>
+<li>Time yourself</li>
+<li>Focus on mediums</li>
+<li>One hard per week</li>
+</ul>
+<h3 id="the-spaced-repetition-secret" class="relative group">The Spaced Repetition Secret </h3><ul>
+<li>Solve problem</li>
+<li>Try again in 3 days</li>
+<li>Try again in 1 week</li>
+<li>Try again in 1 month</li>
+</ul>
+<p>If you can&rsquo;t solve it from scratch each time, you haven&rsquo;t learned the pattern.</p>
+<h2 id="when-youre-stuck" class="relative group">When You&rsquo;re Stuck </h2><h3 id="the-unstuck-protocol" class="relative group">The Unstuck Protocol </h3><ol>
+<li><strong>Re-read the problem</strong>: Did I miss constraints?</li>
+<li><strong>Try more examples</strong>: Look for patterns</li>
+<li><strong>Simplify</strong>: Solve for n=2, then generalize</li>
+<li><strong>Consider all patterns</strong>: Go through the list above</li>
+<li><strong>Check discussions after 30 minutes</strong>: Learn, don&rsquo;t just copy</li>
+</ol>
+<h3 id="the-learning-mindset" class="relative group">The Learning Mindset </h3><ul>
+<li><strong>It&rsquo;s not about intelligence</strong>: It&rsquo;s about pattern recognition</li>
+<li><strong>Everyone struggles initially</strong>: Including FAANG engineers</li>
+<li><strong>Progress isn&rsquo;t linear</strong>: Breakthrough moments happen suddenly</li>
+<li><strong>Quality over quantity</strong>: Understanding 100 problems beats rushing through 500</li>
+</ul>
+<h2 id="the-meta-game" class="relative group">The Meta-Game </h2><h3 id="what-interviewers-actually-care-about" class="relative group">What Interviewers Actually Care About </h3><ol>
+<li><strong>Problem-solving approach</strong>: Not just the solution</li>
+<li><strong>Communication</strong>: Can you explain your thinking?</li>
+<li><strong>Code quality</strong>: Is it readable and maintainable?</li>
+<li><strong>Debugging skills</strong>: How do you handle bugs?</li>
+<li><strong>Optimization</strong>: Can you improve your solution?</li>
+</ol>
+<h3 id="red-flags-to-avoid" class="relative group">Red Flags to Avoid </h3><ul>
+<li>Jumping to code immediately</li>
+<li>Not asking clarifying questions</li>
+<li>Writing unreadable code</li>
+<li>Giving up too quickly</li>
+<li>Not testing your solution</li>
+<li>Being arrogant or dismissive</li>
+</ul>
+<h2 id="conclusion-the-long-game" class="relative group">Conclusion: The Long Game </h2><p>LeetCode is a game with specific rules. Learn the rules, practice the patterns, and you&rsquo;ll improve. But remember:</p>
+<ol>
+<li><strong>It&rsquo;s a learnable skill</strong>: Not a measure of your worth as a developer</li>
+<li><strong>Consistency beats intensity</strong>: 30 minutes daily beats 5-hour weekend sessions</li>
+<li><strong>Understanding beats memorization</strong>: Learn patterns, not solutions</li>
+<li><strong>It&rsquo;s temporary</strong>: Once you get the job, you&rsquo;ll rarely use these specific skills</li>
+</ol>
+<p>The developers who succeed at LeetCode aren&rsquo;t necessarily the smartest—they&rsquo;re the ones who figured out it&rsquo;s just pattern matching with extra steps.</p>
+
+      </div>
+    </section>
+    <footer class="max-w-prose pt-8 print:hidden">
+      
+  <div class="flex">
+    
+    
+    
+      
+      
+        
+        
+
+
+
+
+
+
+
+
+  
+    <picture
+      class="!mb-0 !mt-0 me-4 w-24 h-auto rounded-full"
+      
+    >
+      
+      
+      
+      
+      <img
+        width="1024"
+        height="1100"
+        class="!mb-0 !mt-0 me-4 w-24 h-auto rounded-full"
+        alt="Christopher Lee"
+        loading="lazy" decoding="async"
+        
+          src="/img/avatartion_hu0e2a4256fb5bcd20e8dd2794a6333857_1126479_660x0_resize_q75_box.jpg"
+          srcset="/img/avatartion_hu0e2a4256fb5bcd20e8dd2794a6333857_1126479_330x0_resize_q75_box.jpg 330w,/img/avatartion_hu0e2a4256fb5bcd20e8dd2794a6333857_1126479_660x0_resize_q75_box.jpg 660w
+          
+            ,/img/avatartion.jpg 1024w
+          
+          
+            ,/img/avatartion.jpg 1024w
+          "
+          sizes="100vw"
+        
+      />
+    </picture>
+  
+
+
+      
+    
+    <div class="place-self-center">
+      
+        <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+          Author
+        </div>
+        <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+          Christopher Lee
+        </div>
+      
+      
+        <div class="text-sm text-neutral-700 dark:text-neutral-400">Software Engineer building enterprise solutions at scale</div>
+      
+      <div class="text-2xl sm:text-lg">
+<div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+	 
+	<a
+		class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+		style="will-change: transform"
+		href="mailto:leechristopher722@gmail.com"
+		target="_blank"
+		aria-label="Email"
+		rel="me noopener noreferrer"
+		><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+</span></a
+	>
+	  
+	<a
+		class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+		style="will-change: transform"
+		href="https://github.com/leechristopher722"
+		target="_blank"
+		aria-label="Github"
+		rel="me noopener noreferrer"
+		><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></a
+	>
+	  
+	<a
+		class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+		style="will-change: transform"
+		href="https://www.linkedin.com/in/christopher-lee-0722/"
+		target="_blank"
+		aria-label="Linkedin"
+		rel="me noopener noreferrer"
+		><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span></a
+	>
+	  
+	<a
+		class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+		style="will-change: transform"
+		href="https://www.instagram.com/chrislee722_/"
+		target="_blank"
+		aria-label="Instagram"
+		rel="me noopener noreferrer"
+		><span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+</span></a
+	>
+	 
+</div>
+
+</div>
+    </div>
+  </div>
+
+
+      
+
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="group flex" href="/blog/blockchain/">
+              <span
+                class="me-2 text-neutral-700 transition-transform group-hover:-translate-x-[2px] group-hover:text-primary-600 dark:text-neutral dark:group-hover:text-primary-400"
+                ><span class="ltr:inline rtl:hidden">&larr;</span
+                ><span class="ltr:hidden rtl:inline">&rarr;</span></span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Blockchain: Beyond the Hype</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-10-20 00:00:00 &#43;0000 UTC">20 October 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        
+          <div class="pointer-events-none absolute bottom-0 end-0 top-[100vh] w-12">
+            <a
+              href="#the-top"
+              class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 backdrop-blur hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+              aria-label="Scroll to top"
+              title="Scroll to top"
+            >
+              &uarr;
+            </a>
+          </div>
+        
+      </main><footer class="py-10 print:hidden">
+  
+  
+  <div class="flex items-center justify-between">
+    <div>
+      
+      
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+            &copy;
+            2025
+            Christopher Lee
+        </p>
+      
+      
+      
+    </div>
+    <div class="flex flex-row items-center">
+      
+      
+      
+      
+        <div
+          class="me-14 cursor-pointer text-sm text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        >
+          <button id="appearance-switcher-0" type="button" aria-label="appearance switcher">
+            <div
+              class="flex h-12 w-12 items-center justify-center dark:hidden"
+              title="Switch to dark appearance"
+            >
+              <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+            </div>
+            <div
+              class="hidden h-12 w-12 items-center justify-center dark:flex"
+              title="Switch to light appearance"
+            >
+              <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+            </div>
+          </button>
+        </div>
+      
+    </div>
+  </div>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 z-50 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm sm:p-6 md:p-[10vh] lg:p-[12vh] dark:bg-neutral-900/50"
+  data-url="http://localhost:1313/"
+>
+  <div
+    id="search-modal"
+    class="top-20 mx-auto flex min-h-0 w-full max-w-3xl flex-col rounded-md border border-neutral-200 bg-neutral shadow-lg dark:border-neutral-700 dark:bg-neutral-800"
+  >
+    <header class="relative z-10 flex flex-none items-center justify-between px-2">
+      <form class="flex min-w-0 flex-auto items-center">
+        <div class="flex h-8 w-8 items-center justify-center text-neutral-400">
+          <span class="icon relative inline-block px-1 align-text-bottom"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="mx-1 flex h-12 flex-auto appearance-none bg-transparent focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0"
+        />
+      </form>
+      <button
+        id="close-search-button"
+        class="flex h-8 w-8 items-center justify-center text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)"
+      >
+        <span class="icon relative inline-block px-1 align-text-bottom"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto overflow-auto px-2">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>
