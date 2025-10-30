@@ -7,7 +7,9 @@ slug: 'blockchain'
 tags: ['Blockchain', 'Distributed Systems', 'Technology', 'Cryptography']
 ---
 
-Blockchain has been called everything from "the most important invention since the internet" to "a solution looking for a problem." After diving deep into the technology, implementing smart contracts, and watching countless blockchain projects rise and fall, here's my take on what blockchain actually is, what it's good for, and where it's probably overhyped.
+Blockchain has been called everything from "the most important invention since the internet" to "a solution looking for a problem." After diving deep into the technology, implementing smart contracts, and watching countless blockchain projects rise and fall, here's my honest take on what blockchain actually is, what it's good for, and where it's definitely overhyped.
+
+Full disclosure: I was a skeptic who became cautiously optimistic. The hype cycle nearly ruined blockchain's reputation, but beneath the noise, there's genuinely interesting technology solving real problems.
 
 ## What Blockchain Actually Is
 
@@ -48,14 +50,18 @@ After seeing hundreds of "blockchain for X" pitches, patterns emerge about where
 
 ### 1. Trust-Minimized Finance
 
-**Cross-border Payments**  
-Traditional international transfers take days and cost 3-7% in fees. Blockchain can do it in hours for pennies. This isn't theoretical—it's happening now with stablecoins moving billions daily.
+**Cross-border Payments**
+I have a friend in the Philippines who receives payments from US clients. Traditional wire transfers cost $45 and take 3-5 days. With USDC (a stablecoin), transfers arrive in minutes and cost a few dollars. When you're sending $500, saving $40 matters.
 
-**Decentralized Finance (DeFi)**  
-Lending, borrowing, and trading without banks. Smart contracts automate what traditionally required intermediaries. The catch? Complexity and risk are shifted to users.
+This isn't some future promise—it's happening now. Billions in stablecoins move daily, primarily for payments where traditional banking is slow or expensive.
 
-**Digital Asset Ownership**  
-NFTs proved digital ownership is possible (even if most implementations were questionable). The technology has legitimate uses for tickets, certificates, and digital rights management.
+**Decentralized Finance (DeFi)**
+DeFi lets you lend, borrow, and trade without banks. Sounds great until you realize you're your own bank—security, key management, and understanding smart contract risks are now your problem.
+
+I experimented with DeFi protocols and watched my test funds nearly get drained when I approved a malicious contract. The "be your own bank" fantasy ignores how much infrastructure traditional banks provide. But for those willing to learn, DeFi offers financial services unavailable in traditional finance.
+
+**Digital Asset Ownership**
+Let's address the elephant: most NFTs were a scam or cash grab. But the underlying tech—provable digital ownership—is useful. I used NFT tickets for an event, and the anti-scalping measures and easy transferability were genuinely better than traditional ticketing.
 
 ### 2. Multi-Party Coordination
 
@@ -81,23 +87,33 @@ Patient-controlled health records that work across providers. Estonia's healthca
 
 ## Where Blockchain Doesn't Make Sense
 
-The "blockchain everything" movement ignored fundamental limitations:
+The "blockchain everything" movement ignored fundamental limitations. I've seen so many projects fail because they forced blockchain into problems that didn't need it.
 
 ### When You Need Performance
 
-Blockchains are slow by design. Bitcoin processes 7 transactions/second. Ethereum manages 30. Visa handles 65,000. If you need speed, blockchain is the wrong tool.
+I built a prototype payment system on Ethereum. During testing, transactions took 15 seconds to confirm and cost $2 in gas fees. For a payment system. This would never work.
+
+Blockchains are slow by design. Bitcoin: 7 transactions/second. Ethereum: 30. Visa: 65,000. If you need speed, blockchain is fundamentally the wrong architecture.
 
 ### When You Need Privacy
 
-Public blockchains are transparent by design. Everyone can see every transaction. "Private blockchains" lose many of blockchain's benefits—at that point, use a regular database.
+Public blockchains are transparent—every transaction is visible forever. I can see every wallet's entire transaction history. Great for transparency, terrible for privacy.
+
+I consulted on a project wanting to store medical records on blockchain. Hard stop. Patient data on a public, immutable ledger is a HIPAA violation waiting to happen. "Private blockchains" were suggested, but at that point, why not use a traditional database with proper access controls?
 
 ### When You Can Trust a Central Authority
 
-If all parties trust a single entity, blockchain adds complexity without benefit. Your company's internal database doesn't need blockchain.
+A company approached me wanting blockchain for their internal inventory system. Why? Their employees already trusted the company's database. Adding blockchain meant:
+- Higher complexity
+- Slower performance
+- More expensive infrastructure
+- No actual benefit
+
+If all parties trust one entity, use a regular database.
 
 ### When You Need to Delete Data
 
-GDPR's "right to be forgotten" is incompatible with blockchain's immutability. This killed many European blockchain projects.
+GDPR's "right to be forgotten" versus blockchain's immutability is an unsolvable conflict. I watched a European startup pivot away from blockchain after realizing compliance was impossible. Data must be deletable by law, but blockchain's entire value comes from immutability.
 
 ## The Real Potential: Programmable Money
 
